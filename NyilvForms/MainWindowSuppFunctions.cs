@@ -196,8 +196,11 @@ namespace NyilvForms
         {
             foreach (var prop in new Alapadatok().GetType().GetProperties())
             {
-                var element = new ComboBoxElementItem() { Name = prop.Name, Type = prop.PropertyType };
-                comboBoxFindElement.Items.Add(element);
+                if (prop.Name != "CegID")
+                {
+                    var element = new ComboBoxElementItem() { Name = prop.Name, Type = prop.PropertyType };
+                    comboBoxFindElement.Items.Add(element); 
+                }                
             }
             comboBoxFindElement.ValueMember = "Name";
             comboBoxFindElement.SelectedIndex = 0;

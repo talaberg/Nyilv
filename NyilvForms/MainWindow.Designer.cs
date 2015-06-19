@@ -51,13 +51,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.alapadatokDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainerAdatok = new System.Windows.Forms.SplitContainer();
             this.splitContainerJobbOldal = new System.Windows.Forms.SplitContainer();
             this.panelCegAdat = new System.Windows.Forms.Panel();
@@ -77,6 +70,7 @@
             this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eszközökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aremelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.csatlakozasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdImport = new System.Windows.Forms.OpenFileDialog();
             this.buttonLoadAll = new System.Windows.Forms.Button();
             this.panelGombok = new System.Windows.Forms.Panel();
@@ -90,7 +84,14 @@
             this.modositasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eltavolitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.csatlakozasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CegID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Azonosito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ceg_teljes_nevLabel = new System.Windows.Forms.Label();
             tarifaLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -247,7 +248,8 @@
             this.alapadatokDataGridView.AutoGenerateColumns = false;
             this.alapadatokDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.alapadatokDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.CegID,
+            this.Azonosito,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -261,48 +263,6 @@
             this.alapadatokDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_CellValueChanged);
             this.alapadatokDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
             this.alapadatokDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_RowLeave);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CegID";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Szamlazas";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Felelos";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cegnev";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Ceg_forma";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Hivatkozas";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Felfuggesztett";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // tarifaLabel
             // 
@@ -475,6 +435,12 @@
             resources.ApplyResources(this.aremelesToolStripMenuItem, "aremelesToolStripMenuItem");
             this.aremelesToolStripMenuItem.Click += new System.EventHandler(this.aremelesToolStripMenuItem_Click);
             // 
+            // csatlakozasToolStripMenuItem
+            // 
+            this.csatlakozasToolStripMenuItem.Name = "csatlakozasToolStripMenuItem";
+            resources.ApplyResources(this.csatlakozasToolStripMenuItem, "csatlakozasToolStripMenuItem");
+            this.csatlakozasToolStripMenuItem.Click += new System.EventHandler(this.csatlakozasToolStripMenuItem_Click);
+            // 
             // ofdImport
             // 
             this.ofdImport.FileName = "ofdImport";
@@ -560,11 +526,53 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // csatlakozasToolStripMenuItem
+            // CegID
             // 
-            this.csatlakozasToolStripMenuItem.Name = "csatlakozasToolStripMenuItem";
-            resources.ApplyResources(this.csatlakozasToolStripMenuItem, "csatlakozasToolStripMenuItem");
-            this.csatlakozasToolStripMenuItem.Click += new System.EventHandler(this.csatlakozasToolStripMenuItem_Click);
+            this.CegID.DataPropertyName = "CegID";
+            resources.ApplyResources(this.CegID, "CegID");
+            this.CegID.Name = "CegID";
+            // 
+            // Azonosito
+            // 
+            this.Azonosito.DataPropertyName = "Azonosito";
+            resources.ApplyResources(this.Azonosito, "Azonosito");
+            this.Azonosito.Name = "Azonosito";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Szamlazas";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Felelos";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cegnev";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Ceg_forma";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Hivatkozas";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Felfuggesztett";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // MainWindow
             // 
@@ -642,13 +650,6 @@
         private System.Windows.Forms.TextBox telefonTextBox;
         private System.Windows.Forms.TextBox telephelyTextBox;
         private System.Windows.Forms.TreeView treeViewDokumentumok;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Label labelCegKeres;
         private System.Windows.Forms.TextBox textBoxFind;
         private System.Windows.Forms.ComboBox comboBoxFindCondiditon;
@@ -666,6 +667,14 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ToolStripMenuItem csatlakozasToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CegID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Azonosito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }
 

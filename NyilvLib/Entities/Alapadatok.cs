@@ -13,6 +13,8 @@ namespace NyilvLib.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CegID { get; set; }
 
+        public int? Azonosito { get; set; }
+
         [StringLength(50)]
         public string Szamlazas { get; set; }
 

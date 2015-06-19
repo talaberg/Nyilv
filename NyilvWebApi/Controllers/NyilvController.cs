@@ -19,7 +19,7 @@ using NyilvLib.Auth;
 
 namespace Nyilv.Controllers
 {
-    public class NyilvController : ApiController
+    public partial class NyilvController : ApiController
     {
 
         // GET api/Alapadatok/{id}
@@ -168,7 +168,7 @@ namespace Nyilv.Controllers
 
                     switch (query.Item2Find)
                     {
-                        case "CegID":
+                        case "Azonosito":
                             if (query.Condition == MyQuery.EqualsCondition)
                             {
                                 int val = (int)Int32.Parse(query.Value);
@@ -285,7 +285,9 @@ namespace Nyilv.Controllers
                             .Where(c => c.CegID == adat.CegID).FirstOrDefault<Alapadatok>();
                     if (Item2Modify == null)
                     {
+                        adat.CegID = GenerateAlapadatokId();
                         ctx.Alapadatok.Add(adat);
+                        ctx.Cegadatok.Add(new Cegadatok { CegID = adat.CegID });
                     }
                     else
                     {

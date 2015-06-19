@@ -407,8 +407,23 @@
   <data name="splitContainerBalOldal.Panel2.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
+  <metadata name="CegID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CegID.HeaderText" xml:space="preserve">
     <value>CegID</value>
+  </data>
+  <data name="CegID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="Azonosito.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Azonosito.HeaderText" xml:space="preserve">
+    <value>Azonosító</value>
+  </data>
+  <data name="Azonosito.ToolTipText" xml:space="preserve">
+    <value>Cég azonosítója</value>
   </data>
   <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
     <value>Szamlazas</value>
@@ -635,18 +650,6 @@
   <data name="panelCegAdat.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="buttonCegadatFrissit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 141</value>
-  </data>
-  <data name="buttonCegadatFrissit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonCegadatFrissit.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="buttonCegadatFrissit.Text" xml:space="preserve">
-    <value>Frissít</value>
-  </data>
   <data name="&gt;&gt;buttonCegadatFrissit.Name" xml:space="preserve">
     <value>buttonCegadatFrissit</value>
   </data>
@@ -658,18 +661,6 @@
   </data>
   <data name="&gt;&gt;buttonCegadatFrissit.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="cegadatokBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>586, 17</value>
-  </metadata>
-  <data name="tarifaTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 114</value>
-  </data>
-  <data name="tarifaTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
-  </data>
-  <data name="tarifaTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="&gt;&gt;tarifaTextBox.Name" xml:space="preserve">
     <value>tarifaTextBox</value>
@@ -683,15 +674,6 @@
   <data name="&gt;&gt;tarifaTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ceg_teljes_nevTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 10</value>
-  </data>
-  <data name="ceg_teljes_nevTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
-  </data>
-  <data name="ceg_teljes_nevTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;ceg_teljes_nevTextBox.Name" xml:space="preserve">
     <value>ceg_teljes_nevTextBox</value>
   </data>
@@ -703,15 +685,6 @@
   </data>
   <data name="&gt;&gt;ceg_teljes_nevTextBox.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="emailTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 36</value>
-  </data>
-  <data name="emailTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
-  </data>
-  <data name="emailTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;emailTextBox.Name" xml:space="preserve">
     <value>emailTextBox</value>
@@ -725,15 +698,6 @@
   <data name="&gt;&gt;emailTextBox.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="telefonTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 62</value>
-  </data>
-  <data name="telefonTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
-  </data>
-  <data name="telefonTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;telefonTextBox.Name" xml:space="preserve">
     <value>telefonTextBox</value>
   </data>
@@ -745,15 +709,6 @@
   </data>
   <data name="&gt;&gt;telefonTextBox.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="telephelyTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 88</value>
-  </data>
-  <data name="telephelyTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
-  </data>
-  <data name="telephelyTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="&gt;&gt;telephelyTextBox.Name" xml:space="preserve">
     <value>telephelyTextBox</value>
@@ -896,6 +851,141 @@
   <data name="&gt;&gt;splitContainerAdatok.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="buttonCegadatFrissit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>159, 141</value>
+  </data>
+  <data name="buttonCegadatFrissit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonCegadatFrissit.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="buttonCegadatFrissit.Text" xml:space="preserve">
+    <value>Frissít</value>
+  </data>
+  <data name="&gt;&gt;buttonCegadatFrissit.Name" xml:space="preserve">
+    <value>buttonCegadatFrissit</value>
+  </data>
+  <data name="&gt;&gt;buttonCegadatFrissit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCegadatFrissit.Parent" xml:space="preserve">
+    <value>panelCegAdat</value>
+  </data>
+  <data name="&gt;&gt;buttonCegadatFrissit.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="cegadatokBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>586, 17</value>
+  </metadata>
+  <data name="tarifaTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 114</value>
+  </data>
+  <data name="tarifaTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 20</value>
+  </data>
+  <data name="tarifaTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tarifaTextBox.Name" xml:space="preserve">
+    <value>tarifaTextBox</value>
+  </data>
+  <data name="&gt;&gt;tarifaTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tarifaTextBox.Parent" xml:space="preserve">
+    <value>panelCegAdat</value>
+  </data>
+  <data name="&gt;&gt;tarifaTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="cegadatokBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>586, 17</value>
+  </metadata>
+  <data name="ceg_teljes_nevTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 10</value>
+  </data>
+  <data name="ceg_teljes_nevTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 20</value>
+  </data>
+  <data name="ceg_teljes_nevTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ceg_teljes_nevTextBox.Name" xml:space="preserve">
+    <value>ceg_teljes_nevTextBox</value>
+  </data>
+  <data name="&gt;&gt;ceg_teljes_nevTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ceg_teljes_nevTextBox.Parent" xml:space="preserve">
+    <value>panelCegAdat</value>
+  </data>
+  <data name="&gt;&gt;ceg_teljes_nevTextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="emailTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 36</value>
+  </data>
+  <data name="emailTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 20</value>
+  </data>
+  <data name="emailTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;emailTextBox.Name" xml:space="preserve">
+    <value>emailTextBox</value>
+  </data>
+  <data name="&gt;&gt;emailTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;emailTextBox.Parent" xml:space="preserve">
+    <value>panelCegAdat</value>
+  </data>
+  <data name="&gt;&gt;emailTextBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="telefonTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 62</value>
+  </data>
+  <data name="telefonTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 20</value>
+  </data>
+  <data name="telefonTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;telefonTextBox.Name" xml:space="preserve">
+    <value>telefonTextBox</value>
+  </data>
+  <data name="&gt;&gt;telefonTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;telefonTextBox.Parent" xml:space="preserve">
+    <value>panelCegAdat</value>
+  </data>
+  <data name="&gt;&gt;telefonTextBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="telephelyTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 88</value>
+  </data>
+  <data name="telephelyTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 20</value>
+  </data>
+  <data name="telephelyTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;telephelyTextBox.Name" xml:space="preserve">
+    <value>telephelyTextBox</value>
+  </data>
+  <data name="&gt;&gt;telephelyTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;telephelyTextBox.Parent" xml:space="preserve">
+    <value>panelCegAdat</value>
+  </data>
+  <data name="&gt;&gt;telephelyTextBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="btFind.Location" type="System.Drawing.Point, System.Drawing">
     <value>496, 6</value>
   </data>
@@ -923,48 +1013,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>335, 15</value>
   </metadata>
-  <data name="importalasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="importalasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cégadatok Importálása...</value>
-  </data>
-  <data name="dokumentumokImportalasaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="dokumentumokImportalasaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dokumentumok Importálása...</value>
-  </data>
-  <data name="kilepesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="kilepesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kilépés</value>
-  </data>
-  <data name="fajlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 20</value>
-  </data>
-  <data name="fajlToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fájl</value>
-  </data>
-  <data name="aremelesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="aremelesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áremelés...</value>
-  </data>
-  <data name="csatlakozasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="csatlakozasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Csatlakozás...</value>
-  </data>
-  <data name="eszközökToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="eszközökToolStripMenuItem.Text" xml:space="preserve">
-    <value>Eszközök</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -988,6 +1036,48 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="fajlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 20</value>
+  </data>
+  <data name="fajlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fájl</value>
+  </data>
+  <data name="importalasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="importalasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cégadatok Importálása...</value>
+  </data>
+  <data name="dokumentumokImportalasaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="dokumentumokImportalasaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dokumentumok Importálása...</value>
+  </data>
+  <data name="kilepesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="kilepesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="eszközökToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="eszközökToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
+  <data name="aremelesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="aremelesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Áremelés...</value>
+  </data>
+  <data name="csatlakozasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="csatlakozasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Csatlakozás...</value>
   </data>
   <metadata name="ofdImport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>460, 16</value>
@@ -1015,6 +1105,78 @@
   </data>
   <data name="&gt;&gt;buttonLoadAll.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindCondiditon.Name" xml:space="preserve">
+    <value>comboBoxFindCondiditon</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindCondiditon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindCondiditon.Parent" xml:space="preserve">
+    <value>panelGombok</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindCondiditon.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindElement.Name" xml:space="preserve">
+    <value>comboBoxFindElement</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindElement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindElement.Parent" xml:space="preserve">
+    <value>panelGombok</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFindElement.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelCegKeres.Name" xml:space="preserve">
+    <value>labelCegKeres</value>
+  </data>
+  <data name="&gt;&gt;labelCegKeres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelCegKeres.Parent" xml:space="preserve">
+    <value>panelGombok</value>
+  </data>
+  <data name="&gt;&gt;labelCegKeres.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.Name" xml:space="preserve">
+    <value>textBoxFind</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.Parent" xml:space="preserve">
+    <value>panelGombok</value>
+  </data>
+  <data name="&gt;&gt;textBoxFind.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panelGombok.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelGombok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="panelGombok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>989, 34</value>
+  </data>
+  <data name="panelGombok.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.Name" xml:space="preserve">
+    <value>panelGombok</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.Parent" xml:space="preserve">
+    <value>tableLayoutPanelWorkspace</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="comboBoxFindCondiditon.Location" type="System.Drawing.Point, System.Drawing">
     <value>261, 9</value>
@@ -1106,30 +1268,6 @@
   <data name="&gt;&gt;textBoxFind.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panelGombok.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panelGombok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="panelGombok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>989, 34</value>
-  </data>
-  <data name="panelGombok.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.Name" xml:space="preserve">
-    <value>panelGombok</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.Parent" xml:space="preserve">
-    <value>tableLayoutPanelWorkspace</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tableLayoutPanelWorkspace.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -1166,6 +1304,15 @@
   <metadata name="contextMenuDokumentumokNode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>93, 18</value>
   </metadata>
+  <data name="contextMenuDokumentumokNode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuDokumentumokNode.Name" xml:space="preserve">
+    <value>contextMenuDokumentumokNode</value>
+  </data>
+  <data name="&gt;&gt;contextMenuDokumentumokNode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="hozzáadásToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -1183,15 +1330,6 @@
   </data>
   <data name="eltavolitasToolStripMenuItem.Text" xml:space="preserve">
     <value>Eltávolítás</value>
-  </data>
-  <data name="contextMenuDokumentumokNode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuDokumentumokNode.Name" xml:space="preserve">
-    <value>contextMenuDokumentumokNode</value>
-  </data>
-  <data name="&gt;&gt;contextMenuDokumentumokNode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1136, 17</value>
@@ -2424,48 +2562,6 @@
   <data name="&gt;&gt;toolStripButtonEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn2</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn3</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn4</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn5</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn6</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn7</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cegadatokBindingSource.Name" xml:space="preserve">
     <value>cegadatokBindingSource</value>
   </data>
@@ -2508,6 +2604,12 @@
   <data name="&gt;&gt;aremelesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Name" xml:space="preserve">
+    <value>csatlakozasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ofdImport.Name" xml:space="preserve">
     <value>ofdImport</value>
   </data>
@@ -2538,11 +2640,53 @@
   <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Name" xml:space="preserve">
-    <value>csatlakozasToolStripMenuItem</value>
+  <data name="&gt;&gt;CegID.Name" xml:space="preserve">
+    <value>CegID</value>
   </data>
-  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CegID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Azonosito.Name" xml:space="preserve">
+    <value>Azonosito</value>
+  </data>
+  <data name="&gt;&gt;Azonosito.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn2</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn3</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn4</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn5</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn6</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn7</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
