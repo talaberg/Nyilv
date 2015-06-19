@@ -134,6 +134,7 @@ namespace Nyilv.Controllers
                     {
                         Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.GetAlapadatAll.ControllerFormat + " error: data not found.");
                         Trace.Flush();
+                        
                         return NotFound();
                     }
                     Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.GetAlapadatAll.ControllerFormat + " succes: data sent.");

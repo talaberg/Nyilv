@@ -62,25 +62,39 @@ namespace NyilvForms
             }
 
         }
-        void UpdateCegadatok(int ID)
+        bool UpdateCegadatok(int ID)
         {
 
             var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetCegadatokById.ControllerUrl(ID)).Result;
 
-            var adat = resp.Content.ReadAsAsync<Cegadatok>().Result;
+            if (resp.StatusCode == HttpStatusCode.OK)
+            {
+                var adat = resp.Content.ReadAsAsync<Cegadatok>().Result;
 
-            if (adat == null) adat = new Cegadatok { CegID = ID };
-            UpdateCegadatokField(adat);
+                if (adat == null) adat = new Cegadatok { CegID = ID };
+                UpdateCegadatokField(adat);
+                return true;
+            }
+
+            return false;
+
 
         }
-        void UpdateDokumentumok(int ID)
+        bool UpdateDokumentumok(int ID)
         {
 
             var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetDokumentumokById.ControllerUrl(ID)).Result;
+            if (resp.StatusCode == HttpStatusCode.OK)
+            {
+                var adat = resp.Content.ReadAsAsync<List<Dokumentumok>>().Result;
 
-            var adat = resp.Content.ReadAsAsync<List<Dokumentumok>>().Result;
-
-            UpdateDokumentumokField(adat);
+                UpdateDokumentumokField(adat);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
@@ -127,11 +141,19 @@ namespace NyilvForms
         List<Alapadatok> GetAllAlapadat()
         {
             var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetAlapadatAll.ControllerUrl).Result;
-            resp.EnsureSuccessStatusCode();
 
-            var adat = resp.Content.ReadAsAsync<List<Alapadatok>>().Result;
+            if (resp.StatusCode == HttpStatusCode.OK)
+            {
+                var adat = resp.Content.ReadAsAsync<List<Alapadatok>>().Result;
 
-            return adat;
+                return adat;
+            }
+            else
+            {
+                return null;
+            }
+
+
         }
 
         void RunFindQUery()

@@ -121,6 +121,10 @@ namespace NyilvForms
                     UpdateDokumentumok(ClientList.First().CegID);
                 }
             }
+            else
+            {
+                MessageBox.Show("Hiba az adatlekérdezés során! Ellenőrizze a csatlakozási beállításokat!");
+            }
         }
         // Find element combobox change event
         private void comboBoxFindElement_SelectedIndexChanged(object sender, EventArgs e)
