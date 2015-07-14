@@ -283,6 +283,7 @@ namespace NyilvForms
             {
                 column.HeaderText = GuiConstants.GetHeader(column.HeaderText);
             }
+            DataGridViewHeaderColor();
 
             //Datafield init
             currentGroup = 1;

@@ -32,6 +32,7 @@ namespace NyilvForms
                 Label = new Label();
                 Label.Location = label;
                 Label.Text = name;
+                Label.TextAlign = ContentAlignment.MiddleRight;
             }
 
             
