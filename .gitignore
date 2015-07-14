@@ -154,3 +154,5 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+NyilvWebApi/App_Data/WebFormsIdentity.mdf
+NyilvWebApi/App_Data/WebFormsIdentity_log.ldf

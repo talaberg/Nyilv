@@ -1,9 +1,11 @@
 ﻿using NyilvForms.Connection;
 using NyilvLib;
 using NyilvLib.Entities;
+using NyilvLib.Forms;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,22 +22,33 @@ namespace NyilvForms
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // UI update supplementary functions ----------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void UpdateAlapadatokField(List<Alapadatok> ClientList)
+        private void UpdateAlapadatokField(List<JoinedDatabase> ClientList)
         {
-            alapadatokBindingSource.Clear();
-            foreach (Alapadatok client in ClientList)
+            
+            joinedDatabaseBindingSource.Clear();
+            foreach (JoinedDatabase client in ClientList)
             {
-                alapadatokBindingSource.Add(client);
+                joinedDatabaseBindingSource.Add(client);
             }
+            UpdateDataField(currentGroup);
         }
-        private void UpdateCegadatokField(Cegadatok ceg)
+        private void UpdateMunkatarsak()
         {
-            cegadatokBindingSource.Clear();
-            cegadatokBindingSource.Add(ceg);
+            munkatarsak.Clear();
+            List<Munkatarsak> m = GetMunkatarsak();
+
+            munkatarsak.Add(new ComboboxItem(0, ""));
+
+            foreach (var munkatars in m)
+            {
+                munkatarsak.Add(new ComboboxItem(munkatars.MunkatarsID, munkatars.Nev));
+            }
         }
 
         private void UpdateDokumentumokField(List<Dokumentumok> documents)
         {
+            throw new NotImplementedException();
+            /*
             treeViewDokumentumok.Nodes.Clear();
             documents.OrderBy(c => c.Dokumentum_tipus);
             if (documents.Count != 0)
@@ -60,29 +73,50 @@ namespace NyilvForms
             {
                 treeViewDokumentumok.Nodes.Add(new TreeNode("<Nincs megjelenítendő dokumentum>"));
             }
-
+            */
         }
-        bool UpdateCegadatok(int ID)
+
+        void UpdateDataField(int group)
         {
+            datafield = new List<ObjectDataField>();
 
-            var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetCegadatokById.ControllerUrl(ID)).Result;
+            panelCegAdat.Controls.Clear();
 
-            if (resp.StatusCode == HttpStatusCode.OK)
+            switch (group)
             {
-                var adat = resp.Content.ReadAsAsync<Cegadatok>().Result;
-
-                if (adat == null) adat = new Cegadatok { CegID = ID };
-                UpdateCegadatokField(adat);
-                return true;
+                case 1:
+                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Azonosito.Text,alapadatokDataGridView.CurrentRow.Cells[0].Value));
+                    datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Cegnev.Text, alapadatokDataGridView.CurrentRow.Cells[1].Value));
+                    datafield.Add(new TextBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Adoszam.Text, alapadatokDataGridView.CurrentRow.Cells[2].Value));
+                    datafield.Add(new TextBoxDataField(4, new Point(125, 140), new Point(20, 140), GuiConstants.Ceg_forma.Text, alapadatokDataGridView.CurrentRow.Cells[3].Value));
+                    datafield.Add(new TextBoxDataField(5, new Point(125, 175), new Point(20, 175), GuiConstants.Stat_szamjel.Text, (string)alapadatokDataGridView.CurrentRow.Cells[4].Value));
+                    datafield.Add(new TextBoxDataField(6, new Point(125, 210), new Point(20, 210), GuiConstants.EU_adoszam.Text, (string)alapadatokDataGridView.CurrentRow.Cells[5].Value));
+                    datafield.Add(new TextBoxDataField(7, new Point(125, 245), new Point(20, 245), GuiConstants.Cegjegyzek_szam.Text, (string)alapadatokDataGridView.CurrentRow.Cells[6].Value));
+                    datafield.Add(new TextBoxDataField(8, new Point(125, 280), new Point(20, 280), GuiConstants.Nyilv_szam.Text, (string)alapadatokDataGridView.CurrentRow.Cells[7].Value));
+                    break;
+                case 2:
+                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Szerzodott_AZNAP_ceg.Text, alapadatokDataGridView.CurrentRow.Cells[8].Value));
+                    datafield.Add(new ComboBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Felelos1.Text,munkatarsak, alapadatokDataGridView.CurrentRow.Cells[9].Value));
+                    datafield.Add(new ComboBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Felelos2.Text, munkatarsak, alapadatokDataGridView.CurrentRow.Cells[10].Value));
+                    break;
+                default:
+                    break;
             }
 
-            return false;
-
+            foreach (var item in datafield)
+            {
+                panelCegAdat.Controls.Add(item.DataObj);
+                panelCegAdat.Controls.Add(item.Label);
+            }
 
         }
+
+
+
         bool UpdateDokumentumok(int ID)
         {
-
+            throw new NotImplementedException();
+            /*
             var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetDokumentumokById.ControllerUrl(ID)).Result;
             if (resp.StatusCode == HttpStatusCode.OK)
             {
@@ -94,7 +128,7 @@ namespace NyilvForms
             else
             {
                 return false;
-            }
+            }*/
 
         }
 
@@ -138,13 +172,13 @@ namespace NyilvForms
             }
         }
 
-        List<Alapadatok> GetAllAlapadat()
+        List<JoinedDatabase> GetAllAlapadat()
         {
             var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetAlapadatAll.ControllerUrl).Result;
 
             if (resp.StatusCode == HttpStatusCode.OK)
             {
-                var adat = resp.Content.ReadAsAsync<List<Alapadatok>>().Result;
+                var adat = resp.Content.ReadAsAsync<List<JoinedDatabase>>().Result;
 
                 return adat;
             }
@@ -152,8 +186,21 @@ namespace NyilvForms
             {
                 return null;
             }
+        }
+        List<Munkatarsak> GetMunkatarsak()
+        {
+            var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetMunkatarsakAll.ControllerUrl).Result;
 
+            if (resp.StatusCode == HttpStatusCode.OK)
+            {
+                var adat = resp.Content.ReadAsAsync<List<Munkatarsak>>().Result;
 
+                return adat;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         void RunFindQUery()
@@ -169,20 +216,18 @@ namespace NyilvForms
                 var resp = myConnection.Client.PutAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.FindAlapadat.ControllerUrl, query).Result;
                 if (resp.IsSuccessStatusCode)
                 {
-                    var adat = resp.Content.ReadAsAsync<List<Alapadatok>>().Result;
+                    var adat = resp.Content.ReadAsAsync<List<JoinedDatabase>>().Result;
 
 
                     if (adat.Count != 0)
                     {
                         UpdateAlapadatokField(adat);
-                        UpdateCegadatok(adat.First().CegID);
                         UpdateDokumentumok(adat.First().CegID);
                     }
                     else
                     {
                         treeViewDokumentumok.Nodes.Clear();
-                        alapadatokBindingSource.Clear();
-                        cegadatokBindingSource.Clear();
+                        joinedDatabaseBindingSource.Clear();
                     }
                 }
                 else
@@ -270,13 +315,6 @@ namespace NyilvForms
 
         }
 
-        void UpdateDatabase(Cegadatok data)
-        {
-
-            var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.UpdateCegadatok.ControllerUrl, data).Result;
-            resp.EnsureSuccessStatusCode();
-
-        }
         void UpdateDatabase(Dokumentumok data)
         {
 
@@ -288,11 +326,6 @@ namespace NyilvForms
         void RemoveAlapadatokElement(int id)
         {
             var resp = myConnection.Client.GetAsync(new Uri(myConfig.Configuration.HostAddress + ControllerFormats.DeleteAlapadatById.ControllerUrl(id))).Result;
-
-        }
-        void RemoveCegadatokElement(int id)
-        {
-            var resp = myConnection.Client.GetAsync(new Uri(myConfig.Configuration.HostAddress + ControllerFormats.DeleteCegadatokById.ControllerUrl(id))).Result;
 
         }
         void RemoveDokumentumokElement(int id)
@@ -335,13 +368,15 @@ namespace NyilvForms
 
         private void Aremeles(double p)
         {
+            throw new NotImplementedException();
+            /*
             var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.Aremeles.ControllerUrl, p).Result;
             resp.EnsureSuccessStatusCode();
 
             if (alapadatokDataGridView.CurrentCell != null)
             {
                 UpdateCegadatok(currentCegID);
-            }            
+            }      */      
         }
 
 

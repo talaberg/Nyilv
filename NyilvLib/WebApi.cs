@@ -36,6 +36,11 @@ namespace NyilvLib
             public const string ControllerFormat = "api/Alapadatok/all";
             public static string ControllerUrl { get { return "/" + ControllerFormat; } }
         }
+        public static class GetMunkatarsakAll
+        {
+            public const string ControllerFormat = "api/Munkatarsak/all";
+            public static string ControllerUrl { get { return "/" + ControllerFormat; } }
+        }
         public static class FindAlapadat
         {
             public const string ControllerFormat = "api/Alapadatok/find";

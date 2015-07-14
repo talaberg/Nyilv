@@ -19,6 +19,9 @@ namespace Nyilv
         public static List<Dokumentumok> ImportDokumentumokResult { get { return importDokumentumokResult; } }
         public static void ImportCeg(List<string> filepath)
         {
+            throw new NotImplementedException();
+            //TODO
+            /*
             List<Alapadatok> importedAlapadatokItems = new List<Alapadatok>();
             List<Cegadatok> importedCegadatokItems = new List<Cegadatok>();
 
@@ -36,6 +39,8 @@ namespace Nyilv
 
                     while (((xlWorksheet.Cells[j, 1]) as Range).Value != null)
                     {
+                        
+                        
                         Alapadatok adat = new Alapadatok();
                         adat.CegID = Int32.Parse(((xlWorksheet.Cells[j, 1] as Range).Value).ToString());
                         adat.Szamlazas = ((xlWorksheet.Cells[j, 2] as Range).Value).ToString();
@@ -43,6 +48,9 @@ namespace Nyilv
                         adat.Cegnev = ((xlWorksheet.Cells[j, 4] as Range).Value).ToString();
                         adat.Ceg_forma = ((xlWorksheet.Cells[j, 5] as Range).Value).ToString();
                         adat.Hivatkozas = ((xlWorksheet.Cells[j, 6] as Range).Value).ToString();
+                        
+                        
+
                         if (((xlWorksheet.Cells[j, 7] as Range).Value).ToString() == "True")
                         {
                             adat.Felfuggesztett = true;
@@ -62,16 +70,18 @@ namespace Nyilv
                         ceg.Telephely = ((xlWorksheet.Cells[j, 11] as Range).Value).ToString();
                         ceg.Tarifa = Int32.Parse(((xlWorksheet.Cells[j, 12] as Range).Value).ToString());
                         importedCegadatokItems.Add(ceg);
-
                         j++;
                     }
                 }
             }
             importAlapadatokResult = importedAlapadatokItems;
-            importCegadatokResult = importedCegadatokItems;
+            importCegadatokResult = importedCegadatokItems;*/
         }
         public static void ImportDokumentum(List<string> filepathces)
         {
+                        throw new NotImplementedException();
+            //TODO
+            /*
             List<Dokumentumok> importedDokumentumokItems = new List<Dokumentumok>();
 
             foreach (string file in filepathces)
@@ -103,7 +113,7 @@ namespace Nyilv
                 }
             }
             importDokumentumokResult = importedDokumentumokItems;
-
+            */
         }
     }
 }

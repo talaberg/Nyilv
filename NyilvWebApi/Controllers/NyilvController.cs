@@ -124,11 +124,10 @@ namespace Nyilv.Controllers
             {
                 using (var ctx = new ModelNyilv())
                 {
-                    var cegek = new List<Alapadatok>();
+                    /*var cegek = new List<Alapadatok>();
                     foreach (var ceg in ctx.Alapadatok)
                     {
                         cegek.Add(ceg);
-
                     }
                     if (cegek.Count == 0)
                     {
@@ -141,8 +140,27 @@ namespace Nyilv.Controllers
                     Trace.Flush();
                     DatabaseListener.Trace.WriteLine(DateTime.Now.ToString() + ": user: " + User.Identity.Name.ToString() + "transaction: GetAlapadatokAll");
                     DatabaseListener.Trace.Flush();
+                    return Ok(cegek);*/
+                    var query = (
+                            from ceg in ctx.Alapadatok
+                            join kollega in ctx.Munkatarsak on ceg.Felelos1 equals kollega.MunkatarsID into join1
+                            from kol1 in join1.DefaultIfEmpty()
+                            join kollega in ctx.Munkatarsak on ceg.Felelos2 equals kollega.MunkatarsID into join2
+                            from kol2 in join2.DefaultIfEmpty()
+                            select new JoinedDatabase()
+                            {
+                                Container = ceg,
+                                Felelos1 = (kol1 == null ? String.Empty : kol1.Nev),
+                                Felelos2 = (kol2 == null ? String.Empty : kol2.Nev)
+                            }
+                        );
+
+                    List<JoinedDatabase> cegek = query.ToList();
+                    foreach (var ceg in cegek)
+                    {
+                        ceg.SetData();
+                    }
                     return Ok(cegek);
-                    
                 }
             }
             else
@@ -158,6 +176,9 @@ namespace Nyilv.Controllers
         [Route(ControllerFormats.FindAlapadat.ControllerFormat)]
         public IHttpActionResult PutFind([FromBody]MyQuery query)
         {
+             throw new NotImplementedException();
+            //TODO
+            /*
             if (User.Identity.IsAuthenticated)
             {
                 DatabaseListener.Trace.WriteLine(DateTime.Now.ToString() + ": user: " + User.Identity.Name.ToString() + "transaction: FindQuery");
@@ -268,7 +289,7 @@ namespace Nyilv.Controllers
                 Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.FindAlapadat.ControllerFormat + " error: authentication failed.");
                 Trace.Flush();
                 return NotFound();
-            }
+            }*/
 
         }
 
