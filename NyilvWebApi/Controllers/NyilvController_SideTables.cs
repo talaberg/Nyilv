@@ -39,8 +39,41 @@ namespace Nyilv.Controllers
             {
                 return NotFound();
             }
-
         }
 
+        // GET api/Telephelyek/{ids}
+        [HttpPost]
+        [Route(ControllerFormats.GetTelephelyek.ControllerFormat)]
+        public IHttpActionResult GetTelephelyek([FromBody]List<int> ids)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var ctx = new ModelNyilv())
+                {
+                    List<Telephelyek> Telepek = new List<Telephelyek>();
+
+                    foreach (int id in ids)
+                    {
+                        Telephelyek hely = ctx.Telephelyek.Where(c => c.TelepID == id).FirstOrDefault();
+
+                        if (hely != null)
+	                    {
+		                    Telepek.Add(hely);
+	                    }
+                    }
+
+                    if (Telepek == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(Telepek);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
     }
 }

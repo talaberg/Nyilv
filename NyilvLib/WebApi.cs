@@ -41,6 +41,12 @@ namespace NyilvLib
             public const string ControllerFormat = "api/Munkatarsak/all";
             public static string ControllerUrl { get { return "/" + ControllerFormat; } }
         }
+        public static class GetTelephelyek
+        {
+            public const string ControllerFormat = "api/Telephelyek";
+            public const string ControllerName = "ControllerGetTelephelyek";
+            public static string ControllerUrl { get { return "/" + ControllerFormat; } }            
+        }
         public static class FindAlapadat
         {
             public const string ControllerFormat = "api/Alapadatok/find";

@@ -124,23 +124,6 @@ namespace Nyilv.Controllers
             {
                 using (var ctx = new ModelNyilv())
                 {
-                    /*var cegek = new List<Alapadatok>();
-                    foreach (var ceg in ctx.Alapadatok)
-                    {
-                        cegek.Add(ceg);
-                    }
-                    if (cegek.Count == 0)
-                    {
-                        Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.GetAlapadatAll.ControllerFormat + " error: data not found.");
-                        Trace.Flush();
-                        
-                        return NotFound();
-                    }
-                    Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.GetAlapadatAll.ControllerFormat + " succes: data sent.");
-                    Trace.Flush();
-                    DatabaseListener.Trace.WriteLine(DateTime.Now.ToString() + ": user: " + User.Identity.Name.ToString() + "transaction: GetAlapadatokAll");
-                    DatabaseListener.Trace.Flush();
-                    return Ok(cegek);*/
                     var query = (
                             from ceg in ctx.Alapadatok
                             join kollega in ctx.Munkatarsak on ceg.Felelos1 equals kollega.MunkatarsID into join1
