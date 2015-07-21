@@ -269,11 +269,13 @@ namespace NyilvForms
 
             //Init ComboBox parameteres
             //Make ComboBoxes not editable
-            comboBoxFindElement.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             comboBoxFindCondiditon.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFindCondiditon.ValueMember = "Name";
 
             ComboBoxFindElementInit();
-            comboBoxFindCondiditon.ValueMember = "Name";
+
+            ComboBoxTelephelyekInit();
 
             dataGridViewCellChanged = false;
 
@@ -283,7 +285,7 @@ namespace NyilvForms
             {
                 column.HeaderText = GuiConstants.GetHeader(column.HeaderText);
             }
-            DataGridViewHeaderColor();
+            DataGridViewHeaderStyleUpdate();
 
             //Datafield init
             currentGroup = 1;

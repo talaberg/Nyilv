@@ -129,6 +129,12 @@
     <Compile Include="MainWindowDefinitions.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainWindowGuiUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindowWebClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainWindowSuppFunctions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,7 +154,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
+	  <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageDocument.resx">
       <DependentUpon>ManageDocument.cs</DependentUpon>
@@ -170,8 +176,12 @@
     <None Include="Properties\DataSources\NyilvForms.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\NyilvLib.Entities.Alapadatok.datasource" />
     <None Include="Properties\DataSources\NyilvLib.Entities.Cegadatok.datasource" />
+    <None Include="Properties\DataSources\NyilvLib.Entities.CegesSzemelyek.datasource" />
     <None Include="Properties\DataSources\NyilvLib.Entities.Dokumentumok.datasource" />
     <None Include="Properties\DataSources\NyilvLib.Entities.ModelNyilv.datasource" />
+    <None Include="Properties\DataSources\NyilvLib.Entities.Munkatarsak.datasource" />
+    <None Include="Properties\DataSources\NyilvLib.Entities.Telephelyek.datasource" />
+    <None Include="Properties\DataSources\NyilvLib.Entities.Tevekenysegek.datasource" />
     <None Include="Properties\DataSources\NyilvLib.JoinedDatabase.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
