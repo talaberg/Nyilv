@@ -20,16 +20,22 @@ using Microsoft.Synchronization;
 using System.Globalization;
 using System.Threading;
 using NyilvForms.Connection;
+using NyilvLib.Forms;
 
 namespace NyilvForms
 {
     public partial class MainWindow : Form
     {
+        List<ObjectDataField> datafield;
+
+        List<ComboboxItem> munkatarsak;
+
         bool dataGridViewCellChanged;           //Indicates if a dataGridView cell is modified
         int changedRowIndex;
+        int currentGroup;
 
         UserData user;
-        Connect myConnection;
+        Connect myConnection;                   //Connection handler
 
         ConfigHandler myConfig;
 
@@ -46,6 +52,9 @@ namespace NyilvForms
             FormMiscellaneousInit();
 
 
+            DataGridViewColumn c = alapadatokDataGridView.Columns[0];
+
+
         }
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Event functions ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,6 +65,10 @@ namespace NyilvForms
             myConfig.LoadConfig();
 
             Connect();
+
+            //combobox update
+            munkatarsak = new List<ComboboxItem>();
+            UpdateMunkatarsak();
         }
         //      Main menu events ----------------------------------------------------------------------------------------------------------------------------------------
         // Import Ceg type xls files
@@ -111,14 +124,12 @@ namespace NyilvForms
         // Load all elements
         private void buttonLoadAll_Click(object sender, EventArgs e)
         {
-            List<Alapadatok> ClientList = GetAllAlapadat();
+            List<JoinedDatabase> ClientList = GetAllAlapadat();
             if (ClientList != null)
             {
                 if (ClientList.Count != 0)
                 {
                     UpdateAlapadatokField(ClientList);
-                    UpdateCegadatok(ClientList.First().CegID);
-                    UpdateDokumentumok(ClientList.First().CegID);
                 }
             }
             else
@@ -144,25 +155,19 @@ namespace NyilvForms
             }
         }
 
-        // Datagridview cell switch event
-        private void alapadatokDataGridView_CellSwitch(object sender, EventArgs e)
-        {
-            int index = alapadatokDataGridView.CurrentCell.RowIndex;
-            if (index >= 0)
-            {
-                int ID = (int)alapadatokDataGridView.Rows[index].Cells[0].Value;
-                currentCegID = ID;
-                UpdateCegadatok(ID);
-                UpdateDokumentumok(ID);
-            }
-        }
         private void alapadatokDataGridView_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
+            //TODO
+            /*
             if (dataGridViewCellChanged)
             {
-                UpdateDatabase((Alapadatok)alapadatokDataGridView.Rows[changedRowIndex].DataBoundItem);
-                dataGridViewCellChanged = false;
-            }
+                if (changedRowIndex > 0)
+                {
+                    UpdateDatabase((Alapadatok)alapadatokDataGridView.Rows[changedRowIndex].DataBoundItem);
+                    dataGridViewCellChanged = false;
+                }
+                
+            }*/
         }
 
         // DataGridView Cell value changed
@@ -173,19 +178,20 @@ namespace NyilvForms
         }
         // DataGridView row leave
         // Delete DataGridView element
+
+        private void alapadatokDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int clickedGroup = GuiConstants.GetGroup(alapadatokDataGridView.Columns[e.ColumnIndex].DataPropertyName.ToString());
+            if (currentGroup != clickedGroup)
+            {
+                currentGroup = clickedGroup;                
+            }
+            UpdateDataField(currentGroup);
+        }
+
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             RemoveAlapadatokElement(currentCegID);
-            RemoveCegadatokElement(currentCegID);
-        }
-        // Delete Cegadatok field update
-        private void buttonCegadatFrissit_Click(object sender, EventArgs e)
-        {
-            Cegadatok ceg = (Cegadatok)cegadatokBindingSource.Current;
-            if (ceg != null)
-            {
-                UpdateDatabase(ceg);
-            }
         }
         // Dokumentumok Tree View ------
         private void treeViewDokumentumok_MouseClick(object sender, MouseEventArgs e)
@@ -203,39 +209,6 @@ namespace NyilvForms
                     treeViewDokumentumok.SelectedNode = node;
                 }
             }
-        }
-        private void tarifaTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if ( (tarifaTextBox.Text != "") && !Regex.IsMatch(tarifaTextBox.Text, @"^\d+$"))
-            {
-                e.Cancel = true;
-                tarifaTextBox.Select(0, tarifaTextBox.Text.Length);
-
-                string errorMsg = "Helytelen számformátum!";
-                this.errorProvider.SetError(tarifaTextBox, errorMsg);
-            }
-            else
-            {
-                this.errorProvider.SetError(tarifaTextBox, null);
-            }            
-        }
-        private void emailTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            string emailString = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
-            
-            if (!Regex.IsMatch(emailTextBox.Text, emailString, RegexOptions.IgnoreCase) && (emailTextBox.Text != "") )
-            {
-                e.Cancel = true;
-                emailTextBox.Select(0, emailTextBox.Text.Length);
-
-                string errorMsg = "Helytelen e-mail formátum!";
-                this.errorProvider.SetError(emailTextBox, errorMsg);
-            }
-            else
-            {
-                this.errorProvider.SetError(emailTextBox, null);
-            }
-            
         }
 
         //      Toolstrip events --------------------------------------------------------------------------------------------------------------------
@@ -293,18 +266,30 @@ namespace NyilvForms
 
         private void FormMiscellaneousInit()
         {
-            tarifaTextBox.DataBindings["Text"].NullValue = string.Empty;
 
             //Init ComboBox parameteres
             //Make ComboBoxes not editable
-            comboBoxFindElement.DropDownStyle = ComboBoxStyle.DropDownList;
+            
             comboBoxFindCondiditon.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            ComboBoxFindElementInit();
             comboBoxFindCondiditon.ValueMember = "Name";
 
+            ComboBoxFindElementInit();
+
+            ComboBoxTelephelyekInit();
+
             dataGridViewCellChanged = false;
-            alapadatokDataGridView.ReadOnly = true;
+
+
+            //Datagridview header init
+            foreach (DataGridViewColumn column in alapadatokDataGridView.Columns)
+            {
+                column.HeaderText = GuiConstants.GetHeader(column.HeaderText);
+            }
+            DataGridViewHeaderStyleUpdate();
+
+            //Datafield init
+            currentGroup = 1;
+
         }
 
 
@@ -317,17 +302,11 @@ namespace NyilvForms
             control.Text = text ?? control.Text;
         }
 
-        class ComboboxLanguageItem
-        {
-          public ComboboxLanguageItem(CultureInfo value, string text) { Culture = value; Text = text; }
-          public CultureInfo Culture { get; set; }
-          public string Text { get; set; }
-          public override string ToString() { return Text; }
-        }
-
         private void csatlakozasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reconnect();
         }
+
+
     }
 }

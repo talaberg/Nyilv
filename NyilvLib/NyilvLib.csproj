@@ -58,11 +58,19 @@
     <Compile Include="Auth\Encryption.cs" />
     <Compile Include="Entities\Alapadatok.cs" />
     <Compile Include="Entities\Cegadatok.cs" />
+    <Compile Include="Entities\CegesSzemelyek.cs" />
     <Compile Include="Entities\Dokumentumok.cs" />
     <Compile Include="Entities\ModelNyilv.cs" />
+    <Compile Include="Entities\Munkatarsak.cs" />
+    <Compile Include="Entities\Telephelyek.cs" />
+    <Compile Include="Entities\Tevekenysegek.cs" />
+    <Compile Include="Forms\GuiConstants.cs" />
+    <Compile Include="Forms\JoinedDatabaseFunctions.cs" />
+    <Compile Include="Forms\JoinedDatabase.cs" />
     <Compile Include="MyQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApi.cs" />
+    <Compile Include="Xml\MyXmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

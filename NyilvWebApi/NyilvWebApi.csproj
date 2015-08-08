@@ -177,6 +177,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NyilvController.cs" />
+    <Compile Include="Controllers\NyilvController_SideTables.cs" />
     <Compile Include="Controllers\NyilvController_SupplementaryFunctions.cs" />
     <Compile Include="DatabaseListener.cs" />
     <Compile Include="Global.asax.cs">

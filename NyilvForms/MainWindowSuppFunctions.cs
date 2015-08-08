@@ -1,9 +1,11 @@
 ﻿using NyilvForms.Connection;
 using NyilvLib;
 using NyilvLib.Entities;
+using NyilvLib.Forms;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -17,183 +19,16 @@ namespace NyilvForms
 {
     public partial class MainWindow : Form
     {
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // UI update supplementary functions ----------------------------------------------------------------------------------------------------------------------------
-        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void UpdateAlapadatokField(List<Alapadatok> ClientList)
-        {
-            alapadatokBindingSource.Clear();
-            foreach (Alapadatok client in ClientList)
-            {
-                alapadatokBindingSource.Add(client);
-            }
-        }
-        private void UpdateCegadatokField(Cegadatok ceg)
-        {
-            cegadatokBindingSource.Clear();
-            cegadatokBindingSource.Add(ceg);
-        }
 
-        private void UpdateDokumentumokField(List<Dokumentumok> documents)
-        {
-            treeViewDokumentumok.Nodes.Clear();
-            documents.OrderBy(c => c.Dokumentum_tipus);
-            if (documents.Count != 0)
-            {
-                foreach (Dokumentumok doc in documents)
-                {
-                    TreeNode t;
-                    if (treeViewDokumentumok.Nodes.ContainsKey(doc.Dokumentum_tipus))
-                    {
-                        t = treeViewDokumentumok.Nodes.Find(doc.Dokumentum_tipus, false)[0];
-                    }
-                    else
-                    {
-                        t = new TreeNode(doc.Dokumentum_tipus) { Name = doc.Dokumentum_tipus };
-                        treeViewDokumentumok.Nodes.Add(t);
-                    }
-
-                    t.Nodes.Add(new TreeNode(doc.Datum.ToString()) { ToolTipText = doc.Megjegyzes, Tag = doc.DokumentumID });
-                }
-            }
-            else
-            {
-                treeViewDokumentumok.Nodes.Add(new TreeNode("<Nincs megjelenítendő dokumentum>"));
-            }
-
-        }
-        bool UpdateCegadatok(int ID)
-        {
-
-            var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetCegadatokById.ControllerUrl(ID)).Result;
-
-            if (resp.StatusCode == HttpStatusCode.OK)
-            {
-                var adat = resp.Content.ReadAsAsync<Cegadatok>().Result;
-
-                if (adat == null) adat = new Cegadatok { CegID = ID };
-                UpdateCegadatokField(adat);
-                return true;
-            }
-
-            return false;
-
-
-        }
-        bool UpdateDokumentumok(int ID)
-        {
-
-            var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetDokumentumokById.ControllerUrl(ID)).Result;
-            if (resp.StatusCode == HttpStatusCode.OK)
-            {
-                var adat = resp.Content.ReadAsAsync<List<Dokumentumok>>().Result;
-
-                UpdateDokumentumokField(adat);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Other functions ----------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void Connect()
-        {
-            myConnection = new Connect();
-            try
-            {
-                myConnection.ConnectToServer(myConfig.Configuration);
-
-
-                if (myConnection.Response.StatusCode != System.Net.HttpStatusCode.OK)
-                {
-                    Reconnect();
-                }
-            }
-            catch (Exception)
-            {
-                Reconnect();
-            }
-        }
-        private void Reconnect()
-        {
-            Login userLogin = new Login("Adja meg a csatlakozás paramétereit!", myConfig.Configuration);
-
-            userLogin.ShowDialog();
-
-            if (userLogin.DialogResult == DialogResult.OK)
-            {
-                user = new UserData(userLogin.Configuration.Username, userLogin.Configuration.EncryptedPassword);
-                myConnection = userLogin.Connection;
-                myConfig.Configuration = userLogin.Configuration;
-                myConfig.SaveConfig();
-            }
-            else
-            {
-                //TBD
-            }
-        }
-
-        List<Alapadatok> GetAllAlapadat()
-        {
-            var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetAlapadatAll.ControllerUrl).Result;
-
-            if (resp.StatusCode == HttpStatusCode.OK)
-            {
-                var adat = resp.Content.ReadAsAsync<List<Alapadatok>>().Result;
-
-                return adat;
-            }
-            else
-            {
-                return null;
-            }
-
-
-        }
-
-        void RunFindQUery()
-        {
-            if (textBoxFind.Text != "")
-            {
-                ComboBoxElementItem Item = (ComboBoxElementItem)comboBoxFindElement.SelectedItem;
-                ComboBoxConditionItem ItemCondition = (ComboBoxConditionItem)comboBoxFindCondiditon.SelectedItem;
-
-                var query = new MyQuery() { Item2Find = Item.Name, Condition = ItemCondition.Condition, Value = textBoxFind.Text };
-
-
-                var resp = myConnection.Client.PutAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.FindAlapadat.ControllerUrl, query).Result;
-                if (resp.IsSuccessStatusCode)
-                {
-                    var adat = resp.Content.ReadAsAsync<List<Alapadatok>>().Result;
-
-
-                    if (adat.Count != 0)
-                    {
-                        UpdateAlapadatokField(adat);
-                        UpdateCegadatok(adat.First().CegID);
-                        UpdateDokumentumok(adat.First().CegID);
-                    }
-                    else
-                    {
-                        treeViewDokumentumok.Nodes.Clear();
-                        alapadatokBindingSource.Clear();
-                        cegadatokBindingSource.Clear();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Nem található, vagy elvault verziójú lekérdezés!");
-                }               
-            }
-        }
 
         void ComboBoxFindElementInit()
         {
+            comboBoxFindElement.DropDownStyle = ComboBoxStyle.DropDownList;
+
             foreach (var prop in new Alapadatok().GetType().GetProperties())
             {
                 if (prop.Name != "CegID")
@@ -201,6 +36,21 @@ namespace NyilvForms
                     var element = new ComboBoxElementItem() { Name = prop.Name, Type = prop.PropertyType };
                     comboBoxFindElement.Items.Add(element); 
                 }                
+            }
+            comboBoxFindElement.ValueMember = "Name";
+            comboBoxFindElement.SelectedIndex = 0;
+        }
+        void ComboBoxTelephelyekInit()
+        {
+            comboBoxFindElement.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (var prop in new Alapadatok().GetType().GetProperties())
+            {
+                if (prop.Name != "CegID")
+                {
+                    var element = new ComboBoxElementItem() { Name = prop.Name, Type = prop.PropertyType };
+                    comboBoxFindElement.Items.Add(element);
+                }
             }
             comboBoxFindElement.ValueMember = "Name";
             comboBoxFindElement.SelectedIndex = 0;
@@ -262,45 +112,6 @@ namespace NyilvForms
             }
         }
 
-        void UpdateDatabase(Alapadatok data)
-        {
-
-            var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.UpdateAlapadat.ControllerUrl, data).Result;
-            resp.EnsureSuccessStatusCode();
-
-        }
-
-        void UpdateDatabase(Cegadatok data)
-        {
-
-            var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.UpdateCegadatok.ControllerUrl, data).Result;
-            resp.EnsureSuccessStatusCode();
-
-        }
-        void UpdateDatabase(Dokumentumok data)
-        {
-
-            var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.UpdateDokumentumok.ControllerUrl, data).Result;
-            resp.EnsureSuccessStatusCode();
-
-        }
-
-        void RemoveAlapadatokElement(int id)
-        {
-            var resp = myConnection.Client.GetAsync(new Uri(myConfig.Configuration.HostAddress + ControllerFormats.DeleteAlapadatById.ControllerUrl(id))).Result;
-
-        }
-        void RemoveCegadatokElement(int id)
-        {
-            var resp = myConnection.Client.GetAsync(new Uri(myConfig.Configuration.HostAddress + ControllerFormats.DeleteCegadatokById.ControllerUrl(id))).Result;
-
-        }
-        void RemoveDokumentumokElement(int id)
-        {
-
-            var resp = myConnection.Client.GetAsync(new Uri(myConfig.Configuration.HostAddress + ControllerFormats.DeleteDokumentumokById.ControllerUrl(id))).Result;
-
-        }
         void DokumentumokModify()
         {
             Dokumentumok doc;
@@ -335,16 +146,15 @@ namespace NyilvForms
 
         private void Aremeles(double p)
         {
+            throw new NotImplementedException();
+            /*
             var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.Aremeles.ControllerUrl, p).Result;
             resp.EnsureSuccessStatusCode();
 
             if (alapadatokDataGridView.CurrentCell != null)
             {
                 UpdateCegadatok(currentCegID);
-            }            
+            }      */      
         }
-
-
-
     }
 }

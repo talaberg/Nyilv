@@ -1,16 +1,18 @@
-namespace NyilvLib.Entities
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+﻿using NyilvLib.Entities;
+using NyilvLib.Forms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    [Table("Alapadatok")]
-    public partial class Alapadatok
+namespace NyilvLib
+{
+    public partial class JoinedDatabase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Alapadatok Container { get; set; }
         public int CegID { get; set; }
 
         public int? Azonosito { get; set; }
@@ -40,9 +42,9 @@ namespace NyilvLib.Entities
         [StringLength(32)]
         public string Szerzodott_AZNAP_ceg { get; set; }
 
-        public int? Felelos1 { get; set; }
+        public string Felelos1 { get; set; }
 
-        public int? Felelos2 { get; set; }
+        public string Felelos2 { get; set; }
 
         public string Email { get; set; }
 
@@ -97,5 +99,12 @@ namespace NyilvLib.Entities
 
         [Column(TypeName = "xml")]
         public string Egyeb_adatok { get; set; }
+
+    }
+
+    public class AdatParok
+    {
+        public string Key { get; set; }
+        public string Value { get; set; }
     }
 }
