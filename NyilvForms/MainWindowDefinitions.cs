@@ -11,6 +11,8 @@ namespace NyilvForms
 {
     public partial class MainWindow : Form
     {
+        //Type definitions -----------------------------------------------------------------------------------
+        enum ImportCaller { Ceg, Dokumentum };  // Enum for importcommand
         class ComboboxItem
         {
             public ComboboxItem(int id, string text) { ID = id; Name = text; }
@@ -88,10 +90,14 @@ namespace NyilvForms
                    Data.Items.Add(item);
                }
                Data.SelectedItem = list.Where(c => c.Name == (value as string)).FirstOrDefault();
-               var x = Data.SelectedItem;
-               var y = Data.SelectedValue;
-               var z = Data.Items;
-               DataObj = (Control)Data;
+
+            }
+            public ComboBoxDataField(int num, Point data, Point label, string Name, ComboBox c)
+                : base(label, num, Name)
+            {
+                Data = c;
+                Data.Location = data;
+                Data.Size = new Size(120, 20);
             }
 
         }

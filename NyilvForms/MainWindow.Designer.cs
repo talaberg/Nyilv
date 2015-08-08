@@ -45,32 +45,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.alapadatokDataGridView = new System.Windows.Forms.DataGridView();
-            this.splitContainerAdatok = new System.Windows.Forms.SplitContainer();
-            this.splitContainerJobbOldal = new System.Windows.Forms.SplitContainer();
-            this.panelCegAdat = new System.Windows.Forms.Panel();
-            this.treeViewDokumentumok = new System.Windows.Forms.TreeView();
-            this.btFind = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fajlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dokumentumokImportalasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eszközökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aremelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.csatlakozasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ofdImport = new System.Windows.Forms.OpenFileDialog();
-            this.buttonLoadAll = new System.Windows.Forms.Button();
-            this.panelGombok = new System.Windows.Forms.Panel();
-            this.comboBoxFindCondiditon = new System.Windows.Forms.ComboBox();
-            this.comboBoxFindElement = new System.Windows.Forms.ComboBox();
-            this.labelCegKeres = new System.Windows.Forms.Label();
-            this.textBoxFind = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelWorkspace = new System.Windows.Forms.TableLayoutPanel();
-            this.contextMenuDokumentumokNode = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.hozzáadásToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modositasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eltavolitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.azonositoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cegnevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adoszamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +77,32 @@
             this.felfuggesztettDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.egyebadatokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.joinedDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.splitContainerAdatok = new System.Windows.Forms.SplitContainer();
+            this.splitContainerJobbOldal = new System.Windows.Forms.SplitContainer();
+            this.panelCegAdat = new System.Windows.Forms.Panel();
+            this.treeViewDokumentumok = new System.Windows.Forms.TreeView();
+            this.btFind = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fajlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dokumentumokImportalasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eszközökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aremelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.csatlakozasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdImport = new System.Windows.Forms.OpenFileDialog();
+            this.buttonLoadAll = new System.Windows.Forms.Button();
+            this.panelGombok = new System.Windows.Forms.Panel();
+            this.comboBoxFindCondiditon = new System.Windows.Forms.ComboBox();
+            this.comboBoxFindElement = new System.Windows.Forms.ComboBox();
+            this.labelCegKeres = new System.Windows.Forms.Label();
+            this.textBoxFind = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelWorkspace = new System.Windows.Forms.TableLayoutPanel();
+            this.contextMenuDokumentumokNode = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.hozzáadásToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modositasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eltavolitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBalOldal)).BeginInit();
             this.splitContainerBalOldal.Panel1.SuspendLayout();
             this.splitContainerBalOldal.Panel2.SuspendLayout();
@@ -110,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokBindingNavigator)).BeginInit();
             this.alapadatokBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdatok)).BeginInit();
             this.splitContainerAdatok.Panel1.SuspendLayout();
             this.splitContainerAdatok.Panel2.SuspendLayout();
@@ -123,7 +124,6 @@
             this.tableLayoutPanelWorkspace.SuspendLayout();
             this.contextMenuDokumentumokNode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBalOldal
@@ -276,193 +276,6 @@
             this.alapadatokDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_CellValueChanged);
             this.alapadatokDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
             this.alapadatokDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_RowLeave);
-            // 
-            // splitContainerAdatok
-            // 
-            resources.ApplyResources(this.splitContainerAdatok, "splitContainerAdatok");
-            this.splitContainerAdatok.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainerAdatok.Name = "splitContainerAdatok";
-            // 
-            // splitContainerAdatok.Panel1
-            // 
-            this.splitContainerAdatok.Panel1.Controls.Add(this.splitContainerBalOldal);
-            // 
-            // splitContainerAdatok.Panel2
-            // 
-            this.splitContainerAdatok.Panel2.Controls.Add(this.splitContainerJobbOldal);
-            // 
-            // splitContainerJobbOldal
-            // 
-            resources.ApplyResources(this.splitContainerJobbOldal, "splitContainerJobbOldal");
-            this.splitContainerJobbOldal.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainerJobbOldal.Name = "splitContainerJobbOldal";
-            // 
-            // splitContainerJobbOldal.Panel1
-            // 
-            this.splitContainerJobbOldal.Panel1.Controls.Add(this.panelCegAdat);
-            // 
-            // splitContainerJobbOldal.Panel2
-            // 
-            this.splitContainerJobbOldal.Panel2.Controls.Add(this.treeViewDokumentumok);
-            // 
-            // panelCegAdat
-            // 
-            resources.ApplyResources(this.panelCegAdat, "panelCegAdat");
-            this.panelCegAdat.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.panelCegAdat.Name = "panelCegAdat";
-            // 
-            // treeViewDokumentumok
-            // 
-            resources.ApplyResources(this.treeViewDokumentumok, "treeViewDokumentumok");
-            this.treeViewDokumentumok.Name = "treeViewDokumentumok";
-            this.treeViewDokumentumok.MouseClick += new System.Windows.Forms.MouseEventHandler(this.treeViewDokumentumok_MouseClick);
-            // 
-            // btFind
-            // 
-            resources.ApplyResources(this.btFind, "btFind");
-            this.btFind.Name = "btFind";
-            this.btFind.UseVisualStyleBackColor = true;
-            this.btFind.Click += new System.EventHandler(this.btFind_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fajlToolStripMenuItem,
-            this.eszközökToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
-            // 
-            // fajlToolStripMenuItem
-            // 
-            this.fajlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importalasToolStripMenuItem,
-            this.dokumentumokImportalasaToolStripMenuItem,
-            this.kilepesToolStripMenuItem});
-            this.fajlToolStripMenuItem.Name = "fajlToolStripMenuItem";
-            resources.ApplyResources(this.fajlToolStripMenuItem, "fajlToolStripMenuItem");
-            // 
-            // importalasToolStripMenuItem
-            // 
-            this.importalasToolStripMenuItem.Name = "importalasToolStripMenuItem";
-            resources.ApplyResources(this.importalasToolStripMenuItem, "importalasToolStripMenuItem");
-            this.importalasToolStripMenuItem.Click += new System.EventHandler(this.cegimportalasaToolStripMenuItem_Click);
-            // 
-            // dokumentumokImportalasaToolStripMenuItem
-            // 
-            this.dokumentumokImportalasaToolStripMenuItem.Name = "dokumentumokImportalasaToolStripMenuItem";
-            resources.ApplyResources(this.dokumentumokImportalasaToolStripMenuItem, "dokumentumokImportalasaToolStripMenuItem");
-            this.dokumentumokImportalasaToolStripMenuItem.Click += new System.EventHandler(this.dokumentumokImportalasaToolStripMenuItem_Click);
-            // 
-            // kilepesToolStripMenuItem
-            // 
-            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            resources.ApplyResources(this.kilepesToolStripMenuItem, "kilepesToolStripMenuItem");
-            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
-            // 
-            // eszközökToolStripMenuItem
-            // 
-            this.eszközökToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aremelesToolStripMenuItem,
-            this.csatlakozasToolStripMenuItem});
-            this.eszközökToolStripMenuItem.Name = "eszközökToolStripMenuItem";
-            resources.ApplyResources(this.eszközökToolStripMenuItem, "eszközökToolStripMenuItem");
-            // 
-            // aremelesToolStripMenuItem
-            // 
-            this.aremelesToolStripMenuItem.Name = "aremelesToolStripMenuItem";
-            resources.ApplyResources(this.aremelesToolStripMenuItem, "aremelesToolStripMenuItem");
-            this.aremelesToolStripMenuItem.Click += new System.EventHandler(this.aremelesToolStripMenuItem_Click);
-            // 
-            // csatlakozasToolStripMenuItem
-            // 
-            this.csatlakozasToolStripMenuItem.Name = "csatlakozasToolStripMenuItem";
-            resources.ApplyResources(this.csatlakozasToolStripMenuItem, "csatlakozasToolStripMenuItem");
-            this.csatlakozasToolStripMenuItem.Click += new System.EventHandler(this.csatlakozasToolStripMenuItem_Click);
-            // 
-            // ofdImport
-            // 
-            this.ofdImport.FileName = "ofdImport";
-            this.ofdImport.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdImport_FileOk);
-            // 
-            // buttonLoadAll
-            // 
-            resources.ApplyResources(this.buttonLoadAll, "buttonLoadAll");
-            this.buttonLoadAll.Name = "buttonLoadAll";
-            this.buttonLoadAll.UseVisualStyleBackColor = true;
-            this.buttonLoadAll.Click += new System.EventHandler(this.buttonLoadAll_Click);
-            // 
-            // panelGombok
-            // 
-            this.panelGombok.Controls.Add(this.comboBoxFindCondiditon);
-            this.panelGombok.Controls.Add(this.comboBoxFindElement);
-            this.panelGombok.Controls.Add(this.labelCegKeres);
-            this.panelGombok.Controls.Add(this.textBoxFind);
-            this.panelGombok.Controls.Add(this.btFind);
-            this.panelGombok.Controls.Add(this.buttonLoadAll);
-            resources.ApplyResources(this.panelGombok, "panelGombok");
-            this.panelGombok.Name = "panelGombok";
-            // 
-            // comboBoxFindCondiditon
-            // 
-            this.comboBoxFindCondiditon.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBoxFindCondiditon, "comboBoxFindCondiditon");
-            this.comboBoxFindCondiditon.Name = "comboBoxFindCondiditon";
-            // 
-            // comboBoxFindElement
-            // 
-            this.comboBoxFindElement.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBoxFindElement, "comboBoxFindElement");
-            this.comboBoxFindElement.Name = "comboBoxFindElement";
-            this.comboBoxFindElement.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindElement_SelectedIndexChanged);
-            // 
-            // labelCegKeres
-            // 
-            resources.ApplyResources(this.labelCegKeres, "labelCegKeres");
-            this.labelCegKeres.Name = "labelCegKeres";
-            // 
-            // textBoxFind
-            // 
-            resources.ApplyResources(this.textBoxFind, "textBoxFind");
-            this.textBoxFind.Name = "textBoxFind";
-            this.textBoxFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFind_KeyDown);
-            // 
-            // tableLayoutPanelWorkspace
-            // 
-            resources.ApplyResources(this.tableLayoutPanelWorkspace, "tableLayoutPanelWorkspace");
-            this.tableLayoutPanelWorkspace.Controls.Add(this.panelGombok, 0, 0);
-            this.tableLayoutPanelWorkspace.Controls.Add(this.splitContainerAdatok, 0, 1);
-            this.tableLayoutPanelWorkspace.Name = "tableLayoutPanelWorkspace";
-            // 
-            // contextMenuDokumentumokNode
-            // 
-            this.contextMenuDokumentumokNode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hozzáadásToolStripMenuItem1,
-            this.modositasToolStripMenuItem,
-            this.eltavolitasToolStripMenuItem});
-            this.contextMenuDokumentumokNode.Name = "contextMenuDokumentumokNode";
-            resources.ApplyResources(this.contextMenuDokumentumokNode, "contextMenuDokumentumokNode");
-            // 
-            // hozzáadásToolStripMenuItem1
-            // 
-            this.hozzáadásToolStripMenuItem1.Name = "hozzáadásToolStripMenuItem1";
-            resources.ApplyResources(this.hozzáadásToolStripMenuItem1, "hozzáadásToolStripMenuItem1");
-            this.hozzáadásToolStripMenuItem1.Click += new System.EventHandler(this.hozzaadasToolStripMenuItem_Click);
-            // 
-            // modositasToolStripMenuItem
-            // 
-            this.modositasToolStripMenuItem.Name = "modositasToolStripMenuItem";
-            resources.ApplyResources(this.modositasToolStripMenuItem, "modositasToolStripMenuItem");
-            this.modositasToolStripMenuItem.Click += new System.EventHandler(this.modositasToolStripMenuItem_Click);
-            // 
-            // eltavolitasToolStripMenuItem
-            // 
-            this.eltavolitasToolStripMenuItem.Name = "eltavolitasToolStripMenuItem";
-            resources.ApplyResources(this.eltavolitasToolStripMenuItem, "eltavolitasToolStripMenuItem");
-            this.eltavolitasToolStripMenuItem.Click += new System.EventHandler(this.eltavolitasToolStripMenuItem_Click);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // azonositoDataGridViewTextBoxColumn
             // 
@@ -654,6 +467,193 @@
             // 
             this.joinedDatabaseBindingSource.DataSource = typeof(NyilvLib.JoinedDatabase);
             // 
+            // splitContainerAdatok
+            // 
+            resources.ApplyResources(this.splitContainerAdatok, "splitContainerAdatok");
+            this.splitContainerAdatok.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainerAdatok.Name = "splitContainerAdatok";
+            // 
+            // splitContainerAdatok.Panel1
+            // 
+            this.splitContainerAdatok.Panel1.Controls.Add(this.splitContainerBalOldal);
+            // 
+            // splitContainerAdatok.Panel2
+            // 
+            this.splitContainerAdatok.Panel2.Controls.Add(this.splitContainerJobbOldal);
+            // 
+            // splitContainerJobbOldal
+            // 
+            resources.ApplyResources(this.splitContainerJobbOldal, "splitContainerJobbOldal");
+            this.splitContainerJobbOldal.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainerJobbOldal.Name = "splitContainerJobbOldal";
+            // 
+            // splitContainerJobbOldal.Panel1
+            // 
+            this.splitContainerJobbOldal.Panel1.Controls.Add(this.panelCegAdat);
+            // 
+            // splitContainerJobbOldal.Panel2
+            // 
+            this.splitContainerJobbOldal.Panel2.Controls.Add(this.treeViewDokumentumok);
+            // 
+            // panelCegAdat
+            // 
+            resources.ApplyResources(this.panelCegAdat, "panelCegAdat");
+            this.panelCegAdat.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panelCegAdat.Name = "panelCegAdat";
+            // 
+            // treeViewDokumentumok
+            // 
+            resources.ApplyResources(this.treeViewDokumentumok, "treeViewDokumentumok");
+            this.treeViewDokumentumok.Name = "treeViewDokumentumok";
+            this.treeViewDokumentumok.MouseClick += new System.Windows.Forms.MouseEventHandler(this.treeViewDokumentumok_MouseClick);
+            // 
+            // btFind
+            // 
+            resources.ApplyResources(this.btFind, "btFind");
+            this.btFind.Name = "btFind";
+            this.btFind.UseVisualStyleBackColor = true;
+            this.btFind.Click += new System.EventHandler(this.btFind_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fajlToolStripMenuItem,
+            this.eszközökToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // fajlToolStripMenuItem
+            // 
+            this.fajlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importalasToolStripMenuItem,
+            this.dokumentumokImportalasaToolStripMenuItem,
+            this.kilepesToolStripMenuItem});
+            this.fajlToolStripMenuItem.Name = "fajlToolStripMenuItem";
+            resources.ApplyResources(this.fajlToolStripMenuItem, "fajlToolStripMenuItem");
+            // 
+            // importalasToolStripMenuItem
+            // 
+            this.importalasToolStripMenuItem.Name = "importalasToolStripMenuItem";
+            resources.ApplyResources(this.importalasToolStripMenuItem, "importalasToolStripMenuItem");
+            this.importalasToolStripMenuItem.Click += new System.EventHandler(this.cegimportalasaToolStripMenuItem_Click);
+            // 
+            // dokumentumokImportalasaToolStripMenuItem
+            // 
+            this.dokumentumokImportalasaToolStripMenuItem.Name = "dokumentumokImportalasaToolStripMenuItem";
+            resources.ApplyResources(this.dokumentumokImportalasaToolStripMenuItem, "dokumentumokImportalasaToolStripMenuItem");
+            this.dokumentumokImportalasaToolStripMenuItem.Click += new System.EventHandler(this.dokumentumokImportalasaToolStripMenuItem_Click);
+            // 
+            // kilepesToolStripMenuItem
+            // 
+            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
+            resources.ApplyResources(this.kilepesToolStripMenuItem, "kilepesToolStripMenuItem");
+            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
+            // 
+            // eszközökToolStripMenuItem
+            // 
+            this.eszközökToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aremelesToolStripMenuItem,
+            this.csatlakozasToolStripMenuItem});
+            this.eszközökToolStripMenuItem.Name = "eszközökToolStripMenuItem";
+            resources.ApplyResources(this.eszközökToolStripMenuItem, "eszközökToolStripMenuItem");
+            // 
+            // aremelesToolStripMenuItem
+            // 
+            this.aremelesToolStripMenuItem.Name = "aremelesToolStripMenuItem";
+            resources.ApplyResources(this.aremelesToolStripMenuItem, "aremelesToolStripMenuItem");
+            this.aremelesToolStripMenuItem.Click += new System.EventHandler(this.aremelesToolStripMenuItem_Click);
+            // 
+            // csatlakozasToolStripMenuItem
+            // 
+            this.csatlakozasToolStripMenuItem.Name = "csatlakozasToolStripMenuItem";
+            resources.ApplyResources(this.csatlakozasToolStripMenuItem, "csatlakozasToolStripMenuItem");
+            this.csatlakozasToolStripMenuItem.Click += new System.EventHandler(this.csatlakozasToolStripMenuItem_Click);
+            // 
+            // ofdImport
+            // 
+            this.ofdImport.FileName = "ofdImport";
+            this.ofdImport.FileOk += new System.ComponentModel.CancelEventHandler(this.ofdImport_FileOk);
+            // 
+            // buttonLoadAll
+            // 
+            resources.ApplyResources(this.buttonLoadAll, "buttonLoadAll");
+            this.buttonLoadAll.Name = "buttonLoadAll";
+            this.buttonLoadAll.UseVisualStyleBackColor = true;
+            this.buttonLoadAll.Click += new System.EventHandler(this.buttonLoadAll_Click);
+            // 
+            // panelGombok
+            // 
+            this.panelGombok.Controls.Add(this.comboBoxFindCondiditon);
+            this.panelGombok.Controls.Add(this.comboBoxFindElement);
+            this.panelGombok.Controls.Add(this.labelCegKeres);
+            this.panelGombok.Controls.Add(this.textBoxFind);
+            this.panelGombok.Controls.Add(this.btFind);
+            this.panelGombok.Controls.Add(this.buttonLoadAll);
+            resources.ApplyResources(this.panelGombok, "panelGombok");
+            this.panelGombok.Name = "panelGombok";
+            // 
+            // comboBoxFindCondiditon
+            // 
+            this.comboBoxFindCondiditon.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxFindCondiditon, "comboBoxFindCondiditon");
+            this.comboBoxFindCondiditon.Name = "comboBoxFindCondiditon";
+            // 
+            // comboBoxFindElement
+            // 
+            this.comboBoxFindElement.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxFindElement, "comboBoxFindElement");
+            this.comboBoxFindElement.Name = "comboBoxFindElement";
+            this.comboBoxFindElement.SelectedIndexChanged += new System.EventHandler(this.comboBoxFindElement_SelectedIndexChanged);
+            // 
+            // labelCegKeres
+            // 
+            resources.ApplyResources(this.labelCegKeres, "labelCegKeres");
+            this.labelCegKeres.Name = "labelCegKeres";
+            // 
+            // textBoxFind
+            // 
+            resources.ApplyResources(this.textBoxFind, "textBoxFind");
+            this.textBoxFind.Name = "textBoxFind";
+            this.textBoxFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFind_KeyDown);
+            // 
+            // tableLayoutPanelWorkspace
+            // 
+            resources.ApplyResources(this.tableLayoutPanelWorkspace, "tableLayoutPanelWorkspace");
+            this.tableLayoutPanelWorkspace.Controls.Add(this.panelGombok, 0, 0);
+            this.tableLayoutPanelWorkspace.Controls.Add(this.splitContainerAdatok, 0, 1);
+            this.tableLayoutPanelWorkspace.Name = "tableLayoutPanelWorkspace";
+            // 
+            // contextMenuDokumentumokNode
+            // 
+            this.contextMenuDokumentumokNode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hozzáadásToolStripMenuItem1,
+            this.modositasToolStripMenuItem,
+            this.eltavolitasToolStripMenuItem});
+            this.contextMenuDokumentumokNode.Name = "contextMenuDokumentumokNode";
+            resources.ApplyResources(this.contextMenuDokumentumokNode, "contextMenuDokumentumokNode");
+            // 
+            // hozzáadásToolStripMenuItem1
+            // 
+            this.hozzáadásToolStripMenuItem1.Name = "hozzáadásToolStripMenuItem1";
+            resources.ApplyResources(this.hozzáadásToolStripMenuItem1, "hozzáadásToolStripMenuItem1");
+            this.hozzáadásToolStripMenuItem1.Click += new System.EventHandler(this.hozzaadasToolStripMenuItem_Click);
+            // 
+            // modositasToolStripMenuItem
+            // 
+            this.modositasToolStripMenuItem.Name = "modositasToolStripMenuItem";
+            resources.ApplyResources(this.modositasToolStripMenuItem, "modositasToolStripMenuItem");
+            this.modositasToolStripMenuItem.Click += new System.EventHandler(this.modositasToolStripMenuItem_Click);
+            // 
+            // eltavolitasToolStripMenuItem
+            // 
+            this.eltavolitasToolStripMenuItem.Name = "eltavolitasToolStripMenuItem";
+            resources.ApplyResources(this.eltavolitasToolStripMenuItem, "eltavolitasToolStripMenuItem");
+            this.eltavolitasToolStripMenuItem.Click += new System.EventHandler(this.eltavolitasToolStripMenuItem_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -672,6 +672,7 @@
             this.alapadatokBindingNavigator.ResumeLayout(false);
             this.alapadatokBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).EndInit();
             this.splitContainerAdatok.Panel1.ResumeLayout(false);
             this.splitContainerAdatok.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdatok)).EndInit();
@@ -687,7 +688,6 @@
             this.tableLayoutPanelWorkspace.ResumeLayout(false);
             this.contextMenuDokumentumokNode.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

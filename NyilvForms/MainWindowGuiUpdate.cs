@@ -1,6 +1,7 @@
 ﻿using NyilvLib;
 using NyilvLib.Entities;
 using NyilvLib.Forms;
+using NyilvLib.Xml;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,6 +14,10 @@ namespace NyilvForms
 {
     public partial class MainWindow : Form
     {
+        TreeNode currentnode;                   // Current Dokumentumok TreeNode reference
+
+
+
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // UI update supplementary functions ----------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -104,7 +109,15 @@ namespace NyilvForms
                     break;
                 case 4:
                     datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Szekhely.Text, alapadatokDataGridView.CurrentRow.Cells[18].Value));
-                    datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Telephelyek.Text, alapadatokDataGridView.CurrentRow.Cells[19].Value));
+                    
+                    List<int> telepek = MyXmlParser.Xml2IntList(
+                        alapadatokDataGridView.CurrentRow.Cells[19].Value.ToString(),
+                        XmlConstants.TelephelyTag, XmlConstants.TelephelyCollection);
+                    ComboBox c = ComboBoxTelephelyekInit(GetTelephelyek(telepek));
+
+                    datafield.Add(new ComboBoxDataField(2, new Point(125, 65), new Point(20, 65),GuiConstants.Telephelyek.Text,c));
+
+                    //datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Telephelyek.Text, alapadatokDataGridView.CurrentRow.Cells[19].Value));
                     datafield.Add(new TextBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Felhasznalonev.Text, alapadatokDataGridView.CurrentRow.Cells[20].Value));
                     datafield.Add(new TextBoxDataField(4, new Point(125, 140), new Point(20, 140), GuiConstants.Jelszo.Text, alapadatokDataGridView.CurrentRow.Cells[21].Value));
                     break;

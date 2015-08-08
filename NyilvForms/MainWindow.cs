@@ -16,7 +16,6 @@ using NyilvForms.Configuration;
 
 using System.Text.RegularExpressions;
 
-using Microsoft.Synchronization;
 using System.Globalization;
 using System.Threading;
 using NyilvForms.Connection;
@@ -26,25 +25,34 @@ namespace NyilvForms
 {
     public partial class MainWindow : Form
     {
-        List<ObjectDataField> datafield;
+        // ---------------------------------------------------------------------------------------------------------
+        // Variables -----------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------
 
-        List<ComboboxItem> munkatarsak;
-
-        bool dataGridViewCellChanged;           //Indicates if a dataGridView cell is modified
-        int changedRowIndex;
-        int currentGroup;
-
+        //Data flow --------------------------
         UserData user;
         Connect myConnection;                   //Connection handler
 
+        List<ObjectDataField> datafield;
+        List<ComboboxItem> munkatarsak;
+
         ConfigHandler myConfig;
 
-        TreeNode currentnode;                   // Current Dokumentumok TreeNode reference
+        //Signal flow ------------------------
+        bool dataGridViewCellChanged;           //Indicates if a dataGridView cell is modified
+        int changedRowIndex;                    //Indicates the changed row index
+        int currentRow;
+        int currentGroup;                       //Inidcates the current group
 
         int currentCegID = 1;                   // Current CegID regerence
-        enum ImportCaller { Ceg, Dokumentum };  // Enum for importcommand
+
         int importcommand;                      // Registers, which import mode called the openFileDialog
 
+        // UI elements : MainWindowGuiUpdate.cs       
+
+        // ---------------------------------------------------------------------------------------------------------
+        // Functions -----------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------------------
         public MainWindow()
         {
 
@@ -70,6 +78,7 @@ namespace NyilvForms
             munkatarsak = new List<ComboboxItem>();
             UpdateMunkatarsak();
         }
+
         //      Main menu events ----------------------------------------------------------------------------------------------------------------------------------------
         // Import Ceg type xls files
         private void cegimportalasaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -264,33 +273,7 @@ namespace NyilvForms
             this.Close();
         }
 
-        private void FormMiscellaneousInit()
-        {
 
-            //Init ComboBox parameteres
-            //Make ComboBoxes not editable
-            
-            comboBoxFindCondiditon.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxFindCondiditon.ValueMember = "Name";
-
-            ComboBoxFindElementInit();
-
-            ComboBoxTelephelyekInit();
-
-            dataGridViewCellChanged = false;
-
-
-            //Datagridview header init
-            foreach (DataGridViewColumn column in alapadatokDataGridView.Columns)
-            {
-                column.HeaderText = GuiConstants.GetHeader(column.HeaderText);
-            }
-            DataGridViewHeaderStyleUpdate();
-
-            //Datafield init
-            currentGroup = 1;
-
-        }
 
 
         private static void ApplyResourceToControl(ComponentResourceManager res, Control control)

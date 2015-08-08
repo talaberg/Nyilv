@@ -22,8 +22,33 @@ namespace NyilvForms
 
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        // Other functions ----------------------------------------------------------------------------------------------------------------------------------------------
+        // Init functions ----------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void FormMiscellaneousInit()
+        {
+
+            //Init ComboBox parameteres
+            //Make ComboBoxes not editable
+
+            comboBoxFindCondiditon.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFindCondiditon.ValueMember = "Name";
+
+            ComboBoxFindElementInit();
+
+            dataGridViewCellChanged = false;
+
+
+            //Datagridview header init
+            foreach (DataGridViewColumn column in alapadatokDataGridView.Columns)
+            {
+                column.HeaderText = GuiConstants.GetHeader(column.HeaderText);
+            }
+            DataGridViewHeaderStyleUpdate();
+
+            //Datafield init
+            currentGroup = 1;
+
+        }
 
         void ComboBoxFindElementInit()
         {
@@ -40,21 +65,27 @@ namespace NyilvForms
             comboBoxFindElement.ValueMember = "Name";
             comboBoxFindElement.SelectedIndex = 0;
         }
-        void ComboBoxTelephelyekInit()
+        ComboBox ComboBoxTelephelyekInit(List<Telephelyek> T)
         {
-            comboBoxFindElement.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBox comboboxTelephelyek = new ComboBox();
 
-            foreach (var prop in new Alapadatok().GetType().GetProperties())
+            comboboxTelephelyek.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (var t in T)
             {
-                if (prop.Name != "CegID")
-                {
-                    var element = new ComboBoxElementItem() { Name = prop.Name, Type = prop.PropertyType };
-                    comboBoxFindElement.Items.Add(element);
-                }
+                var element = new ComboboxItem(t.TelepID, t.Cim);
+                comboBoxFindElement.Items.Add(element);
             }
-            comboBoxFindElement.ValueMember = "Name";
-            comboBoxFindElement.SelectedIndex = 0;
+
+            comboboxTelephelyek.ValueMember = "Name";
+            comboboxTelephelyek.SelectedIndex = 0;
+
+            return comboboxTelephelyek;
         }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // Data update ----------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         void ComboBoxFindConditionUpdate(TypeCode ItemTypeCode)
         {
@@ -79,6 +110,10 @@ namespace NyilvForms
 
             comboBoxFindCondiditon.SelectedIndex = 0;
         }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // Error handling ----------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs anError)
         {
@@ -143,7 +178,9 @@ namespace NyilvForms
             }
 
         }
-
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // Other functionalities ----------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void Aremeles(double p)
         {
             throw new NotImplementedException();

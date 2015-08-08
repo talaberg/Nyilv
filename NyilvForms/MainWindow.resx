@@ -374,6 +374,99 @@
   <data name="splitContainerBalOldal.Panel2.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="azonositoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Azonosito</value>
+  </data>
+  <data name="cegnevDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Cegnev</value>
+  </data>
+  <data name="adoszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Adoszam</value>
+  </data>
+  <data name="cegformaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Ceg_forma</value>
+  </data>
+  <data name="statszamjelDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Stat_szamjel</value>
+  </data>
+  <data name="eUadoszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>EU_adoszam</value>
+  </data>
+  <data name="cegjegyzekszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Cegjegyzek_szam</value>
+  </data>
+  <data name="nyilvszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Nyilv_szam</value>
+  </data>
+  <data name="szerzodottAZNAPcegDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Szerzodott_AZNAP_ceg</value>
+  </data>
+  <data name="felelos1DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Felelos1</value>
+  </data>
+  <data name="felelos2DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Felelos2</value>
+  </data>
+  <data name="emailDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="hosszunevDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Hosszunev</value>
+  </data>
+  <data name="megalakulasDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Megalakulas</value>
+  </data>
+  <data name="bejegyzesDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Bejegyzes</value>
+  </data>
+  <data name="fotevekenysegDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Fotevekenyseg</value>
+  </data>
+  <data name="tevekenysegDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Tevekenyseg</value>
+  </data>
+  <data name="tevekenysegvegeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Tevekenyseg_vege</value>
+  </data>
+  <data name="szekhelyDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Szekhely</value>
+  </data>
+  <data name="telephelyekDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Telephelyek</value>
+  </data>
+  <data name="felhasznalonevDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Felhasznalonev</value>
+  </data>
+  <data name="jelszoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Jelszo</value>
+  </data>
+  <data name="ugyveztagokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Ugyvez_tagok</value>
+  </data>
+  <data name="tokeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Toke</value>
+  </data>
+  <data name="nyilvantartobirosagDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Nyilvantarto_birosag</value>
+  </data>
+  <data name="ugyszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Ugyszam</value>
+  </data>
+  <data name="birosagihatarozatszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Birosagi_hatarozat_szam</value>
+  </data>
+  <data name="kozhasznusagfokozatDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Kozhasznusag_fokozat</value>
+  </data>
+  <data name="inaktividoszakokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Inaktiv_idoszakok</value>
+  </data>
+  <data name="felfuggesztettDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Felfuggesztett</value>
+  </data>
+  <data name="egyebadatokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Egyeb_adatok</value>
+  </data>
   <metadata name="joinedDatabaseBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 54</value>
   </metadata>
@@ -623,6 +716,48 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>335, 15</value>
   </metadata>
+  <data name="importalasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="importalasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cégadatok Importálása...</value>
+  </data>
+  <data name="dokumentumokImportalasaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="dokumentumokImportalasaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dokumentumok Importálása...</value>
+  </data>
+  <data name="kilepesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="kilepesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="fajlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 20</value>
+  </data>
+  <data name="fajlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fájl</value>
+  </data>
+  <data name="aremelesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="aremelesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Áremelés...</value>
+  </data>
+  <data name="csatlakozasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="csatlakozasToolStripMenuItem.Text" xml:space="preserve">
+    <value>Csatlakozás...</value>
+  </data>
+  <data name="eszközökToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="eszközökToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -646,48 +781,6 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="fajlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 20</value>
-  </data>
-  <data name="fajlToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fájl</value>
-  </data>
-  <data name="importalasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="importalasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cégadatok Importálása...</value>
-  </data>
-  <data name="dokumentumokImportalasaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="dokumentumokImportalasaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Dokumentumok Importálása...</value>
-  </data>
-  <data name="kilepesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
-  <data name="kilepesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kilépés</value>
-  </data>
-  <data name="eszközökToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="eszközökToolStripMenuItem.Text" xml:space="preserve">
-    <value>Eszközök</value>
-  </data>
-  <data name="aremelesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
-  </data>
-  <data name="aremelesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Áremelés...</value>
-  </data>
-  <data name="csatlakozasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
-  </data>
-  <data name="csatlakozasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Csatlakozás...</value>
   </data>
   <metadata name="ofdImport.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>460, 16</value>
@@ -718,78 +811,6 @@
   </data>
   <data name="&gt;&gt;buttonLoadAll.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindCondiditon.Name" xml:space="preserve">
-    <value>comboBoxFindCondiditon</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindCondiditon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindCondiditon.Parent" xml:space="preserve">
-    <value>panelGombok</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindCondiditon.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindElement.Name" xml:space="preserve">
-    <value>comboBoxFindElement</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindElement.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindElement.Parent" xml:space="preserve">
-    <value>panelGombok</value>
-  </data>
-  <data name="&gt;&gt;comboBoxFindElement.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;labelCegKeres.Name" xml:space="preserve">
-    <value>labelCegKeres</value>
-  </data>
-  <data name="&gt;&gt;labelCegKeres.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelCegKeres.Parent" xml:space="preserve">
-    <value>panelGombok</value>
-  </data>
-  <data name="&gt;&gt;labelCegKeres.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;textBoxFind.Name" xml:space="preserve">
-    <value>textBoxFind</value>
-  </data>
-  <data name="&gt;&gt;textBoxFind.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxFind.Parent" xml:space="preserve">
-    <value>panelGombok</value>
-  </data>
-  <data name="&gt;&gt;textBoxFind.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panelGombok.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panelGombok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="panelGombok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>989, 34</value>
-  </data>
-  <data name="panelGombok.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.Name" xml:space="preserve">
-    <value>panelGombok</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.Parent" xml:space="preserve">
-    <value>tableLayoutPanelWorkspace</value>
-  </data>
-  <data name="&gt;&gt;panelGombok.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="comboBoxFindCondiditon.Location" type="System.Drawing.Point, System.Drawing">
     <value>261, 9</value>
@@ -884,6 +905,30 @@
   <data name="&gt;&gt;textBoxFind.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="panelGombok.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelGombok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="panelGombok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>989, 34</value>
+  </data>
+  <data name="panelGombok.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.Name" xml:space="preserve">
+    <value>panelGombok</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.Parent" xml:space="preserve">
+    <value>tableLayoutPanelWorkspace</value>
+  </data>
+  <data name="&gt;&gt;panelGombok.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tableLayoutPanelWorkspace.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -920,15 +965,6 @@
   <metadata name="contextMenuDokumentumokNode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>93, 18</value>
   </metadata>
-  <data name="contextMenuDokumentumokNode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuDokumentumokNode.Name" xml:space="preserve">
-    <value>contextMenuDokumentumokNode</value>
-  </data>
-  <data name="&gt;&gt;contextMenuDokumentumokNode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="hozzáadásToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -946,6 +982,15 @@
   </data>
   <data name="eltavolitasToolStripMenuItem.Text" xml:space="preserve">
     <value>Eltávolítás</value>
+  </data>
+  <data name="contextMenuDokumentumokNode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuDokumentumokNode.Name" xml:space="preserve">
+    <value>contextMenuDokumentumokNode</value>
+  </data>
+  <data name="&gt;&gt;contextMenuDokumentumokNode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1136, 17</value>
@@ -2094,9 +2139,6 @@
         AAAAAD////////+AAAAAAAAAAAB///////8=
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 300</value>
   </data>
@@ -2174,78 +2216,6 @@
   </data>
   <data name="&gt;&gt;toolStripButtonEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fajlToolStripMenuItem.Name" xml:space="preserve">
-    <value>fajlToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;fajlToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;importalasToolStripMenuItem.Name" xml:space="preserve">
-    <value>importalasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;importalasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Name" xml:space="preserve">
-    <value>dokumentumokImportalasaToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;kilepesToolStripMenuItem.Name" xml:space="preserve">
-    <value>kilepesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;kilepesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eszközökToolStripMenuItem.Name" xml:space="preserve">
-    <value>eszközökToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;eszközökToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aremelesToolStripMenuItem.Name" xml:space="preserve">
-    <value>aremelesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;aremelesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Name" xml:space="preserve">
-    <value>csatlakozasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ofdImport.Name" xml:space="preserve">
-    <value>ofdImport</value>
-  </data>
-  <data name="&gt;&gt;ofdImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Name" xml:space="preserve">
-    <value>hozzáadásToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;modositasToolStripMenuItem.Name" xml:space="preserve">
-    <value>modositasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;modositasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Name" xml:space="preserve">
-    <value>eltavolitasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
-    <value>errorProvider</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;azonositoDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>azonositoDataGridViewTextBoxColumn</value>
@@ -2439,106 +2409,82 @@
   <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;fajlToolStripMenuItem.Name" xml:space="preserve">
+    <value>fajlToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fajlToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importalasToolStripMenuItem.Name" xml:space="preserve">
+    <value>importalasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;importalasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Name" xml:space="preserve">
+    <value>dokumentumokImportalasaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kilepesToolStripMenuItem.Name" xml:space="preserve">
+    <value>kilepesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;kilepesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eszközökToolStripMenuItem.Name" xml:space="preserve">
+    <value>eszközökToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;eszközökToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aremelesToolStripMenuItem.Name" xml:space="preserve">
+    <value>aremelesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aremelesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Name" xml:space="preserve">
+    <value>csatlakozasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ofdImport.Name" xml:space="preserve">
+    <value>ofdImport</value>
+  </data>
+  <data name="&gt;&gt;ofdImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Name" xml:space="preserve">
+    <value>hozzáadásToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modositasToolStripMenuItem.Name" xml:space="preserve">
+    <value>modositasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;modositasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Name" xml:space="preserve">
+    <value>eltavolitasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="azonositoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Azonosito</value>
-  </data>
-  <data name="cegnevDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Cegnev</value>
-  </data>
-  <data name="adoszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Adoszam</value>
-  </data>
-  <data name="cegformaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Ceg_forma</value>
-  </data>
-  <data name="statszamjelDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Stat_szamjel</value>
-  </data>
-  <data name="eUadoszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>EU_adoszam</value>
-  </data>
-  <data name="cegjegyzekszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Cegjegyzek_szam</value>
-  </data>
-  <data name="nyilvszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Nyilv_szam</value>
-  </data>
-  <data name="szerzodottAZNAPcegDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Szerzodott_AZNAP_ceg</value>
-  </data>
-  <data name="felelos1DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Felelos1</value>
-  </data>
-  <data name="felelos2DataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Felelos2</value>
-  </data>
-  <data name="emailDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="hosszunevDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Hosszunev</value>
-  </data>
-  <data name="megalakulasDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Megalakulas</value>
-  </data>
-  <data name="bejegyzesDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Bejegyzes</value>
-  </data>
-  <data name="fotevekenysegDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Fotevekenyseg</value>
-  </data>
-  <data name="tevekenysegDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Tevekenyseg</value>
-  </data>
-  <data name="tevekenysegvegeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Tevekenyseg_vege</value>
-  </data>
-  <data name="szekhelyDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Szekhely</value>
-  </data>
-  <data name="telephelyekDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Telephelyek</value>
-  </data>
-  <data name="felhasznalonevDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Felhasznalonev</value>
-  </data>
-  <data name="jelszoDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Jelszo</value>
-  </data>
-  <data name="ugyveztagokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Ugyvez_tagok</value>
-  </data>
-  <data name="tokeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Toke</value>
-  </data>
-  <data name="nyilvantartobirosagDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Nyilvantarto_birosag</value>
-  </data>
-  <data name="ugyszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Ugyszam</value>
-  </data>
-  <data name="birosagihatarozatszamDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Birosagi_hatarozat_szam</value>
-  </data>
-  <data name="kozhasznusagfokozatDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Kozhasznusag_fokozat</value>
-  </data>
-  <data name="inaktividoszakokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Inaktiv_idoszakok</value>
-  </data>
-  <data name="felfuggesztettDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Felfuggesztett</value>
-  </data>
-  <data name="egyebadatokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Egyeb_adatok</value>
-  </data>
-  <metadata name="joinedDatabaseBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 54</value>
-  </metadata>
 </root>
