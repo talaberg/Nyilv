@@ -20,6 +20,7 @@ using System.Globalization;
 using System.Threading;
 using NyilvForms.Connection;
 using NyilvLib.Forms;
+using NyilvLib.Xml;
 
 namespace NyilvForms
 {
@@ -39,7 +40,7 @@ namespace NyilvForms
         ConfigHandler myConfig;
 
         //Signal flow ------------------------
-        bool dataGridViewCellChanged;           //Indicates if a dataGridView cell is modified
+        //bool dataGridViewCellChanged;           //Indicates if a dataGridView cell is modified
         int changedRowIndex;                    //Indicates the changed row index
         int currentRow;
         int currentGroup;                       //Inidcates the current group
@@ -164,7 +165,7 @@ namespace NyilvForms
             }
         }
 
-        private void alapadatokDataGridView_RowLeave(object sender, DataGridViewCellEventArgs e)
+        private void alapadatokDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             //TODO
             /*
@@ -177,12 +178,14 @@ namespace NyilvForms
                 }
                 
             }*/
+
+
         }
 
         // DataGridView Cell value changed
         private void alapadatokDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridViewCellChanged = true;
+            //dataGridViewCellChanged = true;
             changedRowIndex = e.RowIndex;
         }
         // DataGridView row leave
@@ -190,6 +193,12 @@ namespace NyilvForms
 
         private void alapadatokDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex != currentRow)
+            {
+                UpdateMiscJoinedDataBaseData();
+                currentRow = e.RowIndex;
+            }           
+
             int clickedGroup = GuiConstants.GetGroup(alapadatokDataGridView.Columns[e.ColumnIndex].DataPropertyName.ToString());
             if (currentGroup != clickedGroup)
             {
@@ -197,6 +206,8 @@ namespace NyilvForms
             }
             UpdateDataField(currentGroup);
         }
+
+
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {

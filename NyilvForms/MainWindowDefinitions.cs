@@ -91,6 +91,8 @@ namespace NyilvForms
                }
                Data.SelectedItem = list.Where(c => c.Name == (value as string)).FirstOrDefault();
 
+               DataObj = (Control)Data;
+
             }
             public ComboBoxDataField(int num, Point data, Point label, string Name, ComboBox c)
                 : base(label, num, Name)
@@ -98,6 +100,8 @@ namespace NyilvForms
                 Data = c;
                 Data.Location = data;
                 Data.Size = new Size(120, 20);
+
+                DataObj = (Control)Data;
             }
 
         }

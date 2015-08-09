@@ -2,6 +2,7 @@
 using NyilvLib;
 using NyilvLib.Entities;
 using NyilvLib.Forms;
+using NyilvLib.Xml;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -35,7 +36,7 @@ namespace NyilvForms
 
             ComboBoxFindElementInit();
 
-            dataGridViewCellChanged = false;
+            //dataGridViewCellChanged = false;
 
 
             //Datagridview header init
@@ -74,7 +75,7 @@ namespace NyilvForms
             foreach (var t in T)
             {
                 var element = new ComboboxItem(t.TelepID, t.Cim);
-                comboBoxFindElement.Items.Add(element);
+                comboboxTelephelyek.Items.Add(element);
             }
 
             comboboxTelephelyek.ValueMember = "Name";
@@ -86,6 +87,18 @@ namespace NyilvForms
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Data update ----------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void UpdateMiscJoinedDataBaseData()
+        {
+            string t = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Telephelyek;
+            List<Telephelyek> T = new List<Telephelyek>();
+            if (t != null)
+            {
+                List<int> telepek = MyXmlParser.Xml2IntList(t, XmlConstants.TelephelyTag, XmlConstants.TelephelyCollection);
+                T = GetTelephelyek(telepek);
+            }
+            ((JoinedDatabase)joinedDatabaseBindingSource.Current).TelephelyekList = T;
+        }
+
 
         void ComboBoxFindConditionUpdate(TypeCode ItemTypeCode)
         {
@@ -193,5 +206,15 @@ namespace NyilvForms
                 UpdateCegadatok(currentCegID);
             }      */      
         }
+
+        Point GetLabelPos(int labelNum)
+        {
+            return new Point(Defines.LABEL_XPOS_BASE, (Defines.LABEL_YPOS_BASE + --labelNum * Defines.LABEL_YPOS_STEP));
+        }
+        Point GetControlPos(int controlNum)
+        {
+            return new Point(Defines.CONTROL_XPOS_BASE, (Defines.CONTROL_YPOS_BASE + --controlNum * Defines.CONTROL_YPOS_STEP));
+        }
+        
     }
 }

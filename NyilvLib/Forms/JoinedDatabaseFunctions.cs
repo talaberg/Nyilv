@@ -1,6 +1,8 @@
 ﻿using NyilvLib.Entities;
 using NyilvLib.Forms;
+using NyilvLib.Xml;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +34,7 @@ namespace NyilvLib
             Tevekenyseg = s;
             Tevekenyseg_vege = null;
             Szekhely = null;
-            Telephelyek = s;
+            Telephelyek = null;
             Felhasznalonev = s;
             Jelszo = s;
             Ugyvez_tagok = s;
@@ -46,6 +48,7 @@ namespace NyilvLib
             Egyeb_adatok = s;
 
             Container = null;
+            TelephelyekList = null;
         }
 
         public void SetData()
@@ -74,7 +77,7 @@ namespace NyilvLib
             Tevekenyseg                 = Container.Tevekenyseg;
             Tevekenyseg_vege            = Container.Tevekenyseg_vege;
             Szekhely                    = Container.Szekhely;
-            Telephelyek                 = Container.Telephelyek;
+            Telephelyek                 = Container.Telephelyek; 
             Felhasznalonev              = Container.Felhasznalonev;
             Jelszo                      = Container.Jelszo;
             Ugyvez_tagok                = Container.Ugyvez_tagok;
@@ -88,6 +91,7 @@ namespace NyilvLib
             Egyeb_adatok                = Container.Egyeb_adatok;
 
             Container = null;
+            TelephelyekList = null;
         }
         private Alapadatok GetAlapadatok()
         {

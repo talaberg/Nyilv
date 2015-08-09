@@ -30,6 +30,7 @@ namespace NyilvForms
                 joinedDatabaseBindingSource.Add(client);
             }
             UpdateDataField(currentGroup);
+            UpdateMiscJoinedDataBaseData();
         }
         private void UpdateMunkatarsak()
         {
@@ -81,62 +82,65 @@ namespace NyilvForms
 
             panelCegAdat.Controls.Clear();
 
+            JoinedDatabase currentDataSource = (JoinedDatabase)joinedDatabaseBindingSource.Current;
             switch (group)
             {
                 case 1:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Azonosito.Text, alapadatokDataGridView.CurrentRow.Cells[0].Value));
-                    datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Cegnev.Text, alapadatokDataGridView.CurrentRow.Cells[1].Value));
-                    datafield.Add(new TextBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Adoszam.Text, alapadatokDataGridView.CurrentRow.Cells[2].Value));
-                    datafield.Add(new TextBoxDataField(4, new Point(125, 140), new Point(20, 140), GuiConstants.Ceg_forma.Text, alapadatokDataGridView.CurrentRow.Cells[3].Value));
-                    datafield.Add(new TextBoxDataField(5, new Point(125, 175), new Point(20, 175), GuiConstants.Stat_szamjel.Text, alapadatokDataGridView.CurrentRow.Cells[4].Value));
-                    datafield.Add(new TextBoxDataField(6, new Point(125, 210), new Point(20, 210), GuiConstants.EU_adoszam.Text, alapadatokDataGridView.CurrentRow.Cells[5].Value));
-                    datafield.Add(new TextBoxDataField(7, new Point(125, 245), new Point(20, 245), GuiConstants.Cegjegyzek_szam.Text, alapadatokDataGridView.CurrentRow.Cells[6].Value));
-                    datafield.Add(new TextBoxDataField(8, new Point(125, 280), new Point(20, 280), GuiConstants.Nyilv_szam.Text, alapadatokDataGridView.CurrentRow.Cells[7].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Azonosito.Text, currentDataSource.Azonosito));
+                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Cegnev.Text, currentDataSource.Cegnev));
+                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Adoszam.Text, currentDataSource.Adoszam));
+                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Ceg_forma.Text, currentDataSource.Ceg_forma));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Stat_szamjel.Text, currentDataSource.Stat_szamjel));
+                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.EU_adoszam.Text, currentDataSource.EU_adoszam));
+                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Cegjegyzek_szam.Text, currentDataSource.Cegjegyzek_szam));
+                    datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), GuiConstants.Nyilv_szam.Text, currentDataSource.Nyilv_szam));
                     break;
                 case 2:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Szerzodott_AZNAP_ceg.Text, alapadatokDataGridView.CurrentRow.Cells[8].Value));
-                    datafield.Add(new ComboBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Felelos1.Text, munkatarsak, alapadatokDataGridView.CurrentRow.Cells[9].Value));
-                    datafield.Add(new ComboBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Felelos2.Text, munkatarsak, alapadatokDataGridView.CurrentRow.Cells[10].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Szerzodott_AZNAP_ceg.Text, currentDataSource.Nyilv_szam));
+                    datafield.Add(new ComboBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Felelos1.Text, munkatarsak, currentDataSource.Felelos1));
+                    datafield.Add(new ComboBoxDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Felelos2.Text, munkatarsak, currentDataSource.Felelos2));
                     break;
                 case 3:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Email.Text, alapadatokDataGridView.CurrentRow.Cells[11].Value));
-                    datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Hosszunev.Text, alapadatokDataGridView.CurrentRow.Cells[12].Value));
-                    datafield.Add(new TextBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Megalakulas.Text, alapadatokDataGridView.CurrentRow.Cells[13].Value));
-                    datafield.Add(new TextBoxDataField(4, new Point(125, 140), new Point(20, 140), GuiConstants.Bejegyzes.Text, alapadatokDataGridView.CurrentRow.Cells[14].Value));
-                    datafield.Add(new TextBoxDataField(5, new Point(125, 175), new Point(20, 175), GuiConstants.Fotevekenyseg.Text, alapadatokDataGridView.CurrentRow.Cells[15].Value));
-                    datafield.Add(new TextBoxDataField(6, new Point(125, 210), new Point(20, 210), GuiConstants.Tevekenyseg.Text, alapadatokDataGridView.CurrentRow.Cells[16].Value));
-                    datafield.Add(new TextBoxDataField(7, new Point(125, 245), new Point(20, 245), GuiConstants.Tevekenyseg_vege.Text, alapadatokDataGridView.CurrentRow.Cells[17].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Email.Text, currentDataSource.Email));
+                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Hosszunev.Text, currentDataSource.Hosszunev));
+                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(2), GuiConstants.Megalakulas.Text, currentDataSource.Megalakulas));
+                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Bejegyzes.Text, currentDataSource.Bejegyzes));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Fotevekenyseg.Text, currentDataSource.Fotevekenyseg));
+                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.Tevekenyseg.Text, currentDataSource.Tevekenyseg));
+                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Tevekenyseg_vege.Text, currentDataSource.Tevekenyseg_vege));
                     break;
                 case 4:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Szekhely.Text, alapadatokDataGridView.CurrentRow.Cells[18].Value));
-                    
-                    List<int> telepek = MyXmlParser.Xml2IntList(
-                        alapadatokDataGridView.CurrentRow.Cells[19].Value.ToString(),
-                        XmlConstants.TelephelyTag, XmlConstants.TelephelyCollection);
-                    ComboBox c = ComboBoxTelephelyekInit(GetTelephelyek(telepek));
+                    var lst = new List<int>();
+                    lst.Add(int.Parse(alapadatokDataGridView.CurrentRow.Cells[18].Value.ToString()));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Szekhely.Text, GetTelephelyek(lst)));
 
-                    datafield.Add(new ComboBoxDataField(2, new Point(125, 65), new Point(20, 65),GuiConstants.Telephelyek.Text,c));
+                    ComboBox c = ComboBoxTelephelyekInit(currentDataSource.TelephelyekList);
+                    var currentTelep = currentDataSource.TelephelyekList.Find(x => x.TelepID == ((ComboboxItem)c.SelectedItem).ID);
 
-                    //datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Telephelyek.Text, alapadatokDataGridView.CurrentRow.Cells[19].Value));
-                    datafield.Add(new TextBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Felhasznalonev.Text, alapadatokDataGridView.CurrentRow.Cells[20].Value));
-                    datafield.Add(new TextBoxDataField(4, new Point(125, 140), new Point(20, 140), GuiConstants.Jelszo.Text, alapadatokDataGridView.CurrentRow.Cells[21].Value));
+                    datafield.Add(new ComboBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Telephelyek.Text, c));
+                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Telephely_Cim.Text, currentTelep.Cim));
+                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Telephely_Mettol.Text, currentTelep.Mettol));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Telephely_Meddig.Text, currentTelep.Meddig));
+
+                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.Felhasznalonev.Text, currentDataSource.Felhasznalonev));
+                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Jelszo.Text, currentDataSource.Jelszo));
                     break;
                 case 5:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Ugyvez_tagok.Text, alapadatokDataGridView.CurrentRow.Cells[22].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Ugyvez_tagok.Text, currentDataSource.Ugyvez_tagok));
                     break;
                 case 6:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Toke.Text, alapadatokDataGridView.CurrentRow.Cells[23].Value));
-                    datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Nyilvantarto_birosag.Text, alapadatokDataGridView.CurrentRow.Cells[24].Value));
-                    datafield.Add(new TextBoxDataField(3, new Point(125, 105), new Point(20, 105), GuiConstants.Ugyszam.Text, alapadatokDataGridView.CurrentRow.Cells[25].Value));
-                    datafield.Add(new TextBoxDataField(4, new Point(125, 140), new Point(20, 140), GuiConstants.Birosagi_hatarozat_szam.Text, alapadatokDataGridView.CurrentRow.Cells[26].Value));
-                    datafield.Add(new TextBoxDataField(5, new Point(125, 175), new Point(20, 175), GuiConstants.Kozhasznusag_fokozat.Text, alapadatokDataGridView.CurrentRow.Cells[27].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Toke.Text, currentDataSource.Toke));
+                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Nyilvantarto_birosag.Text, currentDataSource.Nyilvantarto_birosag));
+                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Ugyszam.Text, currentDataSource.Ugyszam));
+                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Birosagi_hatarozat_szam.Text, currentDataSource.Birosagi_hatarozat_szam));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Kozhasznusag_fokozat.Text, currentDataSource.Kozhasznusag_fokozat));
                     break;
                 case 7:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Inaktiv_idoszakok.Text, alapadatokDataGridView.CurrentRow.Cells[28].Value));
-                    datafield.Add(new TextBoxDataField(2, new Point(125, 65), new Point(20, 65), GuiConstants.Felfuggesztett.Text, alapadatokDataGridView.CurrentRow.Cells[29].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Inaktiv_idoszakok.Text, currentDataSource.Inaktiv_idoszakok));
+                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Felfuggesztett.Text, currentDataSource.Felfuggesztett));
                     break;
                 case 8:
-                    datafield.Add(new TextBoxDataField(1, new Point(125, 30), new Point(20, 30), GuiConstants.Egyeb_adatok.Text, alapadatokDataGridView.CurrentRow.Cells[30].Value));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Egyeb_adatok.Text, currentDataSource.Egyeb_adatok));
                     break;
                 default:
                     break;

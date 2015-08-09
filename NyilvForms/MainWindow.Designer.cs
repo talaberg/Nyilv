@@ -275,7 +275,7 @@
             this.alapadatokDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_CellClick);
             this.alapadatokDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_CellValueChanged);
             this.alapadatokDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
-            this.alapadatokDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_RowLeave);
+            this.alapadatokDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_RowEnter);
             // 
             // azonositoDataGridViewTextBoxColumn
             // 

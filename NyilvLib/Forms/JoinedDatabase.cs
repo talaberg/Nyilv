@@ -13,6 +13,10 @@ namespace NyilvLib
     public partial class JoinedDatabase
     {
         public Alapadatok Container { get; set; }
+        public List<Telephelyek> TelephelyekList { get; set; }
+
+        //-------------------------------------------------------
+        //Alapadatok
         public int CegID { get; set; }
 
         public int? Azonosito { get; set; }
@@ -99,6 +103,7 @@ namespace NyilvLib
 
         [Column(TypeName = "xml")]
         public string Egyeb_adatok { get; set; }
+
 
     }
 

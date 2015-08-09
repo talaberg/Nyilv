@@ -210,6 +210,27 @@ namespace NyilvLib.Forms
             public const string Text = "Egyéb adatok";
             public const int Group = 8;
         }
+        //---------------------------------------------------
+        // Telephelyek
+        public static class Telephely_Cim
+        {
+            public const string Name = "Telephely_Cim";
+            public const string Text = "Cím";
+            public const int Group = 4;
+        }
+        public static class Telephely_Mettol
+        {
+            public const string Name = "Telephely_Mettol";
+            public const string Text = "Mettől";
+            public const int Group = 4;
+        }
+        public static class Telephely_Meddig
+        {
+            public const string Name = "Telephely_Meddig";
+            public const string Text = "Meddig";
+            public const int Group = 4;
+        }
+        //---------------------------------------------------
 
         public static string GetHeader(string s)
         {
