@@ -97,6 +97,16 @@ namespace NyilvForms
                 T = GetTelephelyek(telepek);
             }
             ((JoinedDatabase)joinedDatabaseBindingSource.Current).TelephelyekList = T;
+
+            int? id = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Szekhely;
+            Telephelyek Sz = new Telephelyek();
+            if (id != null)
+            {
+                List<int> szekhely = new List<int>();
+                szekhely.Add((int)id);
+                Sz = GetTelephelyek(szekhely).FirstOrDefault();
+            }
+            ((JoinedDatabase)joinedDatabaseBindingSource.Current).SzekhelyData = Sz;
         }
 
 
@@ -123,6 +133,18 @@ namespace NyilvForms
 
             comboBoxFindCondiditon.SelectedIndex = 0;
         }
+
+        void ComboboxTelephelyekChangeHandler(object current)
+        {
+            string currentCim = current as string;
+            Telephelyek currentTelep = ((JoinedDatabase)joinedDatabaseBindingSource.Current).TelephelyekList
+                .Find(x => x.Cim == currentCim);
+
+            datafield.Find(c => c.Number == 5).DataObj.Text = currentTelep.Cim;
+            datafield.Find(c => c.Number == 6).DataObj.Text = currentTelep.Mettol.ToString();
+            datafield.Find(c => c.Number == 7).DataObj.Text = currentTelep.Meddig.ToString();
+        }
+
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Error handling ----------------------------------------------------------------------------------------------------------------------------------------------

@@ -49,6 +49,7 @@ namespace NyilvLib
 
             Container = null;
             TelephelyekList = null;
+            SzekhelyData = null;
         }
 
         public void SetData()
@@ -92,6 +93,7 @@ namespace NyilvLib
 
             Container = null;
             TelephelyekList = null;
+            SzekhelyData = null;
         }
         private Alapadatok GetAlapadatok()
         {

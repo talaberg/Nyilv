@@ -15,7 +15,7 @@ namespace NyilvForms
         enum ImportCaller { Ceg, Dokumentum };  // Enum for importcommand
         class ComboboxItem
         {
-            public ComboboxItem(int id, string text) { ID = id; Name = text; }
+            public ComboboxItem(int id, string name) { ID = id; Name = name; }
             public int ID { get; set; }
             public string Name { get; set; }
             public override string ToString() { return Name; }
@@ -49,6 +49,7 @@ namespace NyilvForms
                 this.Data = new TextBox();
                 this.Data.Location = data;
                 this.Data.Size = new Size(120, 20);
+                this.Data.Anchor = ( AnchorStyles.Right | AnchorStyles.Left);
 
                 if (value != null)
                 {
@@ -75,26 +76,39 @@ namespace NyilvForms
         class ComboBoxDataField : ObjectDataField
         {
             public ComboBox Data { get; set; }
-            public ComboBoxDataField(int num, Point data, Point label, string Name, List<ComboboxItem> list, object value)
+            ComboboxChangeHandlerDelegate handler;
+            public ComboBoxDataField(int num, Point data, Point label, string Name, List<ComboboxItem> list, object value, ComboboxChangeHandlerDelegate handlerFunction = null)
                 : base(label, num,Name)
             {
                Data = new ComboBox
                     {
                        
                         Location = data,
-                        Size = new Size(120, 20),
-                        //SelectedIndex = 3 //list.Where(c => c.Name == (value as string)).FirstOrDefault()                     
+                        Size = new Size(120, 20), 
+                        
                     };
                foreach (var item in list)
                {
                    Data.Items.Add(item);
                }
+
                Data.SelectedItem = list.Where(c => c.Name == (value as string)).FirstOrDefault();
 
                DataObj = (Control)Data;
+               this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
+
+               //Events
+               if (handlerFunction != null)
+               {
+                   handler = handlerFunction;
+                   Data.SelectedValueChanged += Data_SelectedValueChanged;
+               }
 
             }
-            public ComboBoxDataField(int num, Point data, Point label, string Name, ComboBox c)
+
+
+
+            public ComboBoxDataField(int num, Point data, Point label, string Name, ComboBox c, ComboboxChangeHandlerDelegate handlerFunction = null)
                 : base(label, num, Name)
             {
                 Data = c;
@@ -102,8 +116,62 @@ namespace NyilvForms
                 Data.Size = new Size(120, 20);
 
                 DataObj = (Control)Data;
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
+
+                //Events
+                if (handlerFunction != null)
+                {
+                    handler = handlerFunction;
+                    Data.SelectedValueChanged += Data_SelectedValueChanged;
+                }
+            }
+            void Data_SelectedValueChanged(object sender, EventArgs e)
+            {
+                handler(Data.SelectedItem.ToString());
             }
 
+
         }
+
+        class DateTimeDataField : ObjectDataField
+        {
+
+            public DateTimePicker Data { get; set; }
+            public DateTimeDataField(int num, Point data, Point label, string name, object value)
+                : base(label, num, name)
+            {
+                this.Data = new DateTimePicker();
+                this.Data.Location = data;
+                this.Data.Size = new Size(120, 20);
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
+
+                if (value != null)
+                {
+                    type = value.GetType();
+
+                    if (value is string)
+                    {
+                        this.Data.Text = value as string;
+                    }
+                    else
+                    {
+                        this.Data.Text = value.ToString();
+                    }
+                }
+                else
+                {
+                    string s = "";
+                    type = s.GetType();
+                    this.Data.Text = s;
+                }
+                DataObj = (Control)Data;
+            }
+        }
+
+
+
+        //Delegate for comboboxChanged events
+        public delegate void ComboboxChangeHandlerDelegate(object current);
+
     }
 }

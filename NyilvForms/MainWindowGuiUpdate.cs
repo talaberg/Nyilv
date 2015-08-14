@@ -103,27 +103,28 @@ namespace NyilvForms
                 case 3:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Email.Text, currentDataSource.Email));
                     datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Hosszunev.Text, currentDataSource.Hosszunev));
-                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(2), GuiConstants.Megalakulas.Text, currentDataSource.Megalakulas));
-                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Bejegyzes.Text, currentDataSource.Bejegyzes));
+                    datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Megalakulas.Text, currentDataSource.Megalakulas));
+                    datafield.Add(new DateTimeDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Bejegyzes.Text, currentDataSource.Bejegyzes));
                     datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Fotevekenyseg.Text, currentDataSource.Fotevekenyseg));
                     datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.Tevekenyseg.Text, currentDataSource.Tevekenyseg));
-                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Tevekenyseg_vege.Text, currentDataSource.Tevekenyseg_vege));
+                    datafield.Add(new DateTimeDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Tevekenyseg_vege.Text, currentDataSource.Tevekenyseg_vege));
                     break;
                 case 4:
-                    var lst = new List<int>();
-                    lst.Add(int.Parse(alapadatokDataGridView.CurrentRow.Cells[18].Value.ToString()));
-                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Szekhely.Text, GetTelephelyek(lst)));
+                    var szekhely = currentDataSource.SzekhelyData;
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Szekhely.Text, szekhely.Cim));
+                    datafield.Add(new DateTimeDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Telephely_Mettol.Text, szekhely.Mettol));
+                    datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Telephely_Meddig.Text, szekhely.Meddig));
 
                     ComboBox c = ComboBoxTelephelyekInit(currentDataSource.TelephelyekList);
                     var currentTelep = currentDataSource.TelephelyekList.Find(x => x.TelepID == ((ComboboxItem)c.SelectedItem).ID);
 
-                    datafield.Add(new ComboBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Telephelyek.Text, c));
-                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Telephely_Cim.Text, currentTelep.Cim));
-                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Telephely_Mettol.Text, currentTelep.Mettol));
-                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Telephely_Meddig.Text, currentTelep.Meddig));
+                    datafield.Add(new ComboBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Telephelyek.Text, c,new ComboboxChangeHandlerDelegate(ComboboxTelephelyekChangeHandler)));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Telephely_Cim.Text, currentTelep.Cim));
+                    datafield.Add(new DateTimeDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.Telephely_Mettol.Text, currentTelep.Mettol));
+                    datafield.Add(new DateTimeDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Telephely_Meddig.Text, currentTelep.Meddig));
 
-                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.Felhasznalonev.Text, currentDataSource.Felhasznalonev));
-                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Jelszo.Text, currentDataSource.Jelszo));
+                    datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), GuiConstants.Felhasznalonev.Text, currentDataSource.Felhasznalonev));
+                    datafield.Add(new TextBoxDataField(9, GetControlPos(9), GetLabelPos(9), GuiConstants.Jelszo.Text, currentDataSource.Jelszo));
                     break;
                 case 5:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Ugyvez_tagok.Text, currentDataSource.Ugyvez_tagok));
@@ -181,6 +182,7 @@ namespace NyilvForms
 
         void DataGridViewHeaderStyleUpdate()
         {
+            alapadatokDataGridView.EnableHeadersVisualStyles = false;
             alapadatokDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font(FontFamily.GenericSansSerif,
             8.0F, FontStyle.Bold);
             alapadatokDataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

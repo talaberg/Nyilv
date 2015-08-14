@@ -15,6 +15,8 @@ namespace NyilvLib
         public Alapadatok Container { get; set; }
         public List<Telephelyek> TelephelyekList { get; set; }
 
+        public Telephelyek SzekhelyData { get; set; }
+
         //-------------------------------------------------------
         //Alapadatok
         public int CegID { get; set; }
