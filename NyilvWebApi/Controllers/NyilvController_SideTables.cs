@@ -75,5 +75,40 @@ namespace Nyilv.Controllers
             }
 
         }
+
+        // GET api/CegesSzemelyek/{ids}
+        [HttpPost]
+        [Route(ControllerFormats.GetCegesSzemelyek.ControllerFormat)]
+        public IHttpActionResult GetCegesSzemelyek([FromBody]List<int> ids)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var ctx = new ModelNyilv())
+                {
+                    List<CegesSzemelyek> Telepek = new List<CegesSzemelyek>();
+
+                    foreach (int id in ids)
+                    {
+                        CegesSzemelyek hely = ctx.CegesSzemelyek.Where(c => c.CegSzemID == id).FirstOrDefault();
+
+                        if (hely != null)
+                        {
+                            Telepek.Add(hely);
+                        }
+                    }
+
+                    if (Telepek == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(Telepek);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
     }
 }

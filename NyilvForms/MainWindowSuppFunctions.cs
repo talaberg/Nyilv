@@ -83,12 +83,30 @@ namespace NyilvForms
 
             return comboboxTelephelyek;
         }
+        ComboBox ComboBoxCegesSzemelyekInit(List<CegesSzemelyek> T)
+        {
+            ComboBox comboboxTelephelyek = new ComboBox();
+
+            comboboxTelephelyek.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (var t in T)
+            {
+                var element = new ComboboxItem(t.CegSzemID, t.Nev);
+                comboboxTelephelyek.Items.Add(element);
+            }
+
+            comboboxTelephelyek.ValueMember = "Name";
+            comboboxTelephelyek.SelectedIndex = 0;
+
+            return comboboxTelephelyek;
+        }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Data update ----------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void UpdateMiscJoinedDataBaseData()
         {
+            // Get Telephelyek -------------
             string t = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Telephelyek;
             List<Telephelyek> T = new List<Telephelyek>();
             if (t != null)
@@ -98,6 +116,7 @@ namespace NyilvForms
             }
             ((JoinedDatabase)joinedDatabaseBindingSource.Current).TelephelyekList = T;
 
+            // Get Szekhely -------------
             int? id = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Szekhely;
             Telephelyek Sz = new Telephelyek();
             if (id != null)
@@ -107,6 +126,16 @@ namespace NyilvForms
                 Sz = GetTelephelyek(szekhely).FirstOrDefault();
             }
             ((JoinedDatabase)joinedDatabaseBindingSource.Current).SzekhelyData = Sz;
+
+            // Get CegesSzemelyek -------------
+            string ugyv = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Ugyvez_tagok;
+            List<CegesSzemelyek> Ugyv = new List<CegesSzemelyek>();
+            if (ugyv != null)
+            {
+                List<int> szemelyek = MyXmlParser.Xml2IntList(ugyv, XmlConstants.CegesSzemelyekTag, XmlConstants.CegesSzemelyekCollection);
+                Ugyv = GetCegesSzemelyek(szemelyek);
+            }
+            ((JoinedDatabase)joinedDatabaseBindingSource.Current).CegesSzemelyekList = Ugyv;
         }
 
 
@@ -144,7 +173,22 @@ namespace NyilvForms
             datafield.Find(c => c.Number == 6).DataObj.Text = currentTelep.Mettol.ToString();
             datafield.Find(c => c.Number == 7).DataObj.Text = currentTelep.Meddig.ToString();
         }
+        void ComboboxCegesSzemelyekChangeHandler(object current)
+        {
+            string currentNev = current as string;
+            CegesSzemelyek currentSzemely = ((JoinedDatabase)joinedDatabaseBindingSource.Current).CegesSzemelyekList
+                .Find(x => x.Nev == currentNev);
 
+            datafield.Find(c => c.Number == 2).DataObj.Text = currentSzemely.Nev;
+            datafield.Find(c => c.Number == 3).DataObj.Text = currentSzemely.Taj.ToString();
+            datafield.Find(c => c.Number == 4).DataObj.Text = currentSzemely.Szul_Ido.ToString();
+            datafield.Find(c => c.Number == 5).DataObj.Text = currentSzemely.Anyja;
+            datafield.Find(c => c.Number == 6).DataObj.Text = currentSzemely.Cime;
+            datafield.Find(c => c.Number == 7).DataObj.Text = currentSzemely.Adoazon.ToString();
+            datafield.Find(c => c.Number == 8).DataObj.Text = currentSzemely.Mettol.ToString();
+            datafield.Find(c => c.Number == 9).DataObj.Text = currentSzemely.Meddig.ToString();
+            datafield.Find(c => c.Number == 10).DataObj.Text = currentSzemely.Megbizas_minosege;
+        }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Error handling ----------------------------------------------------------------------------------------------------------------------------------------------

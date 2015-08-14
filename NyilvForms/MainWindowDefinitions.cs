@@ -49,7 +49,7 @@ namespace NyilvForms
                 this.Data = new TextBox();
                 this.Data.Location = data;
                 this.Data.Size = new Size(120, 20);
-                this.Data.Anchor = ( AnchorStyles.Right | AnchorStyles.Left);
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                 if (value != null)
                 {
@@ -95,7 +95,7 @@ namespace NyilvForms
                Data.SelectedItem = list.Where(c => c.Name == (value as string)).FirstOrDefault();
 
                DataObj = (Control)Data;
-               this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
+               this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                //Events
                if (handlerFunction != null)
@@ -116,7 +116,7 @@ namespace NyilvForms
                 Data.Size = new Size(120, 20);
 
                 DataObj = (Control)Data;
-                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                 //Events
                 if (handlerFunction != null)
@@ -143,7 +143,7 @@ namespace NyilvForms
                 this.Data = new DateTimePicker();
                 this.Data.Location = data;
                 this.Data.Size = new Size(120, 20);
-                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left);
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                 if (value != null)
                 {

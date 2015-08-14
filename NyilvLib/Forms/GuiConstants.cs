@@ -232,6 +232,66 @@ namespace NyilvLib.Forms
         }
         //---------------------------------------------------
 
+        //---------------------------------------------------
+        // CegesSzemelyek
+
+        public static class CegesSzemely_Nev
+        {
+            public const string Name = "CegesSzemely_Nev";
+            public const string Text = "Név";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Taj
+        {
+            public const string Name = "CegesSzemely_Taj";
+            public const string Text = "TAJ szám";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Szul_Ido
+        {
+            public const string Name = "CegesSzemely_Szul_Ido";
+            public const string Text = "Születési idő";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Anyja
+        {
+            public const string Name = "CegesSzemely_Anyja";
+            public const string Text = "Anyja neve";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Cime
+        {
+            public const string Name = "CegesSzemely_Cime";
+            public const string Text = "Címe";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Adoazon
+        {
+            public const string Name = "CegesSzemely_Adoazon";
+            public const string Text = "Adóazonosító";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Mettol
+        {
+            public const string Name = "CegesSzemely_Mettol";
+            public const string Text = "Mettől";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Meddig
+        {
+            public const string Name = "CegesSzemely_Meddig";
+            public const string Text = "Meddig";
+            public const int Group = 5;
+        }
+        public static class CegesSzemely_Megbizas_minosege
+        {
+            public const string Name = "CegesSzemely_Megbizas_minosege";
+            public const string Text = "Megbízás minősége";
+            public const int Group = 5;
+        }
+
+        //---------------------------------------------------
+
         public static string GetHeader(string s)
         {
             switch (s)

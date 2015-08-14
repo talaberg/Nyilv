@@ -10,5 +10,7 @@ namespace NyilvLib.Xml
     {
         public const string TelephelyTag = "Telephely";
         public const string TelephelyCollection = "Telephelyek";
+        public const string CegesSzemelyekTag = "Ugyvez_tag";
+        public const string CegesSzemelyekCollection = "Ugyvez_tagok";
     }
 }

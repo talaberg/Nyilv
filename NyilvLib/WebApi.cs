@@ -47,6 +47,13 @@ namespace NyilvLib
             public const string ControllerName = "ControllerGetTelephelyek";
             public static string ControllerUrl { get { return "/" + ControllerFormat; } }            
         }
+        public static class GetCegesSzemelyek
+        {
+            public const string ControllerFormat = "api/GetCegesSzemelyek";
+            public const string ControllerName = "ControllerGetGetCegesSzemelyek";
+            public static string ControllerUrl { get { return "/" + ControllerFormat; } }            
+        }
+        
         public static class FindAlapadat
         {
             public const string ControllerFormat = "api/Alapadatok/find";

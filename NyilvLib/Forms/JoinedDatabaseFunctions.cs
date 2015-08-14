@@ -50,6 +50,7 @@ namespace NyilvLib
             Container = null;
             TelephelyekList = null;
             SzekhelyData = null;
+            CegesSzemelyekList = null;
         }
 
         public void SetData()
@@ -94,6 +95,7 @@ namespace NyilvLib
             Container = null;
             TelephelyekList = null;
             SzekhelyData = null;
+            CegesSzemelyekList = null;
         }
         private Alapadatok GetAlapadatok()
         {

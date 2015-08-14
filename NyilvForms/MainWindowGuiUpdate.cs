@@ -115,10 +115,10 @@ namespace NyilvForms
                     datafield.Add(new DateTimeDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.Telephely_Mettol.Text, szekhely.Mettol));
                     datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.Telephely_Meddig.Text, szekhely.Meddig));
 
-                    ComboBox c = ComboBoxTelephelyekInit(currentDataSource.TelephelyekList);
-                    var currentTelep = currentDataSource.TelephelyekList.Find(x => x.TelepID == ((ComboboxItem)c.SelectedItem).ID);
+                    ComboBox comTelepek = ComboBoxTelephelyekInit(currentDataSource.TelephelyekList);
+                    var currentTelep = currentDataSource.TelephelyekList.Find(x => x.TelepID == ((ComboboxItem)comTelepek.SelectedItem).ID);
 
-                    datafield.Add(new ComboBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Telephelyek.Text, c,new ComboboxChangeHandlerDelegate(ComboboxTelephelyekChangeHandler)));
+                    datafield.Add(new ComboBoxDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.Telephelyek.Text, comTelepek, new ComboboxChangeHandlerDelegate(ComboboxTelephelyekChangeHandler)));
                     datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.Telephely_Cim.Text, currentTelep.Cim));
                     datafield.Add(new DateTimeDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.Telephely_Mettol.Text, currentTelep.Mettol));
                     datafield.Add(new DateTimeDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.Telephely_Meddig.Text, currentTelep.Meddig));
@@ -127,7 +127,19 @@ namespace NyilvForms
                     datafield.Add(new TextBoxDataField(9, GetControlPos(9), GetLabelPos(9), GuiConstants.Jelszo.Text, currentDataSource.Jelszo));
                     break;
                 case 5:
-                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Ugyvez_tagok.Text, currentDataSource.Ugyvez_tagok));
+                    ComboBox comSzemelyek = ComboBoxCegesSzemelyekInit(currentDataSource.CegesSzemelyekList);
+                    var currentSzemely = currentDataSource.CegesSzemelyekList.Find(x => x.CegSzemID == ((ComboboxItem)comSzemelyek.SelectedItem).ID);
+
+                    datafield.Add(new ComboBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Ugyvez_tagok.Text, comSzemelyek, new ComboboxChangeHandlerDelegate(ComboboxCegesSzemelyekChangeHandler)));
+                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), GuiConstants.CegesSzemely_Nev.Text, currentSzemely.Nev));
+                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), GuiConstants.CegesSzemely_Taj.Text, currentSzemely.Taj));
+                    datafield.Add(new DateTimeDataField(4, GetControlPos(4), GetLabelPos(4), GuiConstants.CegesSzemely_Szul_Ido.Text, currentSzemely.Szul_Ido));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), GuiConstants.CegesSzemely_Anyja.Text, currentSzemely.Anyja));
+                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), GuiConstants.CegesSzemely_Cime.Text, currentSzemely.Cime));
+                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), GuiConstants.CegesSzemely_Adoazon.Text, currentSzemely.Adoazon));
+                    datafield.Add(new DateTimeDataField(8, GetControlPos(8), GetLabelPos(8), GuiConstants.CegesSzemely_Mettol.Text, currentSzemely.Mettol));
+                    datafield.Add(new DateTimeDataField(9, GetControlPos(9), GetLabelPos(9), GuiConstants.CegesSzemely_Meddig.Text, currentSzemely.Meddig));
+                    datafield.Add(new TextBoxDataField(10, GetControlPos(10), GetLabelPos(10), GuiConstants.CegesSzemely_Megbizas_minosege.Text, currentSzemely.Megbizas_minosege));
                     break;
                 case 6:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GuiConstants.Toke.Text, currentDataSource.Toke));

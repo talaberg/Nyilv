@@ -104,6 +104,23 @@ namespace NyilvForms
                 return null;
             }
         }
+        List<CegesSzemelyek> GetCegesSzemelyek(List<int> ids)
+        {
+            var x = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetCegesSzemelyek.ControllerUrl, ids);
+            var resp = x.Result;
+
+
+            if (resp.StatusCode == HttpStatusCode.OK)
+            {
+                var adat = resp.Content.ReadAsAsync<List<CegesSzemelyek>>().Result;
+
+                return adat;
+            }
+            else
+            {
+                return null;
+            }
+        }
                 void UpdateDatabase(Alapadatok data)
         {
 
