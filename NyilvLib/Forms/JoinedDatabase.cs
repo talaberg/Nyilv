@@ -17,6 +17,8 @@ namespace NyilvLib
         public Telephelyek SzekhelyData { get; set; }
         public List<CegesSzemelyek> CegesSzemelyekList { get; set; }
 
+        public Inaktiv_idoszakok Inaktiv_idoszakokList { get; set; }
+
         //-------------------------------------------------------
         //Alapadatok
         public int CegID { get; set; }

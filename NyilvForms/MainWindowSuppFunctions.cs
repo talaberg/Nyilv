@@ -79,26 +79,53 @@ namespace NyilvForms
             }
 
             comboboxTelephelyek.ValueMember = "Name";
-            comboboxTelephelyek.SelectedIndex = 0;
-
+            if (T.Count != 0)
+            {
+                comboboxTelephelyek.SelectedIndex = 0;
+            }
             return comboboxTelephelyek;
         }
         ComboBox ComboBoxCegesSzemelyekInit(List<CegesSzemelyek> T)
         {
-            ComboBox comboboxTelephelyek = new ComboBox();
+            ComboBox comboboxCegesSzemelyek = new ComboBox();
 
-            comboboxTelephelyek.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboboxCegesSzemelyek.DropDownStyle = ComboBoxStyle.DropDownList;
 
             foreach (var t in T)
             {
                 var element = new ComboboxItem(t.CegSzemID, t.Nev);
-                comboboxTelephelyek.Items.Add(element);
+                comboboxCegesSzemelyek.Items.Add(element);
             }
 
-            comboboxTelephelyek.ValueMember = "Name";
-            comboboxTelephelyek.SelectedIndex = 0;
+            comboboxCegesSzemelyek.ValueMember = "Name";
+            if (T.Count != 0)
+            {
+                comboboxCegesSzemelyek.SelectedIndex = 0;
+            }
 
-            return comboboxTelephelyek;
+            return comboboxCegesSzemelyek;
+        }
+
+        ComboBox ComboBoxInaktiv_idoszakokInit(Inaktiv_idoszakok T)
+        {
+            ComboBox comboboxInaktiv = new ComboBox();
+
+            comboboxInaktiv.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (var t in T.Inaktiv_idoszak)
+            {
+                string toShow = t.Intervallum;
+                var element = new ComboboxItem(t.Id, toShow);
+
+                comboboxInaktiv.Items.Add(element);
+            }
+
+            comboboxInaktiv.ValueMember = "Name";
+            if (T.Inaktiv_idoszak.Count != 0)
+            {
+                comboboxInaktiv.SelectedIndex = 0;
+            }
+            return comboboxInaktiv;
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -136,6 +163,15 @@ namespace NyilvForms
                 Ugyv = GetCegesSzemelyek(szemelyek);
             }
             ((JoinedDatabase)joinedDatabaseBindingSource.Current).CegesSzemelyekList = Ugyv;
+
+            // Get Inaktiv_idoszakok -------------
+            if (((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakok != null)
+            {
+                string inaktiv_xml = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakok;
+                ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakokList.Parse(inaktiv_xml);                
+            }
+            
+
         }
 
 
@@ -188,6 +224,15 @@ namespace NyilvForms
             datafield.Find(c => c.Number == 8).DataObj.Text = currentSzemely.Mettol.ToString();
             datafield.Find(c => c.Number == 9).DataObj.Text = currentSzemely.Meddig.ToString();
             datafield.Find(c => c.Number == 10).DataObj.Text = currentSzemely.Megbizas_minosege;
+        }
+        void ComboboxInaktiv_idoszakokChangeHandler(object current)
+        {
+            string currentIdo = current as string;
+            Inaktiv_idoszak currentIdoszak = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakokList.Inaktiv_idoszak
+                .Find(x => x.Intervallum == currentIdo);
+
+            datafield.Find(c => c.Number == 2).DataObj.Text = currentIdoszak.Mettol.ToString();
+            datafield.Find(c => c.Number == 3).DataObj.Text = currentIdoszak.Meddig.ToString();
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -280,6 +325,17 @@ namespace NyilvForms
         Point GetControlPos(int controlNum)
         {
             return new Point(Defines.CONTROL_XPOS_BASE, (Defines.CONTROL_YPOS_BASE + --controlNum * Defines.CONTROL_YPOS_STEP));
+        }
+        Size GetControlSize()
+        {
+            Size s = new Size(0,Defines.CONTROL_HEIGHT);
+
+            if (panelCegAdat.Width.CompareTo(Defines.CONTROL_XPOS_BASE) > 0)
+	        {
+                s = new Size(panelCegAdat.Width - Defines.CONTROL_XPOS_BASE - Defines.CONTROL_MARGIN, Defines.CONTROL_HEIGHT);
+	        }
+
+            return s;
         }
         
     }

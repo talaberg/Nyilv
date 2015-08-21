@@ -64,6 +64,7 @@
     <Compile Include="Entities\Munkatarsak.cs" />
     <Compile Include="Entities\Telephelyek.cs" />
     <Compile Include="Entities\Tevekenysegek.cs" />
+    <Compile Include="Forms\ClassDefinitions.cs" />
     <Compile Include="Forms\GuiConstants.cs" />
     <Compile Include="Forms\JoinedDatabaseFunctions.cs" />
     <Compile Include="Forms\JoinedDatabase.cs" />

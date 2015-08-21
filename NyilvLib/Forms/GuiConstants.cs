@@ -289,7 +289,22 @@ namespace NyilvLib.Forms
             public const string Text = "Megbízás minősége";
             public const int Group = 5;
         }
+        //---------------------------------------------------
 
+        //---------------------------------------------------
+        // Inaktiv idoszakok
+        public static class Inaktiv_idoszakok_Mettol
+        {
+            public const string Name = "Mettol";
+            public const string Text = "Mettől";
+            public const int Group = 7;
+        }
+        public static class Inaktiv_idoszakok_Meddig
+        {
+            public const string Name = "Meddig";
+            public const string Text = "Meddig";
+            public const int Group = 7;
+        }
         //---------------------------------------------------
 
         public static string GetHeader(string s)

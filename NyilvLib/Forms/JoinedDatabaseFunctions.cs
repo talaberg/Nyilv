@@ -13,46 +13,12 @@ namespace NyilvLib
     {
         public JoinedDatabase()
         {
+            Container = new Alapadatok();
+            TelephelyekList = new List<Entities.Telephelyek>();
+            SzekhelyData = new Entities.Telephelyek();
+            CegesSzemelyekList = new List<CegesSzemelyek>();
+            Inaktiv_idoszakokList = new Inaktiv_idoszakok();
         }
-        public JoinedDatabase(string s)
-        {
-            CegID = -1;
-            Azonosito = null;
-            Cegnev = s;
-            Adoszam = s;
-            Ceg_forma = s;
-            Stat_szamjel = s;
-            EU_adoszam = s;
-            Cegjegyzek_szam = s;
-            Nyilv_szam = s;
-            Szerzodott_AZNAP_ceg = s;
-            Email = s;
-            Hosszunev = s;
-            Megalakulas = null;
-            Bejegyzes = null;
-            Fotevekenyseg = null;
-            Tevekenyseg = s;
-            Tevekenyseg_vege = null;
-            Szekhely = null;
-            Telephelyek = null;
-            Felhasznalonev = s;
-            Jelszo = s;
-            Ugyvez_tagok = s;
-            Toke = null;
-            Nyilvantarto_birosag = s;
-            Ugyszam = s;
-            Birosagi_hatarozat_szam = s;
-            Kozhasznusag_fokozat = s;
-            Inaktiv_idoszakok = s;
-            Felfuggesztett = null;
-            Egyeb_adatok = s;
-
-            Container = null;
-            TelephelyekList = null;
-            SzekhelyData = null;
-            CegesSzemelyekList = null;
-        }
-
         public void SetData()
         {
             SetAlapadatok();
@@ -96,6 +62,8 @@ namespace NyilvLib
             TelephelyekList = null;
             SzekhelyData = null;
             CegesSzemelyekList = null;
+            Inaktiv_idoszakokList = new Inaktiv_idoszakok();
+            Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
         }
         private Alapadatok GetAlapadatok()
         {

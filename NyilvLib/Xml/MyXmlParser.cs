@@ -84,5 +84,26 @@ namespace NyilvLib.Xml
 
             return Li;
         }
+
+        public static string Class2Xml<T>(T myClass)
+        {
+            XmlSerializer x = new XmlSerializer(myClass.GetType());
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("", "");
+            
+            var settings = new XmlWriterSettings()
+            {
+                OmitXmlDeclaration = true, ConformanceLevel = ConformanceLevel.Auto, Indent = true 
+            };
+
+            using(StringWriter sW = new StringWriter())
+            using (XmlWriter xw = XmlWriter.Create(sW, settings))
+            {
+                x.Serialize(xw, myClass, ns);
+
+                return sW.ToString();
+            }
+        }
+
     }
 }

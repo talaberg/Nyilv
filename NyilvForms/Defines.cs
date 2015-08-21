@@ -8,6 +8,8 @@ namespace NyilvForms
 {
     public static class Defines
     {
+        public const int CONTROL_HEIGHT = 20;
+        public const int CONTROL_MARGIN = 10;
         public const int CONTROL_XPOS_BASE = 125;
         public const int CONTROL_YPOS_BASE = 30;
         public const int CONTROL_YPOS_STEP = 35;

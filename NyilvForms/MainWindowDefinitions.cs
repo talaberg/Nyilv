@@ -15,9 +15,18 @@ namespace NyilvForms
         enum ImportCaller { Ceg, Dokumentum };  // Enum for importcommand
         class ComboboxItem
         {
-            public ComboboxItem(int id, string name) { ID = id; Name = name; }
             public int ID { get; set; }
             public string Name { get; set; }
+
+            public ComboboxItem(int id, string name) { ID = id; Name = name; }
+
+            public ComboboxItem(Guid id, string name)
+            {
+                byte [] bt = id.ToByteArray();
+                ID = BitConverter.ToInt32(bt,0);
+                Name = name;
+            }
+
             public override string ToString() { return Name; }
         }
 
@@ -43,12 +52,12 @@ namespace NyilvForms
         {
 
            public TextBox Data { get; set; }
-            public TextBoxDataField(int num, Point data, Point label, string name, object value)
+           public TextBoxDataField(int num, Point data, Point label, Size size, string name, object value)
                 : base(label,num,name)
             {
                 this.Data = new TextBox();
                 this.Data.Location = data;
-                this.Data.Size = new Size(120, 20);
+                this.Data.Size = size;
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                 if (value != null)
@@ -77,14 +86,14 @@ namespace NyilvForms
         {
             public ComboBox Data { get; set; }
             ComboboxChangeHandlerDelegate handler;
-            public ComboBoxDataField(int num, Point data, Point label, string Name, List<ComboboxItem> list, object value, ComboboxChangeHandlerDelegate handlerFunction = null)
+            public ComboBoxDataField(int num, Point data, Point label, Size size , string Name, List<ComboboxItem> list, object value, ComboboxChangeHandlerDelegate handlerFunction = null)
                 : base(label, num,Name)
             {
                Data = new ComboBox
                     {
                        
                         Location = data,
-                        Size = new Size(120, 20), 
+                        Size = size, 
                         
                     };
                foreach (var item in list)
@@ -108,12 +117,12 @@ namespace NyilvForms
 
 
 
-            public ComboBoxDataField(int num, Point data, Point label, string Name, ComboBox c, ComboboxChangeHandlerDelegate handlerFunction = null)
+            public ComboBoxDataField(int num, Point data, Point label, Size size, string Name, ComboBox c, ComboboxChangeHandlerDelegate handlerFunction = null)
                 : base(label, num, Name)
             {
                 Data = c;
                 Data.Location = data;
-                Data.Size = new Size(120, 20);
+                Data.Size = size;
 
                 DataObj = (Control)Data;
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
@@ -137,12 +146,12 @@ namespace NyilvForms
         {
 
             public DateTimePicker Data { get; set; }
-            public DateTimeDataField(int num, Point data, Point label, string name, object value)
+            public DateTimeDataField(int num, Point data, Point label, Size size, string name, object value)
                 : base(label, num, name)
             {
                 this.Data = new DateTimePicker();
                 this.Data.Location = data;
-                this.Data.Size = new Size(120, 20);
+                this.Data.Size = size;
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                 if (value != null)
@@ -152,6 +161,10 @@ namespace NyilvForms
                     if (value is string)
                     {
                         this.Data.Text = value as string;
+                    }
+                    else if (value is DateTime)
+                    {
+                        this.Data.Text = ((DateTime)value).ToShortDateString();
                     }
                     else
                     {
