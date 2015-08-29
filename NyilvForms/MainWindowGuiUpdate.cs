@@ -170,7 +170,7 @@ namespace NyilvForms
                     datafield.Add(new DateTimeDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Inaktiv_idoszakok_Mettol.Text, currentInaktiv_ido.Mettol));
                     datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Inaktiv_idoszakok_Meddig.Text, currentInaktiv_ido.Meddig));
 
-                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Felfuggesztett.Text, currentDataSource.Felfuggesztett));
+                    datafield.Add(new CheckBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Felfuggesztett.Text, currentDataSource.Felfuggesztett));
                     break;
                 case 8:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Egyeb_adatok.Text, currentDataSource.Egyeb_adatok));

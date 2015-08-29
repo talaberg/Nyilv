@@ -181,6 +181,29 @@ namespace NyilvForms
             }
         }
 
+        class CheckBoxDataField : ObjectDataField
+        {
+
+            public CheckBox Data { get; set; }
+            public CheckBoxDataField(int num, Point data, Point label, Size size, string name, object value)
+                : base(label, num, name)
+            {
+                this.Data = new CheckBox();
+                this.Data.Location = data;
+                this.Data.Size = size;
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+
+                if (value != null)
+                {
+                    this.Data.Checked = (bool)value;
+                }
+                else
+                {
+                    this.Data.Checked = false;
+                }
+                DataObj = (Control)Data;
+            }
+        }
 
 
         //Delegate for comboboxChanged events
