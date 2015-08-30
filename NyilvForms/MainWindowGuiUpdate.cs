@@ -45,6 +45,20 @@ namespace NyilvForms
             }
         }
 
+        private void UpdateCegFormak()
+        {
+            cegFormak.Clear();
+
+            cegFormak.Add(new ComboboxItem(0, ""));
+
+            int i = 1;
+
+            foreach (var cegForma in Constants.CegesFormak.CegesFormakList)
+            {
+                cegFormak.Add(new ComboboxItem(i++, cegForma));
+            }
+        }
+
         private void UpdateDokumentumokField(List<Dokumentumok> documents)
         {
             throw new NotImplementedException();
@@ -91,11 +105,13 @@ namespace NyilvForms
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Azonosito.Text, currentDataSource.Azonosito));
                     datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Cegnev.Text, currentDataSource.Cegnev));
                     datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Adoszam.Text, currentDataSource.Adoszam));
+                    datafield.Add(new ComboBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Ceg_forma.Text, cegFormak, currentDataSource.Ceg_forma));
                     datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Ceg_forma.Text, currentDataSource.Ceg_forma));
                     datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.Stat_szamjel.Text, currentDataSource.Stat_szamjel));
                     datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.EU_adoszam.Text, currentDataSource.EU_adoszam));
                     datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Cegjegyzek_szam.Text, currentDataSource.Cegjegyzek_szam));
                     datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.Nyilv_szam.Text, currentDataSource.Nyilv_szam));
+                    
                     break;
                 case 2:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Szerzodott_AZNAP_ceg.Text, currentDataSource.Nyilv_szam));

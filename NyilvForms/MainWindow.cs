@@ -36,6 +36,7 @@ namespace NyilvForms
 
         List<ObjectDataField> datafield;
         List<ComboboxItem> munkatarsak;
+        List<ComboboxItem> cegFormak;
 
         ConfigHandler myConfig;
 
@@ -76,6 +77,9 @@ namespace NyilvForms
             //combobox update
             munkatarsak = new List<ComboboxItem>();
             UpdateMunkatarsak();
+
+            cegFormak = new List<ComboboxItem>();
+            UpdateCegFormak();
         }
 
         //      Main menu events ----------------------------------------------------------------------------------------------------------------------------------------

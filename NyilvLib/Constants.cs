@@ -22,6 +22,27 @@ namespace NyilvLib
             public const string TARSASHAZ = "Társasház";
             public const string LAKASZOVETKEZET = "Lakásszövetkezet";
             public const string EGYEB = "Egyéb";
+
+            public static List<string> CegesFormakList
+            {
+                get
+                {
+                    var lst = new List<string>();
+
+                    lst.Add(CegesFormak.ZRT);
+                    lst.Add(CegesFormak.NYRT);
+                    lst.Add(CegesFormak.KFT);
+                    lst.Add(CegesFormak.BT);
+                    lst.Add(CegesFormak.EGYENI);
+                    lst.Add(CegesFormak.ALAPITVANY);
+                    lst.Add(CegesFormak.EGYESULET);
+                    lst.Add(CegesFormak.TARSASHAZ);
+                    lst.Add(CegesFormak.LAKASZOVETKEZET);
+                    lst.Add(CegesFormak.EGYEB);
+
+                    return lst;
+                }
+            }
         }
              
     }
