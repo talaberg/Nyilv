@@ -339,7 +339,7 @@
     <value>0, 0</value>
   </data>
   <data name="alapadatokBindingNavigator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>718, 25</value>
+    <value>687, 25</value>
   </data>
   <data name="alapadatokBindingNavigator.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -477,7 +477,7 @@
     <value>0, 0</value>
   </data>
   <data name="alapadatokDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>718, 431</value>
+    <value>687, 431</value>
   </data>
   <data name="alapadatokDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -507,7 +507,7 @@
     <value>1</value>
   </data>
   <data name="splitContainerBalOldal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>718, 467</value>
+    <value>687, 467</value>
   </data>
   <data name="splitContainerBalOldal.SplitterDistance" type="System.Int32, mscorlib">
     <value>32</value>
@@ -564,7 +564,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelCegAdat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 412</value>
+    <value>298, 412</value>
   </data>
   <data name="panelCegAdat.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -603,7 +603,7 @@
     <value>0, 0</value>
   </data>
   <data name="treeViewDokumentumok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 51</value>
+    <value>298, 51</value>
   </data>
   <data name="treeViewDokumentumok.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -633,7 +633,7 @@
     <value>1</value>
   </data>
   <data name="splitContainerJobbOldal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 467</value>
+    <value>298, 467</value>
   </data>
   <data name="splitContainerJobbOldal.SplitterDistance" type="System.Int32, mscorlib">
     <value>412</value>
@@ -669,7 +669,7 @@
     <value>989, 467</value>
   </data>
   <data name="splitContainerAdatok.SplitterDistance" type="System.Int32, mscorlib">
-    <value>718</value>
+    <value>687</value>
   </data>
   <data name="splitContainerAdatok.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2139,6 +2139,9 @@
         AAAAAD////////+AAAAAAAAAAAB///////8=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 300</value>
   </data>
@@ -2216,6 +2219,84 @@
   </data>
   <data name="&gt;&gt;toolStripButtonEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fajlToolStripMenuItem.Name" xml:space="preserve">
+    <value>fajlToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;fajlToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;importalasToolStripMenuItem.Name" xml:space="preserve">
+    <value>importalasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;importalasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Name" xml:space="preserve">
+    <value>dokumentumokImportalasaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kilepesToolStripMenuItem.Name" xml:space="preserve">
+    <value>kilepesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;kilepesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eszközökToolStripMenuItem.Name" xml:space="preserve">
+    <value>eszközökToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;eszközökToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aremelesToolStripMenuItem.Name" xml:space="preserve">
+    <value>aremelesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aremelesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Name" xml:space="preserve">
+    <value>csatlakozasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ofdImport.Name" xml:space="preserve">
+    <value>ofdImport</value>
+  </data>
+  <data name="&gt;&gt;ofdImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Name" xml:space="preserve">
+    <value>hozzáadásToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modositasToolStripMenuItem.Name" xml:space="preserve">
+    <value>modositasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;modositasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Name" xml:space="preserve">
+    <value>eltavolitasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;joinedDatabaseBindingSource.Name" xml:space="preserve">
+    <value>joinedDatabaseBindingSource</value>
+  </data>
+  <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;azonositoDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>azonositoDataGridViewTextBoxColumn</value>
@@ -2395,91 +2476,13 @@
     <value>felfuggesztettDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;felfuggesztettDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;egyebadatokDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>egyebadatokDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;egyebadatokDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;joinedDatabaseBindingSource.Name" xml:space="preserve">
-    <value>joinedDatabaseBindingSource</value>
-  </data>
-  <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fajlToolStripMenuItem.Name" xml:space="preserve">
-    <value>fajlToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;fajlToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;importalasToolStripMenuItem.Name" xml:space="preserve">
-    <value>importalasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;importalasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Name" xml:space="preserve">
-    <value>dokumentumokImportalasaToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;dokumentumokImportalasaToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;kilepesToolStripMenuItem.Name" xml:space="preserve">
-    <value>kilepesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;kilepesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eszközökToolStripMenuItem.Name" xml:space="preserve">
-    <value>eszközökToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;eszközökToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aremelesToolStripMenuItem.Name" xml:space="preserve">
-    <value>aremelesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;aremelesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Name" xml:space="preserve">
-    <value>csatlakozasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;csatlakozasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ofdImport.Name" xml:space="preserve">
-    <value>ofdImport</value>
-  </data>
-  <data name="&gt;&gt;ofdImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Name" xml:space="preserve">
-    <value>hozzáadásToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;hozzáadásToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;modositasToolStripMenuItem.Name" xml:space="preserve">
-    <value>modositasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;modositasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Name" xml:space="preserve">
-    <value>eltavolitasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;eltavolitasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
-    <value>errorProvider</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

@@ -45,6 +45,33 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.alapadatokDataGridView = new System.Windows.Forms.DataGridView();
+            this.splitContainerAdatok = new System.Windows.Forms.SplitContainer();
+            this.splitContainerJobbOldal = new System.Windows.Forms.SplitContainer();
+            this.panelCegAdat = new System.Windows.Forms.Panel();
+            this.treeViewDokumentumok = new System.Windows.Forms.TreeView();
+            this.btFind = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fajlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dokumentumokImportalasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eszközökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aremelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.csatlakozasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdImport = new System.Windows.Forms.OpenFileDialog();
+            this.buttonLoadAll = new System.Windows.Forms.Button();
+            this.panelGombok = new System.Windows.Forms.Panel();
+            this.comboBoxFindCondiditon = new System.Windows.Forms.ComboBox();
+            this.comboBoxFindElement = new System.Windows.Forms.ComboBox();
+            this.labelCegKeres = new System.Windows.Forms.Label();
+            this.textBoxFind = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanelWorkspace = new System.Windows.Forms.TableLayoutPanel();
+            this.contextMenuDokumentumokNode = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.hozzáadásToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modositasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eltavolitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.joinedDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.azonositoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cegnevDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adoszamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,35 +101,8 @@
             this.birosagihatarozatszamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kozhasznusagfokozatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inaktividoszakokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.felfuggesztettDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.felfuggesztettDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.egyebadatokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.joinedDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.splitContainerAdatok = new System.Windows.Forms.SplitContainer();
-            this.splitContainerJobbOldal = new System.Windows.Forms.SplitContainer();
-            this.panelCegAdat = new System.Windows.Forms.Panel();
-            this.treeViewDokumentumok = new System.Windows.Forms.TreeView();
-            this.btFind = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fajlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importalasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dokumentumokImportalasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eszközökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aremelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.csatlakozasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ofdImport = new System.Windows.Forms.OpenFileDialog();
-            this.buttonLoadAll = new System.Windows.Forms.Button();
-            this.panelGombok = new System.Windows.Forms.Panel();
-            this.comboBoxFindCondiditon = new System.Windows.Forms.ComboBox();
-            this.comboBoxFindElement = new System.Windows.Forms.ComboBox();
-            this.labelCegKeres = new System.Windows.Forms.Label();
-            this.textBoxFind = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelWorkspace = new System.Windows.Forms.TableLayoutPanel();
-            this.contextMenuDokumentumokNode = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.hozzáadásToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modositasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eltavolitasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerBalOldal)).BeginInit();
             this.splitContainerBalOldal.Panel1.SuspendLayout();
             this.splitContainerBalOldal.Panel2.SuspendLayout();
@@ -110,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokBindingNavigator)).BeginInit();
             this.alapadatokBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdatok)).BeginInit();
             this.splitContainerAdatok.Panel1.SuspendLayout();
             this.splitContainerAdatok.Panel2.SuspendLayout();
@@ -124,6 +123,7 @@
             this.tableLayoutPanelWorkspace.SuspendLayout();
             this.contextMenuDokumentumokNode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerBalOldal
@@ -276,196 +276,6 @@
             this.alapadatokDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_CellValueChanged);
             this.alapadatokDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
             this.alapadatokDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.alapadatokDataGridView_RowEnter);
-            // 
-            // azonositoDataGridViewTextBoxColumn
-            // 
-            this.azonositoDataGridViewTextBoxColumn.DataPropertyName = "Azonosito";
-            resources.ApplyResources(this.azonositoDataGridViewTextBoxColumn, "azonositoDataGridViewTextBoxColumn");
-            this.azonositoDataGridViewTextBoxColumn.Name = "azonositoDataGridViewTextBoxColumn";
-            // 
-            // cegnevDataGridViewTextBoxColumn
-            // 
-            this.cegnevDataGridViewTextBoxColumn.DataPropertyName = "Cegnev";
-            resources.ApplyResources(this.cegnevDataGridViewTextBoxColumn, "cegnevDataGridViewTextBoxColumn");
-            this.cegnevDataGridViewTextBoxColumn.Name = "cegnevDataGridViewTextBoxColumn";
-            // 
-            // adoszamDataGridViewTextBoxColumn
-            // 
-            this.adoszamDataGridViewTextBoxColumn.DataPropertyName = "Adoszam";
-            resources.ApplyResources(this.adoszamDataGridViewTextBoxColumn, "adoszamDataGridViewTextBoxColumn");
-            this.adoszamDataGridViewTextBoxColumn.Name = "adoszamDataGridViewTextBoxColumn";
-            // 
-            // cegformaDataGridViewTextBoxColumn
-            // 
-            this.cegformaDataGridViewTextBoxColumn.DataPropertyName = "Ceg_forma";
-            resources.ApplyResources(this.cegformaDataGridViewTextBoxColumn, "cegformaDataGridViewTextBoxColumn");
-            this.cegformaDataGridViewTextBoxColumn.Name = "cegformaDataGridViewTextBoxColumn";
-            // 
-            // statszamjelDataGridViewTextBoxColumn
-            // 
-            this.statszamjelDataGridViewTextBoxColumn.DataPropertyName = "Stat_szamjel";
-            resources.ApplyResources(this.statszamjelDataGridViewTextBoxColumn, "statszamjelDataGridViewTextBoxColumn");
-            this.statszamjelDataGridViewTextBoxColumn.Name = "statszamjelDataGridViewTextBoxColumn";
-            // 
-            // eUadoszamDataGridViewTextBoxColumn
-            // 
-            this.eUadoszamDataGridViewTextBoxColumn.DataPropertyName = "EU_adoszam";
-            resources.ApplyResources(this.eUadoszamDataGridViewTextBoxColumn, "eUadoszamDataGridViewTextBoxColumn");
-            this.eUadoszamDataGridViewTextBoxColumn.Name = "eUadoszamDataGridViewTextBoxColumn";
-            // 
-            // cegjegyzekszamDataGridViewTextBoxColumn
-            // 
-            this.cegjegyzekszamDataGridViewTextBoxColumn.DataPropertyName = "Cegjegyzek_szam";
-            resources.ApplyResources(this.cegjegyzekszamDataGridViewTextBoxColumn, "cegjegyzekszamDataGridViewTextBoxColumn");
-            this.cegjegyzekszamDataGridViewTextBoxColumn.Name = "cegjegyzekszamDataGridViewTextBoxColumn";
-            // 
-            // nyilvszamDataGridViewTextBoxColumn
-            // 
-            this.nyilvszamDataGridViewTextBoxColumn.DataPropertyName = "Nyilv_szam";
-            resources.ApplyResources(this.nyilvszamDataGridViewTextBoxColumn, "nyilvszamDataGridViewTextBoxColumn");
-            this.nyilvszamDataGridViewTextBoxColumn.Name = "nyilvszamDataGridViewTextBoxColumn";
-            // 
-            // szerzodottAZNAPcegDataGridViewTextBoxColumn
-            // 
-            this.szerzodottAZNAPcegDataGridViewTextBoxColumn.DataPropertyName = "Szerzodott_AZNAP_ceg";
-            resources.ApplyResources(this.szerzodottAZNAPcegDataGridViewTextBoxColumn, "szerzodottAZNAPcegDataGridViewTextBoxColumn");
-            this.szerzodottAZNAPcegDataGridViewTextBoxColumn.Name = "szerzodottAZNAPcegDataGridViewTextBoxColumn";
-            // 
-            // felelos1DataGridViewTextBoxColumn
-            // 
-            this.felelos1DataGridViewTextBoxColumn.DataPropertyName = "Felelos1";
-            resources.ApplyResources(this.felelos1DataGridViewTextBoxColumn, "felelos1DataGridViewTextBoxColumn");
-            this.felelos1DataGridViewTextBoxColumn.Name = "felelos1DataGridViewTextBoxColumn";
-            // 
-            // felelos2DataGridViewTextBoxColumn
-            // 
-            this.felelos2DataGridViewTextBoxColumn.DataPropertyName = "Felelos2";
-            resources.ApplyResources(this.felelos2DataGridViewTextBoxColumn, "felelos2DataGridViewTextBoxColumn");
-            this.felelos2DataGridViewTextBoxColumn.Name = "felelos2DataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            resources.ApplyResources(this.emailDataGridViewTextBoxColumn, "emailDataGridViewTextBoxColumn");
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // hosszunevDataGridViewTextBoxColumn
-            // 
-            this.hosszunevDataGridViewTextBoxColumn.DataPropertyName = "Hosszunev";
-            resources.ApplyResources(this.hosszunevDataGridViewTextBoxColumn, "hosszunevDataGridViewTextBoxColumn");
-            this.hosszunevDataGridViewTextBoxColumn.Name = "hosszunevDataGridViewTextBoxColumn";
-            // 
-            // megalakulasDataGridViewTextBoxColumn
-            // 
-            this.megalakulasDataGridViewTextBoxColumn.DataPropertyName = "Megalakulas";
-            resources.ApplyResources(this.megalakulasDataGridViewTextBoxColumn, "megalakulasDataGridViewTextBoxColumn");
-            this.megalakulasDataGridViewTextBoxColumn.Name = "megalakulasDataGridViewTextBoxColumn";
-            // 
-            // bejegyzesDataGridViewTextBoxColumn
-            // 
-            this.bejegyzesDataGridViewTextBoxColumn.DataPropertyName = "Bejegyzes";
-            resources.ApplyResources(this.bejegyzesDataGridViewTextBoxColumn, "bejegyzesDataGridViewTextBoxColumn");
-            this.bejegyzesDataGridViewTextBoxColumn.Name = "bejegyzesDataGridViewTextBoxColumn";
-            // 
-            // fotevekenysegDataGridViewTextBoxColumn
-            // 
-            this.fotevekenysegDataGridViewTextBoxColumn.DataPropertyName = "Fotevekenyseg";
-            resources.ApplyResources(this.fotevekenysegDataGridViewTextBoxColumn, "fotevekenysegDataGridViewTextBoxColumn");
-            this.fotevekenysegDataGridViewTextBoxColumn.Name = "fotevekenysegDataGridViewTextBoxColumn";
-            // 
-            // tevekenysegDataGridViewTextBoxColumn
-            // 
-            this.tevekenysegDataGridViewTextBoxColumn.DataPropertyName = "Tevekenyseg";
-            resources.ApplyResources(this.tevekenysegDataGridViewTextBoxColumn, "tevekenysegDataGridViewTextBoxColumn");
-            this.tevekenysegDataGridViewTextBoxColumn.Name = "tevekenysegDataGridViewTextBoxColumn";
-            // 
-            // tevekenysegvegeDataGridViewTextBoxColumn
-            // 
-            this.tevekenysegvegeDataGridViewTextBoxColumn.DataPropertyName = "Tevekenyseg_vege";
-            resources.ApplyResources(this.tevekenysegvegeDataGridViewTextBoxColumn, "tevekenysegvegeDataGridViewTextBoxColumn");
-            this.tevekenysegvegeDataGridViewTextBoxColumn.Name = "tevekenysegvegeDataGridViewTextBoxColumn";
-            // 
-            // szekhelyDataGridViewTextBoxColumn
-            // 
-            this.szekhelyDataGridViewTextBoxColumn.DataPropertyName = "Szekhely";
-            resources.ApplyResources(this.szekhelyDataGridViewTextBoxColumn, "szekhelyDataGridViewTextBoxColumn");
-            this.szekhelyDataGridViewTextBoxColumn.Name = "szekhelyDataGridViewTextBoxColumn";
-            // 
-            // telephelyekDataGridViewTextBoxColumn
-            // 
-            this.telephelyekDataGridViewTextBoxColumn.DataPropertyName = "Telephelyek";
-            resources.ApplyResources(this.telephelyekDataGridViewTextBoxColumn, "telephelyekDataGridViewTextBoxColumn");
-            this.telephelyekDataGridViewTextBoxColumn.Name = "telephelyekDataGridViewTextBoxColumn";
-            // 
-            // felhasznalonevDataGridViewTextBoxColumn
-            // 
-            this.felhasznalonevDataGridViewTextBoxColumn.DataPropertyName = "Felhasznalonev";
-            resources.ApplyResources(this.felhasznalonevDataGridViewTextBoxColumn, "felhasznalonevDataGridViewTextBoxColumn");
-            this.felhasznalonevDataGridViewTextBoxColumn.Name = "felhasznalonevDataGridViewTextBoxColumn";
-            // 
-            // jelszoDataGridViewTextBoxColumn
-            // 
-            this.jelszoDataGridViewTextBoxColumn.DataPropertyName = "Jelszo";
-            resources.ApplyResources(this.jelszoDataGridViewTextBoxColumn, "jelszoDataGridViewTextBoxColumn");
-            this.jelszoDataGridViewTextBoxColumn.Name = "jelszoDataGridViewTextBoxColumn";
-            // 
-            // ugyveztagokDataGridViewTextBoxColumn
-            // 
-            this.ugyveztagokDataGridViewTextBoxColumn.DataPropertyName = "Ugyvez_tagok";
-            resources.ApplyResources(this.ugyveztagokDataGridViewTextBoxColumn, "ugyveztagokDataGridViewTextBoxColumn");
-            this.ugyveztagokDataGridViewTextBoxColumn.Name = "ugyveztagokDataGridViewTextBoxColumn";
-            // 
-            // tokeDataGridViewTextBoxColumn
-            // 
-            this.tokeDataGridViewTextBoxColumn.DataPropertyName = "Toke";
-            resources.ApplyResources(this.tokeDataGridViewTextBoxColumn, "tokeDataGridViewTextBoxColumn");
-            this.tokeDataGridViewTextBoxColumn.Name = "tokeDataGridViewTextBoxColumn";
-            // 
-            // nyilvantartobirosagDataGridViewTextBoxColumn
-            // 
-            this.nyilvantartobirosagDataGridViewTextBoxColumn.DataPropertyName = "Nyilvantarto_birosag";
-            resources.ApplyResources(this.nyilvantartobirosagDataGridViewTextBoxColumn, "nyilvantartobirosagDataGridViewTextBoxColumn");
-            this.nyilvantartobirosagDataGridViewTextBoxColumn.Name = "nyilvantartobirosagDataGridViewTextBoxColumn";
-            // 
-            // ugyszamDataGridViewTextBoxColumn
-            // 
-            this.ugyszamDataGridViewTextBoxColumn.DataPropertyName = "Ugyszam";
-            resources.ApplyResources(this.ugyszamDataGridViewTextBoxColumn, "ugyszamDataGridViewTextBoxColumn");
-            this.ugyszamDataGridViewTextBoxColumn.Name = "ugyszamDataGridViewTextBoxColumn";
-            // 
-            // birosagihatarozatszamDataGridViewTextBoxColumn
-            // 
-            this.birosagihatarozatszamDataGridViewTextBoxColumn.DataPropertyName = "Birosagi_hatarozat_szam";
-            resources.ApplyResources(this.birosagihatarozatszamDataGridViewTextBoxColumn, "birosagihatarozatszamDataGridViewTextBoxColumn");
-            this.birosagihatarozatszamDataGridViewTextBoxColumn.Name = "birosagihatarozatszamDataGridViewTextBoxColumn";
-            // 
-            // kozhasznusagfokozatDataGridViewTextBoxColumn
-            // 
-            this.kozhasznusagfokozatDataGridViewTextBoxColumn.DataPropertyName = "Kozhasznusag_fokozat";
-            resources.ApplyResources(this.kozhasznusagfokozatDataGridViewTextBoxColumn, "kozhasznusagfokozatDataGridViewTextBoxColumn");
-            this.kozhasznusagfokozatDataGridViewTextBoxColumn.Name = "kozhasznusagfokozatDataGridViewTextBoxColumn";
-            // 
-            // inaktividoszakokDataGridViewTextBoxColumn
-            // 
-            this.inaktividoszakokDataGridViewTextBoxColumn.DataPropertyName = "Inaktiv_idoszakok";
-            resources.ApplyResources(this.inaktividoszakokDataGridViewTextBoxColumn, "inaktividoszakokDataGridViewTextBoxColumn");
-            this.inaktividoszakokDataGridViewTextBoxColumn.Name = "inaktividoszakokDataGridViewTextBoxColumn";
-            // 
-            // felfuggesztettDataGridViewTextBoxColumn
-            // 
-            this.felfuggesztettDataGridViewTextBoxColumn.DataPropertyName = "Felfuggesztett";
-            resources.ApplyResources(this.felfuggesztettDataGridViewTextBoxColumn, "felfuggesztettDataGridViewTextBoxColumn");
-            this.felfuggesztettDataGridViewTextBoxColumn.Name = "felfuggesztettDataGridViewTextBoxColumn";
-            // 
-            // egyebadatokDataGridViewTextBoxColumn
-            // 
-            this.egyebadatokDataGridViewTextBoxColumn.DataPropertyName = "Egyeb_adatok";
-            resources.ApplyResources(this.egyebadatokDataGridViewTextBoxColumn, "egyebadatokDataGridViewTextBoxColumn");
-            this.egyebadatokDataGridViewTextBoxColumn.Name = "egyebadatokDataGridViewTextBoxColumn";
-            // 
-            // joinedDatabaseBindingSource
-            // 
-            this.joinedDatabaseBindingSource.DataSource = typeof(NyilvLib.JoinedDatabase);
             // 
             // splitContainerAdatok
             // 
@@ -654,6 +464,198 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // joinedDatabaseBindingSource
+            // 
+            this.joinedDatabaseBindingSource.DataSource = typeof(NyilvLib.JoinedDatabase);
+            // 
+            // azonositoDataGridViewTextBoxColumn
+            // 
+            this.azonositoDataGridViewTextBoxColumn.DataPropertyName = "Azonosito";
+            resources.ApplyResources(this.azonositoDataGridViewTextBoxColumn, "azonositoDataGridViewTextBoxColumn");
+            this.azonositoDataGridViewTextBoxColumn.Name = "azonositoDataGridViewTextBoxColumn";
+            // 
+            // cegnevDataGridViewTextBoxColumn
+            // 
+            this.cegnevDataGridViewTextBoxColumn.DataPropertyName = "Cegnev";
+            resources.ApplyResources(this.cegnevDataGridViewTextBoxColumn, "cegnevDataGridViewTextBoxColumn");
+            this.cegnevDataGridViewTextBoxColumn.Name = "cegnevDataGridViewTextBoxColumn";
+            // 
+            // adoszamDataGridViewTextBoxColumn
+            // 
+            this.adoszamDataGridViewTextBoxColumn.DataPropertyName = "Adoszam";
+            resources.ApplyResources(this.adoszamDataGridViewTextBoxColumn, "adoszamDataGridViewTextBoxColumn");
+            this.adoszamDataGridViewTextBoxColumn.Name = "adoszamDataGridViewTextBoxColumn";
+            // 
+            // cegformaDataGridViewTextBoxColumn
+            // 
+            this.cegformaDataGridViewTextBoxColumn.DataPropertyName = "Ceg_forma";
+            resources.ApplyResources(this.cegformaDataGridViewTextBoxColumn, "cegformaDataGridViewTextBoxColumn");
+            this.cegformaDataGridViewTextBoxColumn.Name = "cegformaDataGridViewTextBoxColumn";
+            // 
+            // statszamjelDataGridViewTextBoxColumn
+            // 
+            this.statszamjelDataGridViewTextBoxColumn.DataPropertyName = "Stat_szamjel";
+            resources.ApplyResources(this.statszamjelDataGridViewTextBoxColumn, "statszamjelDataGridViewTextBoxColumn");
+            this.statszamjelDataGridViewTextBoxColumn.Name = "statszamjelDataGridViewTextBoxColumn";
+            // 
+            // eUadoszamDataGridViewTextBoxColumn
+            // 
+            this.eUadoszamDataGridViewTextBoxColumn.DataPropertyName = "EU_adoszam";
+            resources.ApplyResources(this.eUadoszamDataGridViewTextBoxColumn, "eUadoszamDataGridViewTextBoxColumn");
+            this.eUadoszamDataGridViewTextBoxColumn.Name = "eUadoszamDataGridViewTextBoxColumn";
+            // 
+            // cegjegyzekszamDataGridViewTextBoxColumn
+            // 
+            this.cegjegyzekszamDataGridViewTextBoxColumn.DataPropertyName = "Cegjegyzek_szam";
+            resources.ApplyResources(this.cegjegyzekszamDataGridViewTextBoxColumn, "cegjegyzekszamDataGridViewTextBoxColumn");
+            this.cegjegyzekszamDataGridViewTextBoxColumn.Name = "cegjegyzekszamDataGridViewTextBoxColumn";
+            // 
+            // nyilvszamDataGridViewTextBoxColumn
+            // 
+            this.nyilvszamDataGridViewTextBoxColumn.DataPropertyName = "Nyilv_szam";
+            resources.ApplyResources(this.nyilvszamDataGridViewTextBoxColumn, "nyilvszamDataGridViewTextBoxColumn");
+            this.nyilvszamDataGridViewTextBoxColumn.Name = "nyilvszamDataGridViewTextBoxColumn";
+            // 
+            // szerzodottAZNAPcegDataGridViewTextBoxColumn
+            // 
+            this.szerzodottAZNAPcegDataGridViewTextBoxColumn.DataPropertyName = "Szerzodott_AZNAP_ceg";
+            resources.ApplyResources(this.szerzodottAZNAPcegDataGridViewTextBoxColumn, "szerzodottAZNAPcegDataGridViewTextBoxColumn");
+            this.szerzodottAZNAPcegDataGridViewTextBoxColumn.Name = "szerzodottAZNAPcegDataGridViewTextBoxColumn";
+            // 
+            // felelos1DataGridViewTextBoxColumn
+            // 
+            this.felelos1DataGridViewTextBoxColumn.DataPropertyName = "Felelos1";
+            resources.ApplyResources(this.felelos1DataGridViewTextBoxColumn, "felelos1DataGridViewTextBoxColumn");
+            this.felelos1DataGridViewTextBoxColumn.Name = "felelos1DataGridViewTextBoxColumn";
+            // 
+            // felelos2DataGridViewTextBoxColumn
+            // 
+            this.felelos2DataGridViewTextBoxColumn.DataPropertyName = "Felelos2";
+            resources.ApplyResources(this.felelos2DataGridViewTextBoxColumn, "felelos2DataGridViewTextBoxColumn");
+            this.felelos2DataGridViewTextBoxColumn.Name = "felelos2DataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            resources.ApplyResources(this.emailDataGridViewTextBoxColumn, "emailDataGridViewTextBoxColumn");
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // hosszunevDataGridViewTextBoxColumn
+            // 
+            this.hosszunevDataGridViewTextBoxColumn.DataPropertyName = "Hosszunev";
+            resources.ApplyResources(this.hosszunevDataGridViewTextBoxColumn, "hosszunevDataGridViewTextBoxColumn");
+            this.hosszunevDataGridViewTextBoxColumn.Name = "hosszunevDataGridViewTextBoxColumn";
+            // 
+            // megalakulasDataGridViewTextBoxColumn
+            // 
+            this.megalakulasDataGridViewTextBoxColumn.DataPropertyName = "Megalakulas";
+            resources.ApplyResources(this.megalakulasDataGridViewTextBoxColumn, "megalakulasDataGridViewTextBoxColumn");
+            this.megalakulasDataGridViewTextBoxColumn.Name = "megalakulasDataGridViewTextBoxColumn";
+            // 
+            // bejegyzesDataGridViewTextBoxColumn
+            // 
+            this.bejegyzesDataGridViewTextBoxColumn.DataPropertyName = "Bejegyzes";
+            resources.ApplyResources(this.bejegyzesDataGridViewTextBoxColumn, "bejegyzesDataGridViewTextBoxColumn");
+            this.bejegyzesDataGridViewTextBoxColumn.Name = "bejegyzesDataGridViewTextBoxColumn";
+            // 
+            // fotevekenysegDataGridViewTextBoxColumn
+            // 
+            this.fotevekenysegDataGridViewTextBoxColumn.DataPropertyName = "Fotevekenyseg";
+            resources.ApplyResources(this.fotevekenysegDataGridViewTextBoxColumn, "fotevekenysegDataGridViewTextBoxColumn");
+            this.fotevekenysegDataGridViewTextBoxColumn.Name = "fotevekenysegDataGridViewTextBoxColumn";
+            // 
+            // tevekenysegDataGridViewTextBoxColumn
+            // 
+            this.tevekenysegDataGridViewTextBoxColumn.DataPropertyName = "Tevekenyseg";
+            resources.ApplyResources(this.tevekenysegDataGridViewTextBoxColumn, "tevekenysegDataGridViewTextBoxColumn");
+            this.tevekenysegDataGridViewTextBoxColumn.Name = "tevekenysegDataGridViewTextBoxColumn";
+            // 
+            // tevekenysegvegeDataGridViewTextBoxColumn
+            // 
+            this.tevekenysegvegeDataGridViewTextBoxColumn.DataPropertyName = "Tevekenyseg_vege";
+            resources.ApplyResources(this.tevekenysegvegeDataGridViewTextBoxColumn, "tevekenysegvegeDataGridViewTextBoxColumn");
+            this.tevekenysegvegeDataGridViewTextBoxColumn.Name = "tevekenysegvegeDataGridViewTextBoxColumn";
+            // 
+            // szekhelyDataGridViewTextBoxColumn
+            // 
+            this.szekhelyDataGridViewTextBoxColumn.DataPropertyName = "Szekhely";
+            resources.ApplyResources(this.szekhelyDataGridViewTextBoxColumn, "szekhelyDataGridViewTextBoxColumn");
+            this.szekhelyDataGridViewTextBoxColumn.Name = "szekhelyDataGridViewTextBoxColumn";
+            // 
+            // telephelyekDataGridViewTextBoxColumn
+            // 
+            this.telephelyekDataGridViewTextBoxColumn.DataPropertyName = "Telephelyek";
+            resources.ApplyResources(this.telephelyekDataGridViewTextBoxColumn, "telephelyekDataGridViewTextBoxColumn");
+            this.telephelyekDataGridViewTextBoxColumn.Name = "telephelyekDataGridViewTextBoxColumn";
+            // 
+            // felhasznalonevDataGridViewTextBoxColumn
+            // 
+            this.felhasznalonevDataGridViewTextBoxColumn.DataPropertyName = "Felhasznalonev";
+            resources.ApplyResources(this.felhasznalonevDataGridViewTextBoxColumn, "felhasznalonevDataGridViewTextBoxColumn");
+            this.felhasznalonevDataGridViewTextBoxColumn.Name = "felhasznalonevDataGridViewTextBoxColumn";
+            // 
+            // jelszoDataGridViewTextBoxColumn
+            // 
+            this.jelszoDataGridViewTextBoxColumn.DataPropertyName = "Jelszo";
+            resources.ApplyResources(this.jelszoDataGridViewTextBoxColumn, "jelszoDataGridViewTextBoxColumn");
+            this.jelszoDataGridViewTextBoxColumn.Name = "jelszoDataGridViewTextBoxColumn";
+            // 
+            // ugyveztagokDataGridViewTextBoxColumn
+            // 
+            this.ugyveztagokDataGridViewTextBoxColumn.DataPropertyName = "Ugyvez_tagok";
+            resources.ApplyResources(this.ugyveztagokDataGridViewTextBoxColumn, "ugyveztagokDataGridViewTextBoxColumn");
+            this.ugyveztagokDataGridViewTextBoxColumn.Name = "ugyveztagokDataGridViewTextBoxColumn";
+            // 
+            // tokeDataGridViewTextBoxColumn
+            // 
+            this.tokeDataGridViewTextBoxColumn.DataPropertyName = "Toke";
+            resources.ApplyResources(this.tokeDataGridViewTextBoxColumn, "tokeDataGridViewTextBoxColumn");
+            this.tokeDataGridViewTextBoxColumn.Name = "tokeDataGridViewTextBoxColumn";
+            // 
+            // nyilvantartobirosagDataGridViewTextBoxColumn
+            // 
+            this.nyilvantartobirosagDataGridViewTextBoxColumn.DataPropertyName = "Nyilvantarto_birosag";
+            resources.ApplyResources(this.nyilvantartobirosagDataGridViewTextBoxColumn, "nyilvantartobirosagDataGridViewTextBoxColumn");
+            this.nyilvantartobirosagDataGridViewTextBoxColumn.Name = "nyilvantartobirosagDataGridViewTextBoxColumn";
+            // 
+            // ugyszamDataGridViewTextBoxColumn
+            // 
+            this.ugyszamDataGridViewTextBoxColumn.DataPropertyName = "Ugyszam";
+            resources.ApplyResources(this.ugyszamDataGridViewTextBoxColumn, "ugyszamDataGridViewTextBoxColumn");
+            this.ugyszamDataGridViewTextBoxColumn.Name = "ugyszamDataGridViewTextBoxColumn";
+            // 
+            // birosagihatarozatszamDataGridViewTextBoxColumn
+            // 
+            this.birosagihatarozatszamDataGridViewTextBoxColumn.DataPropertyName = "Birosagi_hatarozat_szam";
+            resources.ApplyResources(this.birosagihatarozatszamDataGridViewTextBoxColumn, "birosagihatarozatszamDataGridViewTextBoxColumn");
+            this.birosagihatarozatszamDataGridViewTextBoxColumn.Name = "birosagihatarozatszamDataGridViewTextBoxColumn";
+            // 
+            // kozhasznusagfokozatDataGridViewTextBoxColumn
+            // 
+            this.kozhasznusagfokozatDataGridViewTextBoxColumn.DataPropertyName = "Kozhasznusag_fokozat";
+            resources.ApplyResources(this.kozhasznusagfokozatDataGridViewTextBoxColumn, "kozhasznusagfokozatDataGridViewTextBoxColumn");
+            this.kozhasznusagfokozatDataGridViewTextBoxColumn.Name = "kozhasznusagfokozatDataGridViewTextBoxColumn";
+            // 
+            // inaktividoszakokDataGridViewTextBoxColumn
+            // 
+            this.inaktividoszakokDataGridViewTextBoxColumn.DataPropertyName = "Inaktiv_idoszakok";
+            resources.ApplyResources(this.inaktividoszakokDataGridViewTextBoxColumn, "inaktividoszakokDataGridViewTextBoxColumn");
+            this.inaktividoszakokDataGridViewTextBoxColumn.Name = "inaktividoszakokDataGridViewTextBoxColumn";
+            // 
+            // felfuggesztettDataGridViewTextBoxColumn
+            // 
+            this.felfuggesztettDataGridViewTextBoxColumn.DataPropertyName = "Felfuggesztett";
+            resources.ApplyResources(this.felfuggesztettDataGridViewTextBoxColumn, "felfuggesztettDataGridViewTextBoxColumn");
+            this.felfuggesztettDataGridViewTextBoxColumn.Name = "felfuggesztettDataGridViewTextBoxColumn";
+            this.felfuggesztettDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.felfuggesztettDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // egyebadatokDataGridViewTextBoxColumn
+            // 
+            this.egyebadatokDataGridViewTextBoxColumn.DataPropertyName = "Egyeb_adatok";
+            resources.ApplyResources(this.egyebadatokDataGridViewTextBoxColumn, "egyebadatokDataGridViewTextBoxColumn");
+            this.egyebadatokDataGridViewTextBoxColumn.Name = "egyebadatokDataGridViewTextBoxColumn";
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -672,7 +674,6 @@
             this.alapadatokBindingNavigator.ResumeLayout(false);
             this.alapadatokBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).EndInit();
             this.splitContainerAdatok.Panel1.ResumeLayout(false);
             this.splitContainerAdatok.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdatok)).EndInit();
@@ -688,6 +689,7 @@
             this.tableLayoutPanelWorkspace.ResumeLayout(false);
             this.contextMenuDokumentumokNode.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -769,7 +771,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn birosagihatarozatszamDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kozhasznusagfokozatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn inaktividoszakokDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn felfuggesztettDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn felfuggesztettDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn egyebadatokDataGridViewTextBoxColumn;
     }
 }

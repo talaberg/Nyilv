@@ -13,14 +13,31 @@ namespace NyilvLib
     public partial class JoinedDatabase
     {
         public Alapadatok Container { get; set; }
-        public List<Telephelyek> TelephelyekList { get; set; }
-        public Telephelyek SzekhelyData { get; set; }
-        public List<CegesSzemelyek> CegesSzemelyekList { get; set; }
 
-        public Inaktiv_idoszakok Inaktiv_idoszakokList { get; set; }
+        public List<Telephelyek> TelephelyekList { get { return telephelyekList; } set { telephelyekList = value; TelephelyekText = TelephelyekList.ToString(); } }
+        public List<Telephelyek> telephelyekList;
+        public string TelephelyekText { get; set; }
 
-        public List<Tevekenysegek> TevekenysegekList { get; set; }
-        public Tevekenysegek FotevekenysegData { get; set; }
+        public Telephelyek SzekhelyData { get { return szekhelyData; } set { szekhelyData = value; SzekhelyDataText = SzekhelyData.ToString(); } }
+        public Telephelyek szekhelyData;
+        public string SzekhelyDataText { get; set; }
+
+        public List<CegesSzemelyek> CegesSzemelyekList { get { return cegesSzemelyekList; } set { cegesSzemelyekList = value; CegesSzemelyekListText = CegesSzemelyekList.ToString(); } }
+        public List<CegesSzemelyek> cegesSzemelyekList;
+        public string CegesSzemelyekListText { get; set; }
+
+        public Inaktiv_idoszakok Inaktiv_idoszakokList { get { return inaktiv_idoszakokList; } set { inaktiv_idoszakokList = value; Inaktiv_idoszakokListText = Inaktiv_idoszakokList.ToString(); } }
+        public Inaktiv_idoszakok inaktiv_idoszakokList;
+        public string Inaktiv_idoszakokListText { get; set; }
+
+        public List<Tevekenysegek> TevekenysegekList { get { return tevekenysegekList; } set { tevekenysegekList = value; TevekenysegekListText = TevekenysegekList.ToString(); } }
+        public List<Tevekenysegek> tevekenysegekList;
+        public string TevekenysegekListText { get; set; }
+
+        public Tevekenysegek FotevekenysegData { get { return fotevekenysegData; } set { fotevekenysegData = value; FotevekenysegDataText = FotevekenysegData.ToString(); } }
+        public Tevekenysegek fotevekenysegData;
+        public string FotevekenysegDataText { get; set; }
+
         //-------------------------------------------------------
         //Alapadatok
         public int CegID { get; set; }

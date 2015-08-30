@@ -43,7 +43,13 @@ namespace NyilvForms
                 Label = new Label();
                 Label.Location = label;
                 Label.Text = name;
-                Label.TextAlign = ContentAlignment.MiddleRight;
+
+                var labelsize = new Size(Defines.CONTROL_XPOS_BASE - Defines.LABEL_XPOS_BASE - Defines.LABEL_MARGIN, 0);
+                Label.MinimumSize = labelsize;
+                Label.MaximumSize = labelsize;
+                Label.AutoSize = true;
+                
+                Label.TextAlign = ContentAlignment.MiddleRight;                
             }
 
             
