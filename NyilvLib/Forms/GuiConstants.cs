@@ -307,6 +307,22 @@ namespace NyilvLib.Forms
         }
         //---------------------------------------------------
 
+        //---------------------------------------------------
+        // Tevekenysegek
+        public static class Tevekenyseg_ID
+        {
+            public const string Name = "Tevekenyseg_ID";
+            public const string Text = "Tevékenység azonosító";
+            public const int Group = 7;
+        }
+        public static class Tevekenyseg_Megnevezes
+        {
+            public const string Name = "Tevekenyseg_Megnevezes";
+            public const string Text = "Tevékenység megnevezése";
+            public const int Group = 7;
+        }
+        //---------------------------------------------------
+
         public static string GetHeader(string s)
         {
             switch (s)

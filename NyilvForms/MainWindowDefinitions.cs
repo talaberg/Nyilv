@@ -52,13 +52,14 @@ namespace NyilvForms
         {
 
            public TextBox Data { get; set; }
-           public TextBoxDataField(int num, Point data, Point label, Size size, string name, object value)
+           public TextBoxDataField(int num, Point data, Point label, Size size, string name, object value, bool isreadonly = false)
                 : base(label,num,name)
             {
                 this.Data = new TextBox();
                 this.Data.Location = data;
                 this.Data.Size = size;
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+                this.Data.ReadOnly = isreadonly;
 
                 if (value != null)
                 {

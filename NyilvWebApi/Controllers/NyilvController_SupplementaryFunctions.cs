@@ -44,5 +44,14 @@ namespace Nyilv.Controllers
 
         }
 
+        Tevekenysegek TevekenysegekEV2Tevekenysegek(TevekenysegekEV tev)
+        {
+            Tevekenysegek t = new Tevekenysegek();
+            t.ID = tev.ID;
+            t.Megnevezes = tev.Megnevezes;
+
+            return t;
+        }
+
     }
 }

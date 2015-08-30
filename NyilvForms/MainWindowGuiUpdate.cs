@@ -108,8 +108,19 @@ namespace NyilvForms
                     datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Megalakulas.Text, currentDataSource.Megalakulas));
                     datafield.Add(new DateTimeDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Bejegyzes.Text, currentDataSource.Bejegyzes));
                     datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.Fotevekenyseg.Text, currentDataSource.Fotevekenyseg));
-                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.Tevekenyseg.Text, currentDataSource.Tevekenyseg));
-                    datafield.Add(new DateTimeDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Tevekenyseg_vege.Text, currentDataSource.Tevekenyseg_vege));
+                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.Fotevekenyseg.Text, currentDataSource.FotevekenysegData.Megnevezes,true));
+
+                    ComboBox comTevekenyseg = ComboBoxTevekenysegekInit(currentDataSource.TevekenysegekList);
+                    var currentTevekenyseg = currentDataSource.TevekenysegekList.Find(x => int.Parse(x.ID) == ((ComboboxItem)comTevekenyseg.SelectedItem).ID);
+                    if (currentTevekenyseg == null)
+                    {
+                        currentTevekenyseg = new Tevekenysegek(); 
+                    }
+
+                    datafield.Add(new ComboBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Telephelyek.Text, comTevekenyseg, new ComboboxChangeHandlerDelegate(ComboboxTevekenysegekChangeHandler)));
+                    datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.Tevekenyseg_ID.Text, currentTevekenyseg.ID));
+                    datafield.Add(new TextBoxDataField(9, GetControlPos(9), GetLabelPos(9), currSize, GuiConstants.Tevekenyseg_Megnevezes.Text, currentTevekenyseg.Megnevezes,true));
+                    datafield.Add(new DateTimeDataField(10, GetControlPos(10), GetLabelPos(10), currSize, GuiConstants.Tevekenyseg_vege.Text, currentDataSource.Tevekenyseg_vege));
                     break;
                 case 4:
                     var szekhely = currentDataSource.SzekhelyData;

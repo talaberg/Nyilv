@@ -127,6 +127,25 @@ namespace NyilvForms
             }
             return comboboxInaktiv;
         }
+        ComboBox ComboBoxTevekenysegekInit(List<Tevekenysegek> T)
+        {
+            ComboBox comboboxTevekenysegek = new ComboBox();
+
+            comboboxTevekenysegek.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            foreach (var t in T)
+            {
+                var element = new ComboboxItem(int.Parse(t.ID), t.Megnevezes);
+                comboboxTevekenysegek.Items.Add(element);
+            }
+
+            comboboxTevekenysegek.ValueMember = "Name";
+            if (T.Count != 0)
+            {
+                comboboxTevekenysegek.SelectedIndex = 0;
+            }
+            return comboboxTevekenysegek;
+        }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Data update ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -170,7 +189,32 @@ namespace NyilvForms
                 string inaktiv_xml = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakok;
                 ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakokList.Parse(inaktiv_xml);                
             }
+
             
+
+            // Get Tevekenysegek -------------
+            bool ev = (((JoinedDatabase)joinedDatabaseBindingSource.Current).Ceg_forma == Constants.CegesFormak.EGYENI) ? true : false;
+
+            string tev = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Tevekenyseg;
+            List<Tevekenysegek> Tev = new List<Tevekenysegek>();
+            if (tev != null)
+            {
+                List<string> tevekenysegek = MyXmlParser.Xml2StringList(tev, XmlConstants.TevekenysegekTag, XmlConstants.TevekenysegekTagCollection);
+                
+                Tev = GetTevekenysegek(tevekenysegek, ev);
+            }
+            ((JoinedDatabase)joinedDatabaseBindingSource.Current).TevekenysegekList = Tev;
+            
+            // Get Fotevekenyseg -------------
+            string fotev = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Fotevekenyseg;
+            Tevekenysegek Fotevevekeny = new Tevekenysegek();
+            if (fotev != null)
+            {
+                List<string> fotevekenyseg = new List<string>();
+                fotevekenyseg.Add(fotev);
+                Fotevevekeny = GetTevekenysegek(fotevekenyseg, ev).FirstOrDefault();
+            }
+            ((JoinedDatabase)joinedDatabaseBindingSource.Current).FotevekenysegData = Fotevevekeny;
 
         }
 
@@ -233,6 +277,16 @@ namespace NyilvForms
 
             datafield.Find(c => c.Number == 2).DataObj.Text = currentIdoszak.Mettol.ToString();
             datafield.Find(c => c.Number == 3).DataObj.Text = currentIdoszak.Meddig.ToString();
+        }
+
+        void ComboboxTevekenysegekChangeHandler(object current)
+        {
+            string currentTev = current as string;
+            Tevekenysegek currentTevekenyseg = ((JoinedDatabase)joinedDatabaseBindingSource.Current).TevekenysegekList
+                .Find(x => x.Megnevezes == currentTev);
+
+            datafield.Find(c => c.Number == 8).DataObj.Text = currentTevekenyseg.ID;
+            datafield.Find(c => c.Number == 9).DataObj.Text = currentTevekenyseg.Megnevezes;
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------

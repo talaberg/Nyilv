@@ -19,6 +19,7 @@ namespace NyilvLib.Entities
         public virtual DbSet<Munkatarsak> Munkatarsak { get; set; }
         public virtual DbSet<Telephelyek> Telephelyek { get; set; }
         public virtual DbSet<Tevekenysegek> Tevekenysegek { get; set; }
+        public virtual DbSet<TevekenysegekEV> TevekenysegekEV { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

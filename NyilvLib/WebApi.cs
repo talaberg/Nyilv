@@ -53,7 +53,12 @@ namespace NyilvLib
             public const string ControllerName = "ControllerGetGetCegesSzemelyek";
             public static string ControllerUrl { get { return "/" + ControllerFormat; } }            
         }
-        
+        public static class GetTevekenysegek
+        {
+            public const string ControllerFormat = "api/GetTevekenysegek";
+            public const string ControllerName = "ControllerGetTevekenysegek";
+            public static string ControllerUrl { get { return "/" + ControllerFormat; } }
+        }
         public static class FindAlapadat
         {
             public const string ControllerFormat = "api/Alapadatok/find";

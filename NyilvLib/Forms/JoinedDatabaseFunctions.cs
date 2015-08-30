@@ -18,6 +18,8 @@ namespace NyilvLib
             SzekhelyData = new Entities.Telephelyek();
             CegesSzemelyekList = new List<CegesSzemelyek>();
             Inaktiv_idoszakokList = new Inaktiv_idoszakok();
+            FotevekenysegData  = new Tevekenysegek();
+            TevekenysegekList = new List<Tevekenysegek>();
         }
         public void SetData()
         {
@@ -64,6 +66,8 @@ namespace NyilvLib
             CegesSzemelyekList = null;
             Inaktiv_idoszakokList = new Inaktiv_idoszakok();
             Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
+            FotevekenysegData = null;
+            TevekenysegekList = null;
         }
         private Alapadatok GetAlapadatok()
         {

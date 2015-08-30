@@ -121,7 +121,30 @@ namespace NyilvForms
                 return null;
             }
         }
-                void UpdateDatabase(Alapadatok data)
+
+        List<Tevekenysegek> GetTevekenysegek(List<string> ids, bool ev)
+        {
+            if (ev)
+            {
+                ids.Add(Constants.EVstring);
+            }
+            var x = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetTevekenysegek.ControllerUrl, ids);
+            var resp = x.Result;
+
+
+            if (resp.StatusCode == HttpStatusCode.OK)
+            {
+                var adat = resp.Content.ReadAsAsync<List<Tevekenysegek>>().Result;
+
+                return adat;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+       void UpdateDatabase(Alapadatok data)
         {
 
             var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.UpdateAlapadat.ControllerUrl, data).Result;

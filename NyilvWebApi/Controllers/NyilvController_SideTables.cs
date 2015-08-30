@@ -110,5 +110,60 @@ namespace Nyilv.Controllers
             }
 
         }
+        // GET api/Tevekenysegek/{ids}
+        [HttpPost]
+        [Route(ControllerFormats.GetTevekenysegek.ControllerFormat)]
+        public IHttpActionResult GetTevekenysegek([FromBody]List<string> ids)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var ctx = new ModelNyilv())
+                {
+                    List<Tevekenysegek> tevekenysegek = new List<Tevekenysegek>();
+
+                    if (ids.Contains(Constants.EVstring))
+                    { //Table to use: TevekenysegekEV
+                        ids.Remove(Constants.EVstring);
+
+                        foreach (string id in ids)
+                        {
+                            TevekenysegekEV tevekenyseg = ctx.TevekenysegekEV.Where(c => c.ID == id).FirstOrDefault();
+
+                            if (tevekenyseg != null)
+                            {
+                                tevekenysegek.Add(TevekenysegekEV2Tevekenysegek(tevekenyseg));
+                            }
+                        }
+		 
+	                }
+                    else
+                    {//Table to use: Tevekenysegek
+                        foreach (string id in ids)
+                        {
+                            Tevekenysegek tevekenyseg = ctx.Tevekenysegek.Where(c => c.ID == id).FirstOrDefault();
+
+                            if (tevekenyseg != null)
+                            {
+                                tevekenysegek.Add(tevekenyseg);
+                            }
+                        }
+                    }
+                    
+
+
+
+                    if (tevekenysegek == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(tevekenysegek);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
     }
 }

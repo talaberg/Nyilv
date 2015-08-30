@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Auth\Decryption.cs" />
     <Compile Include="Auth\Encryption.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Entities\Alapadatok.cs" />
     <Compile Include="Entities\Cegadatok.cs" />
     <Compile Include="Entities\CegesSzemelyek.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Entities\ModelNyilv.cs" />
     <Compile Include="Entities\Munkatarsak.cs" />
     <Compile Include="Entities\Telephelyek.cs" />
+    <Compile Include="Entities\TevekenysegekEV.cs" />
     <Compile Include="Entities\Tevekenysegek.cs" />
     <Compile Include="Forms\ClassDefinitions.cs" />
     <Compile Include="Forms\GuiConstants.cs" />

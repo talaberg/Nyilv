@@ -19,6 +19,8 @@ namespace NyilvLib
 
         public Inaktiv_idoszakok Inaktiv_idoszakokList { get; set; }
 
+        public List<Tevekenysegek> TevekenysegekList { get; set; }
+        public Tevekenysegek FotevekenysegData { get; set; }
         //-------------------------------------------------------
         //Alapadatok
         public int CegID { get; set; }
@@ -64,7 +66,8 @@ namespace NyilvLib
         [Column(TypeName = "date")]
         public DateTime? Bejegyzes { get; set; }
 
-        public int? Fotevekenyseg { get; set; }
+        [StringLength(32)]
+        public string Fotevekenyseg { get; set; }
 
         [Column(TypeName = "xml")]
         public string Tevekenyseg { get; set; }
