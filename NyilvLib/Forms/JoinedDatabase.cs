@@ -14,29 +14,29 @@ namespace NyilvLib
     {
         public Alapadatok Container { get; set; }
 
-        public List<Telephelyek> TelephelyekList { get { return telephelyekList; } set { telephelyekList = value; TelephelyekText = TelephelyekList.ToString(); } }
-        public List<Telephelyek> telephelyekList;
-        public string TelephelyekText { get; set; }
+        public List<Telephelyek> TelephelyekList { get { return telephelyekList; } set { telephelyekList = value; TelephelyekText = value.ToString(); } }
+        public List<Telephelyek> telephelyekList = new List<Telephelyek>();
+        public string TelephelyekText { get { return telephelyekList.ExtendedToString(); } set { } }
 
-        public Telephelyek SzekhelyData { get { return szekhelyData; } set { szekhelyData = value; SzekhelyDataText = SzekhelyData.ToString(); } }
-        public Telephelyek szekhelyData;
-        public string SzekhelyDataText { get; set; }
+        public Telephelyek SzekhelyData { get { return szekhelyData; } set { szekhelyData = value; SzekhelyDataText = value.ToString(); } }
+        public Telephelyek szekhelyData = new Telephelyek();
+        public string SzekhelyDataText { get { return szekhelyData.ToString(); } set { } }
 
-        public List<CegesSzemelyek> CegesSzemelyekList { get { return cegesSzemelyekList; } set { cegesSzemelyekList = value; CegesSzemelyekListText = CegesSzemelyekList.ToString(); } }
-        public List<CegesSzemelyek> cegesSzemelyekList;
-        public string CegesSzemelyekListText { get; set; }
+        public List<CegesSzemelyek> CegesSzemelyekList { get { return cegesSzemelyekList; } set { cegesSzemelyekList = value; CegesSzemelyekListText = value.ToString(); } }
+        public List<CegesSzemelyek> cegesSzemelyekList = new List<CegesSzemelyek>();
+        public string CegesSzemelyekListText { get { return cegesSzemelyekList.ExtendedToString(); } set { } }
 
-        public Inaktiv_idoszakok Inaktiv_idoszakokList { get { return inaktiv_idoszakokList; } set { inaktiv_idoszakokList = value; Inaktiv_idoszakokListText = Inaktiv_idoszakokList.ToString(); } }
-        public Inaktiv_idoszakok inaktiv_idoszakokList;
-        public string Inaktiv_idoszakokListText { get; set; }
+        public Inaktiv_idoszakok Inaktiv_idoszakokList { get { return inaktiv_idoszakokList; } set { inaktiv_idoszakokList = value; Inaktiv_idoszakokListText = value.ToString(); } }
+        public Inaktiv_idoszakok inaktiv_idoszakokList = new Inaktiv_idoszakok();
+        public string Inaktiv_idoszakokListText { get { return inaktiv_idoszakokList.ToString(); } set { } }
 
-        public List<Tevekenysegek> TevekenysegekList { get { return tevekenysegekList; } set { tevekenysegekList = value; TevekenysegekListText = TevekenysegekList.ToString(); } }
-        public List<Tevekenysegek> tevekenysegekList;
-        public string TevekenysegekListText { get; set; }
+        public List<Tevekenysegek> TevekenysegekList { get { return tevekenysegekList; } set { tevekenysegekList = value; TevekenysegekListText = value.ToString(); } }
+        public List<Tevekenysegek> tevekenysegekList = new List<Tevekenysegek>();
+        public string TevekenysegekListText { get { return tevekenysegekList.ExtendedToString(); } set { } }
 
-        public Tevekenysegek FotevekenysegData { get { return fotevekenysegData; } set { fotevekenysegData = value; FotevekenysegDataText = FotevekenysegData.ToString(); } }
-        public Tevekenysegek fotevekenysegData;
-        public string FotevekenysegDataText { get; set; }
+        public Tevekenysegek FotevekenysegData { get { return fotevekenysegData; } set { fotevekenysegData = value; FotevekenysegDataText = value.ToString(); } }
+        public Tevekenysegek fotevekenysegData = new Tevekenysegek();
+        public string FotevekenysegDataText { get { return fotevekenysegData.ToString(); } set { } }
 
         //-------------------------------------------------------
         //Alapadatok

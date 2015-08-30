@@ -1,5 +1,6 @@
 ﻿using NyilvLib.Xml;
 using NyilvLib.Forms;
+using NyilvLib.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using NyilvLib.String;
 
 namespace NyilvLib.Forms
 {
@@ -72,6 +74,15 @@ namespace NyilvLib.Forms
             }
             return tol + " - " + ig;            
         }
+
+        public override string ToString()
+        {
+            List<string> str = new List<string>();
+            if (this.mettol != null) str.Add(GuiConstants.Inaktiv_idoszakok_Mettol.Text + GuiConstants.KulcsElvalasztojel.Text + this.mettol.ToString());
+            if (this.meddig != null) str.Add(GuiConstants.Inaktiv_idoszakok_Meddig.Text + GuiConstants.KulcsElvalasztojel.Text + this.meddig.ToString());
+
+            return StringHandler.BuildGuiString(str, GuiConstants.MezoElvalasztojel.Text);
+        }
     }
 
     public class Inaktiv_idoszakok
@@ -127,6 +138,10 @@ namespace NyilvLib.Forms
                 }
 
             }
+        }
+        public override string ToString()
+        {
+            return this.Inaktiv_idoszak.ExtendedToString();
         }
     }
 

@@ -322,6 +322,56 @@ namespace NyilvLib.Forms
             public const int Group = 7;
         }
         //---------------------------------------------------
+        public static class TelephelyekText
+        {
+            public const string Name = "TelephelyekText";
+            public const string Text = GuiConstants.Telephelyek.Text;
+            public const int Group = GuiConstants.Telephelyek.Group;
+        }
+        public static class SzekhelyDataText
+        {
+            public const string Name = "SzekhelyDataText";
+            public const string Text = GuiConstants.Szekhely.Text;
+            public const int Group = GuiConstants.Szekhely.Group;
+        }
+        public static class CegesSzemelyekListText
+        {
+            public const string Name = "CegesSzemelyekListText";
+            public const string Text = GuiConstants.Ugyvez_tagok.Text;
+            public const int Group = GuiConstants.Ugyvez_tagok.Group;
+        }
+        public static class Inaktiv_idoszakokListText
+        {
+            public const string Name = "Inaktiv_idoszakokListText";
+            public const string Text = GuiConstants.Inaktiv_idoszakok.Text;
+            public const int Group = GuiConstants.Inaktiv_idoszakok.Group;
+        }
+        public static class TevekenysegekListText
+        {
+            public const string Name = "TevekenysegekListText";
+            public const string Text = GuiConstants.Tevekenyseg.Text;
+            public const int Group = GuiConstants.Tevekenyseg.Group;
+        }
+        public static class FotevekenysegDataText
+        {
+            public const string Name = "FotevekenysegDataText";
+            public const string Text = GuiConstants.Fotevekenyseg.Text;
+            public const int Group = GuiConstants.Fotevekenyseg.Group;
+        }
+
+        // Others ------------------------------------------
+        public static class KulcsElvalasztojel
+        {
+            public const string Name = "KulcsElvalasztojel";
+            public const string Text = ": ";
+        }
+        public static class MezoElvalasztojel
+        {
+            public const string Name = "MezoElvalasztojel";
+            public const string Text = "; ";
+        }
+
+
 
         public static string GetHeader(string s)
         {
@@ -358,8 +408,13 @@ namespace NyilvLib.Forms
                 case GuiConstants.Toke.Name:                      return GuiConstants.Toke.Text;
                 case GuiConstants.Ugyszam.Name:                   return GuiConstants.Ugyszam.Text;
                 case GuiConstants.Ugyvez_tagok.Name:              return GuiConstants.Ugyvez_tagok.Text;
-
-                default:                                        return "";
+                case GuiConstants.TelephelyekText.Name:           return GuiConstants.TelephelyekText.Text;
+                case GuiConstants.SzekhelyDataText.Name:          return GuiConstants.SzekhelyDataText.Text;
+                case GuiConstants.CegesSzemelyekListText.Name:    return GuiConstants.CegesSzemelyekListText.Text;
+                case GuiConstants.Inaktiv_idoszakokListText.Name: return GuiConstants.Inaktiv_idoszakokListText.Text;
+                case GuiConstants.TevekenysegekListText.Name:     return GuiConstants.TevekenysegekListText.Text;
+                case GuiConstants.FotevekenysegDataText.Name:     return GuiConstants.FotevekenysegDataText.Text;
+                default: return "";
             }
         }
         public static int GetGroup(string s)
@@ -397,6 +452,12 @@ namespace NyilvLib.Forms
                 case GuiConstants.Toke.Name:                      return GuiConstants.Toke.Group;
                 case GuiConstants.Ugyszam.Name:                   return GuiConstants.Ugyszam.Group;
                 case GuiConstants.Ugyvez_tagok.Name:              return GuiConstants.Ugyvez_tagok.Group;
+                case GuiConstants.TelephelyekText.Name:           return GuiConstants.TelephelyekText.Group;
+                case GuiConstants.SzekhelyDataText.Name:          return GuiConstants.SzekhelyDataText.Group;
+                case GuiConstants.CegesSzemelyekListText.Name:    return GuiConstants.CegesSzemelyekListText.Group;
+                case GuiConstants.Inaktiv_idoszakokListText.Name: return GuiConstants.Inaktiv_idoszakokListText.Group;
+                case GuiConstants.TevekenysegekListText.Name:     return GuiConstants.TevekenysegekListText.Group;
+                case GuiConstants.FotevekenysegDataText.Name:     return GuiConstants.FotevekenysegDataText.Group;
 
                 default: return -1;
             }

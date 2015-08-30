@@ -28,9 +28,10 @@ namespace NyilvForms
             foreach (JoinedDatabase client in ClientList)
             {
                 joinedDatabaseBindingSource.Add(client);
+                UpdateMiscJoinedDataBaseData(client);
             }
             UpdateDataField(currentGroup);
-            UpdateMiscJoinedDataBaseData();
+            
         }
         private void UpdateMunkatarsak()
         {

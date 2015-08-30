@@ -60,14 +60,8 @@ namespace NyilvLib
             Felfuggesztett              = Container.Felfuggesztett;
             Egyeb_adatok                = Container.Egyeb_adatok;
 
-            Container = null;
-            TelephelyekList = null;
-            SzekhelyData = null;
-            CegesSzemelyekList = null;
             Inaktiv_idoszakokList = new Inaktiv_idoszakok();
             Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
-            FotevekenysegData = null;
-            TevekenysegekList = null;
         }
         private Alapadatok GetAlapadatok()
         {

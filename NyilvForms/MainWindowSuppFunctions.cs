@@ -43,6 +43,7 @@ namespace NyilvForms
             foreach (DataGridViewColumn column in alapadatokDataGridView.Columns)
             {
                 column.HeaderText = GuiConstants.GetHeader(column.HeaderText);
+                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
             DataGridViewHeaderStyleUpdate();
 
@@ -150,20 +151,20 @@ namespace NyilvForms
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // Data update ----------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void UpdateMiscJoinedDataBaseData()
+        private void UpdateMiscJoinedDataBaseData(JoinedDatabase data)
         {
             // Get Telephelyek -------------
-            string t = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Telephelyek;
+            string t = data.Telephelyek;
             List<Telephelyek> T = new List<Telephelyek>();
             if (t != null)
             {
                 List<int> telepek = MyXmlParser.Xml2IntList(t, XmlConstants.TelephelyTag, XmlConstants.TelephelyCollection);
                 T = GetTelephelyek(telepek);
             }
-            ((JoinedDatabase)joinedDatabaseBindingSource.Current).TelephelyekList = T;
+            data.TelephelyekList = T;
 
             // Get Szekhely -------------
-            int? id = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Szekhely;
+            int? id = data.Szekhely;
             Telephelyek Sz = new Telephelyek();
             if (id != null)
             {
@@ -171,31 +172,31 @@ namespace NyilvForms
                 szekhely.Add((int)id);
                 Sz = GetTelephelyek(szekhely).FirstOrDefault();
             }
-            ((JoinedDatabase)joinedDatabaseBindingSource.Current).SzekhelyData = Sz;
+            data.SzekhelyData = Sz;
 
             // Get CegesSzemelyek -------------
-            string ugyv = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Ugyvez_tagok;
+            string ugyv = data.Ugyvez_tagok;
             List<CegesSzemelyek> Ugyv = new List<CegesSzemelyek>();
             if (ugyv != null)
             {
                 List<int> szemelyek = MyXmlParser.Xml2IntList(ugyv, XmlConstants.CegesSzemelyekTag, XmlConstants.CegesSzemelyekCollection);
                 Ugyv = GetCegesSzemelyek(szemelyek);
             }
-            ((JoinedDatabase)joinedDatabaseBindingSource.Current).CegesSzemelyekList = Ugyv;
+            data.CegesSzemelyekList = Ugyv;
 
             // Get Inaktiv_idoszakok -------------
-            if (((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakok != null)
+            if (data.Inaktiv_idoszakok != null)
             {
-                string inaktiv_xml = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakok;
-                ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakokList.Parse(inaktiv_xml);                
+                string inaktiv_xml = data.Inaktiv_idoszakok;
+                data.Inaktiv_idoszakokList.Parse(inaktiv_xml);                
             }
 
             
 
             // Get Tevekenysegek -------------
-            bool ev = (((JoinedDatabase)joinedDatabaseBindingSource.Current).Ceg_forma == Constants.CegesFormak.EGYENI) ? true : false;
+            bool ev = (data.Ceg_forma == Constants.CegesFormak.EGYENI) ? true : false;
 
-            string tev = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Tevekenyseg;
+            string tev = data.Tevekenyseg;
             List<Tevekenysegek> Tev = new List<Tevekenysegek>();
             if (tev != null)
             {
@@ -203,10 +204,10 @@ namespace NyilvForms
                 
                 Tev = GetTevekenysegek(tevekenysegek, ev);
             }
-            ((JoinedDatabase)joinedDatabaseBindingSource.Current).TevekenysegekList = Tev;
+            data.TevekenysegekList = Tev;
             
             // Get Fotevekenyseg -------------
-            string fotev = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Fotevekenyseg;
+            string fotev = data.Fotevekenyseg;
             Tevekenysegek Fotevevekeny = new Tevekenysegek();
             if (fotev != null)
             {
@@ -214,7 +215,7 @@ namespace NyilvForms
                 fotevekenyseg.Add(fotev);
                 Fotevevekeny = GetTevekenysegek(fotevekenyseg, ev).FirstOrDefault();
             }
-            ((JoinedDatabase)joinedDatabaseBindingSource.Current).FotevekenysegData = Fotevevekeny;
+            data.FotevekenysegData = Fotevevekeny;
 
         }
 

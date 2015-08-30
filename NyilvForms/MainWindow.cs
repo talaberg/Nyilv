@@ -197,7 +197,7 @@ namespace NyilvForms
         {
             if (e.RowIndex != currentRow)
             {
-                UpdateMiscJoinedDataBaseData();
+                UpdateMiscJoinedDataBaseData(((JoinedDatabase)joinedDatabaseBindingSource.Current));
                 currentRow = e.RowIndex;
             }           
 
