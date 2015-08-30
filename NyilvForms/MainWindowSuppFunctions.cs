@@ -380,13 +380,13 @@ namespace NyilvForms
         {
             return new Point(Defines.CONTROL_XPOS_BASE, (Defines.CONTROL_YPOS_BASE + --controlNum * Defines.CONTROL_YPOS_STEP));
         }
-        Size GetControlSize()
+        Size GetControlSize(int numberOfLines = 1)
         {
-            Size s = new Size(0,Defines.CONTROL_HEIGHT);
+            Size s = new Size(0, Defines.CONTROL_HEIGHT * numberOfLines);
 
             if (panelCegAdat.Width.CompareTo(Defines.CONTROL_XPOS_BASE) > 0)
 	        {
-                s = new Size(panelCegAdat.Width - Defines.CONTROL_XPOS_BASE - Defines.CONTROL_MARGIN, Defines.CONTROL_HEIGHT);
+                s = new Size(panelCegAdat.Width - Defines.CONTROL_XPOS_BASE - Defines.CONTROL_MARGIN, Defines.CONTROL_HEIGHT * numberOfLines);
 	        }
 
             return s;

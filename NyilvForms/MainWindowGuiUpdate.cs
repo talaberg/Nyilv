@@ -200,7 +200,8 @@ namespace NyilvForms
                     datafield.Add(new CheckBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Felfuggesztett.Text, currentDataSource.Felfuggesztett));
                     break;
                 case 8:
-                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Egyeb_adatok.Text, currentDataSource.Egyeb_adatok));
+                    datafield.Add(new RichTextBoxDataField(1, GetControlPos(1), GetLabelPos(1), GetControlSize(6), GuiConstants.Egyeb_adatok.Text, currentDataSource.Egyeb_adatok));
+
                     break;
                 default:
                     break;

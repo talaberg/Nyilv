@@ -83,6 +83,41 @@ namespace NyilvForms
                 DataObj = (Control)Data;
             }
         }
+        class RichTextBoxDataField : ObjectDataField
+        {
+
+            public RichTextBox Data { get; set; }
+            public RichTextBoxDataField(int num, Point data, Point label, Size size, string name, object value, bool isreadonly = false)
+                : base(label, num, name)
+            {
+                this.Data = new RichTextBox();
+                this.Data.Location = data;
+                this.Data.Size = size;
+                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+                this.Data.ReadOnly = isreadonly;
+
+                if (value != null)
+                {
+                    type = value.GetType();
+
+                    if (value is string)
+                    {
+                        this.Data.Text = value as string;
+                    }
+                    else
+                    {
+                        this.Data.Text = value.ToString();
+                    }
+                }
+                else
+                {
+                    string s = "";
+                    type = s.GetType();
+                    this.Data.Text = s;
+                }
+                DataObj = (Control)Data;
+            }
+        }
         class ComboBoxDataField : ObjectDataField
         {
             public ComboBox Data { get; set; }
