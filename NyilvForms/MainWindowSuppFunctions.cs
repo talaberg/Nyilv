@@ -194,7 +194,7 @@ namespace NyilvForms
             
 
             // Get Tevekenysegek -------------
-            bool ev = (data.Ceg_forma == Constants.CegesFormak.EGYENI) ? true : false;
+            bool ev = (data.Ceg_forma == NyilvConstants.CegesFormak.EGYENI) ? true : false;
 
             string tev = data.Tevekenyseg;
             List<Tevekenysegek> Tev = new List<Tevekenysegek>();

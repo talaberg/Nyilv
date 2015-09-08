@@ -153,127 +153,159 @@ namespace Nyilv.Controllers
                 return NotFound();
             }
         }
-        
-        // PUT: api/Alapadatok/find
-        [HttpPut]
-        [Route(ControllerFormats.FindAlapadat.ControllerFormat)]
-        public IHttpActionResult PutFind([FromBody]MyQuery query)
+
+        // GET api/Munkatarsak
+        [HttpGet]
+        [Route(ControllerFormats.GetMunkatarsakAll.ControllerFormat)]
+        public IHttpActionResult GetDokumentumok()
         {
-             throw new NotImplementedException();
-            //TODO
-            /*
             if (User.Identity.IsAuthenticated)
             {
-                DatabaseListener.Trace.WriteLine(DateTime.Now.ToString() + ": user: " + User.Identity.Name.ToString() + "transaction: FindQuery");
-                DatabaseListener.Trace.Flush();
                 using (var ctx = new ModelNyilv())
                 {
-                    List<Alapadatok> result = null;
-
-                    switch (query.Item2Find)
+                    var munkatarsak = new List<Munkatarsak>();
+                    foreach (var munk in ctx.Munkatarsak)
                     {
-                        case "Azonosito":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                int val = (int)Int32.Parse(query.Value);
-                                result = ctx.Alapadatok.Where(c => c.CegID == val).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        case "Szamlazas":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Szamlazas == query.Value).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.ContainsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Szamlazas.Contains(query.Value)).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        case "Felelos":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Felelos == query.Value).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.ContainsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Felelos.Contains(query.Value)).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        case "Cegnev":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Cegnev == query.Value).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.ContainsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Cegnev.Contains(query.Value)).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        case "Ceg_forma":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Ceg_forma == query.Value).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.ContainsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Ceg_forma.Contains(query.Value)).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        case "Hivatkozas":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Hivatkozas == query.Value).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.ContainsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Hivatkozas.Contains(query.Value)).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        case "Felfuggesztett":
-                            if (query.Condition == MyQuery.EqualsCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Felfuggesztett == bool.Parse(query.Value)).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.TrueCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Felfuggesztett == true).ToList<Alapadatok>();
-                            }
-                            else if (query.Condition == MyQuery.FalseCondition)
-                            {
-                                result = ctx.Alapadatok.Where(c => c.Felfuggesztett != true).ToList<Alapadatok>();
-                            }
-                            break;
-
-                        default:
-                            break;
+                        munkatarsak.Add(munk);
                     }
-
-                    if (result == null)
+                    if (munkatarsak.Count == 0)
                     {
-                        Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.FindAlapadat.ControllerFormat + " succes: data not found.");
-                        Trace.Flush();
                         return NotFound();
                     }
-                    Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.FindAlapadat.ControllerFormat + " succes: data sent.");
-                    Trace.Flush();
-                    return Ok(result);
+                    else
+                    {
+                        return Ok(munkatarsak);
+                    }
                 }
-
-  
             }
             else
             {
-                Trace.TraceInformation(DateTime.Now.ToString() + ": " + ControllerFormats.FindAlapadat.ControllerFormat + " error: authentication failed.");
-                Trace.Flush();
                 return NotFound();
-            }*/
+            }
+        }
+
+        // GET api/Telephelyek/{ids}
+        [HttpPost]
+        [Route(ControllerFormats.GetTelephelyek.ControllerFormat)]
+        public IHttpActionResult GetTelephelyek([FromBody]List<int> ids)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var ctx = new ModelNyilv())
+                {
+                    List<Telephelyek> Telepek = new List<Telephelyek>();
+
+                    foreach (int id in ids)
+                    {
+                        Telephelyek hely = ctx.Telephelyek.Where(c => c.TelepID == id).FirstOrDefault();
+
+                        if (hely != null)
+                        {
+                            Telepek.Add(hely);
+                        }
+                    }
+
+                    if (Telepek == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(Telepek);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
 
         }
+
+        // GET api/CegesSzemelyek/{ids}
+        [HttpPost]
+        [Route(ControllerFormats.GetCegesSzemelyek.ControllerFormat)]
+        public IHttpActionResult GetCegesSzemelyek([FromBody]List<int> ids)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var ctx = new ModelNyilv())
+                {
+                    List<CegesSzemelyek> Telepek = new List<CegesSzemelyek>();
+
+                    foreach (int id in ids)
+                    {
+                        CegesSzemelyek hely = ctx.CegesSzemelyek.Where(c => c.CegSzemID == id).FirstOrDefault();
+
+                        if (hely != null)
+                        {
+                            Telepek.Add(hely);
+                        }
+                    }
+
+                    if (Telepek == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(Telepek);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+        // GET api/Tevekenysegek/{ids}
+        [HttpPost]
+        [Route(ControllerFormats.GetTevekenysegek.ControllerFormat)]
+        public IHttpActionResult GetTevekenysegek([FromBody]List<string> ids)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                using (var ctx = new ModelNyilv())
+                {
+                    List<Tevekenysegek> tevekenysegek = new List<Tevekenysegek>();
+
+                    if (ids.Contains(NyilvConstants.EVstring))
+                    { //Table to use: TevekenysegekEV
+                        ids.Remove(NyilvConstants.EVstring);
+
+                        foreach (string id in ids)
+                        {
+                            TevekenysegekEV tevekenyseg = ctx.TevekenysegekEV.Where(c => c.ID == id).FirstOrDefault();
+
+                            if (tevekenyseg != null)
+                            {
+                                tevekenysegek.Add(TevekenysegekEV2Tevekenysegek(tevekenyseg));
+                            }
+                        }
+
+                    }
+                    else
+                    {//Table to use: Tevekenysegek
+                        foreach (string id in ids)
+                        {
+                            Tevekenysegek tevekenyseg = ctx.Tevekenysegek.Where(c => c.ID == id).FirstOrDefault();
+
+                            if (tevekenyseg != null)
+                            {
+                                tevekenysegek.Add(tevekenyseg);
+                            }
+                        }
+                    }
+
+                    if (tevekenysegek == null)
+                    {
+                        return NotFound();
+                    }
+                    return Ok(tevekenysegek);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+
+        }
+        
+
     }
 }

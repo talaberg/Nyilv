@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NyilvLib
 {
-    public static class Constants
+    public static class NyilvConstants
     {
         public const string EVstring = "Table:TelephelyekEV";
 

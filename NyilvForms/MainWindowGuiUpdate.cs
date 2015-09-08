@@ -54,7 +54,7 @@ namespace NyilvForms
 
             int i = 1;
 
-            foreach (var cegForma in Constants.CegesFormak.CegesFormakList)
+            foreach (var cegForma in NyilvConstants.CegesFormak.CegesFormakList)
             {
                 cegFormak.Add(new ComboboxItem(i++, cegForma));
             }

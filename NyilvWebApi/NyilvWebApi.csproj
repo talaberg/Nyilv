@@ -176,9 +176,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NyilvController.cs" />
-    <Compile Include="Controllers\NyilvController_SideTables.cs" />
+    <Compile Include="Controllers\NyilvController_Get.cs" />
+    <Compile Include="Controllers\NyilvController_Misc.cs" />
+    <Compile Include="Controllers\NyilvController_Remove.cs" />
+    <Compile Include="Controllers\NyilvController_Query.cs" />
     <Compile Include="Controllers\NyilvController_SupplementaryFunctions.cs" />
+    <Compile Include="Controllers\NyilvController_Update.cs" />
     <Compile Include="DatabaseListener.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

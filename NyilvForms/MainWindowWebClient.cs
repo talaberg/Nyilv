@@ -126,7 +126,7 @@ namespace NyilvForms
         {
             if (ev)
             {
-                ids.Add(Constants.EVstring);
+                ids.Add(NyilvConstants.EVstring);
             }
             var x = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetTevekenysegek.ControllerUrl, ids);
             var resp = x.Result;
