@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NyilvLib;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -44,7 +45,7 @@ namespace NyilvForms
                 Label.Location = label;
                 Label.Text = name;
 
-                var labelsize = new Size(Defines.CONTROL_XPOS_BASE - Defines.LABEL_XPOS_BASE - Defines.LABEL_MARGIN, 0);
+                var labelsize = new Size(NyilvConstants.CONTROL_XPOS_BASE - NyilvConstants.LABEL_XPOS_BASE - NyilvConstants.LABEL_MARGIN, 0);
                 Label.MinimumSize = labelsize;
                 Label.MaximumSize = labelsize;
                 Label.AutoSize = true;
@@ -67,6 +68,10 @@ namespace NyilvForms
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
                 this.Data.ReadOnly = isreadonly;
 
+              /* BindingSource b = new BindingSource();
+               b.DataSource = value;
+               this.Data.DataBindings.Add("Value",b);*/
+
                 if (value != null)
                 {
                     type = value.GetType();
@@ -86,6 +91,8 @@ namespace NyilvForms
                     type = s.GetType();
                     this.Data.Text = s;
                 }
+               
+
                 DataObj = (Control)Data;
             }
         }

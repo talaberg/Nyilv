@@ -21,7 +21,7 @@ namespace Nyilv.Controllers
 {
     public partial class NyilvController : ApiController
     {
-        int GenerateAlapadatokId()
+        protected static int GenerateId()
         {
             int maxId = -1;
             using (var ctx = new ModelNyilv())

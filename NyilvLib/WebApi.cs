@@ -79,6 +79,11 @@ namespace NyilvLib
             public const string ControllerFormat = "api/Dokumentumok/update";
             public static string ControllerUrl { get { return "/" + ControllerFormat; } }
         }
+        public static class UpdateDatabase
+        {
+            public const string ControllerFormat = "api/Database/update";
+            public static string ControllerUrl { get { return "/" + ControllerFormat; } }
+        }
         public static class DeleteAlapadatById
         {
             public const string ControllerFormat = "api/Alapadatok/delete/{id}";

@@ -159,6 +159,15 @@ namespace NyilvForms
             resp.EnsureSuccessStatusCode();
 
         }
+        private void SaveChanges()
+        {
+            JoinedDatabase data = (JoinedDatabase)joinedDatabaseBindingSource.Current;
+            if (data != null)
+            {
+                var resp = myConnection.Client.PostAsJsonAsync(myConfig.Configuration.HostAddress + ControllerFormats.UpdateDatabase.ControllerUrl, data).Result;
+            }
+            
+        }
 
         void RemoveAlapadatokElement(int id)
         {

@@ -25,7 +25,6 @@ namespace NyilvLib
         {
             SetAlapadatok();
         }
-
         private void SetAlapadatok()
         {
 
@@ -63,7 +62,7 @@ namespace NyilvLib
             Inaktiv_idoszakokList = new Inaktiv_idoszakok();
             Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
         }
-        private Alapadatok GetAlapadatok()
+        public Alapadatok GetAlapadatok()
         {
             Alapadatok A = new Alapadatok();
 

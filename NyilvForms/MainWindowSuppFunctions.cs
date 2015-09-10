@@ -375,19 +375,19 @@ namespace NyilvForms
 
         Point GetLabelPos(int labelNum)
         {
-            return new Point(Defines.LABEL_XPOS_BASE, (Defines.LABEL_YPOS_BASE + --labelNum * Defines.LABEL_YPOS_STEP));
+            return new Point(NyilvConstants.LABEL_XPOS_BASE, (NyilvConstants.LABEL_YPOS_BASE + --labelNum * NyilvConstants.LABEL_YPOS_STEP));
         }
         Point GetControlPos(int controlNum)
         {
-            return new Point(Defines.CONTROL_XPOS_BASE, (Defines.CONTROL_YPOS_BASE + --controlNum * Defines.CONTROL_YPOS_STEP));
+            return new Point(NyilvConstants.CONTROL_XPOS_BASE, (NyilvConstants.CONTROL_YPOS_BASE + --controlNum * NyilvConstants.CONTROL_YPOS_STEP));
         }
         Size GetControlSize(int numberOfLines = 1)
         {
-            Size s = new Size(0, Defines.CONTROL_HEIGHT * numberOfLines);
+            Size s = new Size(0, NyilvConstants.CONTROL_HEIGHT * numberOfLines);
 
-            if (panelCegAdat.Width.CompareTo(Defines.CONTROL_XPOS_BASE) > 0)
+            if (panelCegAdat.Width.CompareTo(NyilvConstants.CONTROL_XPOS_BASE) > 0)
 	        {
-                s = new Size(panelCegAdat.Width - Defines.CONTROL_XPOS_BASE - Defines.CONTROL_MARGIN, Defines.CONTROL_HEIGHT * numberOfLines);
+                s = new Size(panelCegAdat.Width - NyilvConstants.CONTROL_XPOS_BASE - NyilvConstants.CONTROL_MARGIN, NyilvConstants.CONTROL_HEIGHT * numberOfLines);
 	        }
 
             return s;

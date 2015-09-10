@@ -34,7 +34,7 @@ namespace Nyilv.Controllers
                             .Where(c => c.CegID == adat.CegID).FirstOrDefault<Alapadatok>();
                     if (Item2Modify == null)
                     {
-                        adat.CegID = GenerateAlapadatokId();
+                        adat.CegID = GenerateId();
                         ctx.Alapadatok.Add(adat);
                         ctx.Cegadatok.Add(new Cegadatok { CegID = adat.CegID });
                     }
@@ -126,6 +126,63 @@ namespace Nyilv.Controllers
                 Trace.Flush();
                 return NotFound();
             }
+        }
+
+        //Modify database
+        [HttpPost]
+        [Route(ControllerFormats.UpdateDatabase.ControllerFormat)]
+        public IHttpActionResult PostDatabase([FromBody]JoinedDatabase adat)
+        {
+            if (adat != null)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+
+
+                    using (var ctx = new ModelNyilv())
+                    {
+                        Alapadatok Item2Modify = ctx.Alapadatok
+                                .Where(c => c.CegID == adat.CegID).FirstOrDefault<Alapadatok>();
+                        if (Item2Modify == null)
+                        {
+                            adat.CegID = GenerateId();
+                            ctx.Alapadatok.Add(adat.GetAlapadatok());
+                            //ctx.Cegadatok.Add(new Cegadatok { CegID = adat.CegID });
+                        }
+                        else
+                        {
+                            ctx.Entry(Item2Modify).CurrentValues.SetValues(adat.GetAlapadatok());
+                        }
+                        ctx.SaveChanges();
+
+                        return Ok();
+                    }
+                    using (var ctx = new ModelNyilv())
+                    {
+                        foreach (Telephelyek item in adat.telephelyekList)
+                        {
+                            Telephelyek Item2Modify = ctx.Telephelyek
+                                .Where(c => c.TelepID == item.TelepID).FirstOrDefault<Telephelyek>();
+
+                            if (Item2Modify == null)
+                            {
+                                item.TelepID = GenerateId();
+                                ctx.Telephelyek.Add(item);
+                            }
+                            else
+                            {
+                                ctx.Entry(Item2Modify).CurrentValues.SetValues(item);
+                            }
+                            ctx.SaveChanges();
+
+                            return Ok();
+                        }
+                    }
+                }
+            }
+
+            return NotFound();
+
         }
     }
 }

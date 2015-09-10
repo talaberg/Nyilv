@@ -2157,6 +2157,9 @@
         AAAAAD////////+AAAAAAAAAAAB///////8=
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>700, 300</value>
   </data>
@@ -2235,11 +2238,41 @@
   <data name="&gt;&gt;toolStripButtonEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;joinedDatabaseBindingSource.Name" xml:space="preserve">
-    <value>joinedDatabaseBindingSource</value>
+  <data name="&gt;&gt;FotevekenysegDataText.Name" xml:space="preserve">
+    <value>FotevekenysegDataText</value>
   </data>
-  <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;FotevekenysegDataText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TevekenysegekListText.Name" xml:space="preserve">
+    <value>TevekenysegekListText</value>
+  </data>
+  <data name="&gt;&gt;TevekenysegekListText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SzekhelyDataText.Name" xml:space="preserve">
+    <value>SzekhelyDataText</value>
+  </data>
+  <data name="&gt;&gt;SzekhelyDataText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TelephelyekText.Name" xml:space="preserve">
+    <value>TelephelyekText</value>
+  </data>
+  <data name="&gt;&gt;TelephelyekText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CegesSzemelyekListText.Name" xml:space="preserve">
+    <value>CegesSzemelyekListText</value>
+  </data>
+  <data name="&gt;&gt;CegesSzemelyekListText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Inaktiv_idoszakokListText.Name" xml:space="preserve">
+    <value>Inaktiv_idoszakokListText</value>
+  </data>
+  <data name="&gt;&gt;Inaktiv_idoszakokListText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fajlToolStripMenuItem.Name" xml:space="preserve">
     <value>fajlToolStripMenuItem</value>
@@ -2403,34 +2436,10 @@
   <data name="&gt;&gt;bejegyzesDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;FotevekenysegDataText.Name" xml:space="preserve">
-    <value>FotevekenysegDataText</value>
-  </data>
-  <data name="&gt;&gt;FotevekenysegDataText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TevekenysegekListText.Name" xml:space="preserve">
-    <value>TevekenysegekListText</value>
-  </data>
-  <data name="&gt;&gt;TevekenysegekListText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;tevekenysegvegeDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>tevekenysegvegeDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;tevekenysegvegeDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SzekhelyDataText.Name" xml:space="preserve">
-    <value>SzekhelyDataText</value>
-  </data>
-  <data name="&gt;&gt;SzekhelyDataText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TelephelyekText.Name" xml:space="preserve">
-    <value>TelephelyekText</value>
-  </data>
-  <data name="&gt;&gt;TelephelyekText.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;felhasznalonevDataGridViewTextBoxColumn.Name" xml:space="preserve">
@@ -2443,12 +2452,6 @@
     <value>jelszoDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;jelszoDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CegesSzemelyekListText.Name" xml:space="preserve">
-    <value>CegesSzemelyekListText</value>
-  </data>
-  <data name="&gt;&gt;CegesSzemelyekListText.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tokeDataGridViewTextBoxColumn.Name" xml:space="preserve">
@@ -2481,12 +2484,6 @@
   <data name="&gt;&gt;kozhasznusagfokozatDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Inaktiv_idoszakokListText.Name" xml:space="preserve">
-    <value>Inaktiv_idoszakokListText</value>
-  </data>
-  <data name="&gt;&gt;Inaktiv_idoszakokListText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;felfuggesztettDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>felfuggesztettDataGridViewTextBoxColumn</value>
   </data>
@@ -2498,6 +2495,12 @@
   </data>
   <data name="&gt;&gt;egyebadatokDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;joinedDatabaseBindingSource.Name" xml:space="preserve">
+    <value>joinedDatabaseBindingSource</value>
+  </data>
+  <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

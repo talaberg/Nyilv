@@ -303,6 +303,12 @@ namespace NyilvForms
             Reconnect();
         }
 
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            SaveChanges();
+        }
+
+
 
     }
 }

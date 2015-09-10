@@ -97,6 +97,10 @@ namespace NyilvForms
 
             panelCegAdat.Controls.Clear();
 
+            Button saveButton = InitButton(NyilvConstants.ButtonTypes.Save);
+
+            panelCegAdat.Controls.Add(saveButton);
+
             Size currSize = GetControlSize();
 
             JoinedDatabase currentDataSource = (JoinedDatabase)joinedDatabaseBindingSource.Current;
@@ -216,8 +220,6 @@ namespace NyilvForms
 
         }
 
-
-
         bool UpdateDokumentumok(int ID)
         {
             throw new NotImplementedException();
@@ -240,6 +242,23 @@ namespace NyilvForms
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // UI ----------------------------------------------------------------------------------------------------------------------------------------------
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        private Button InitButton(NyilvConstants.ButtonTypes buttonTypes)
+        {
+            Button bt = new Button();
+            switch (buttonTypes)
+            {
+                case NyilvConstants.ButtonTypes.Save:
+                    bt.Text = NyilvConstants.SaveButtonProperties.Text;
+                    bt.Location = NyilvConstants.SaveButtonProperties.Pos;
+                    bt.Click += btSave_Click;
+                    break;
+                default:
+                    break;
+            }
+            bt.BackColor = SystemColors.Control;
+            return bt;
+        }
 
         void DataGridViewHeaderStyleUpdate()
         {

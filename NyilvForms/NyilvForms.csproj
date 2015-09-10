@@ -114,7 +114,6 @@
     <Compile Include="ComboBoxElementItem.cs" />
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Connection\Connect.cs" />
-    <Compile Include="Defines.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
