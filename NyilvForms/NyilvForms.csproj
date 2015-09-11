@@ -132,6 +132,9 @@
     <Compile Include="MainWindowGuiUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainWindowSaveChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainWindowWebClient.cs">
       <SubType>Form</SubType>
     </Compile>

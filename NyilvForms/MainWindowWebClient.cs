@@ -159,7 +159,7 @@ namespace NyilvForms
             resp.EnsureSuccessStatusCode();
 
         }
-        private void SaveChanges()
+        private void UploadChanges()
         {
             JoinedDatabase data = (JoinedDatabase)joinedDatabaseBindingSource.Current;
             if (data != null)

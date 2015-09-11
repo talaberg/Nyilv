@@ -35,7 +35,8 @@ namespace NyilvForms
         Connect myConnection;                   //Connection handler
 
         List<ObjectDataField> datafield;
-        List<ComboboxItem> munkatarsak;
+        List<ComboboxItem> munkatarsakCb;
+        List<Munkatarsak> munkatarsak;
         List<ComboboxItem> cegFormak;
 
         ConfigHandler myConfig;
@@ -75,11 +76,13 @@ namespace NyilvForms
             Connect();
 
             //combobox update
-            munkatarsak = new List<ComboboxItem>();
+            munkatarsakCb = new List<ComboboxItem>();
+            munkatarsak = GetMunkatarsak();
             UpdateMunkatarsak();
 
             cegFormak = new List<ComboboxItem>();
             UpdateCegFormak();
+            
         }
 
         //      Main menu events ----------------------------------------------------------------------------------------------------------------------------------------
@@ -305,7 +308,8 @@ namespace NyilvForms
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            SaveChanges();
+            SaveData();
+            UploadChanges();
         }
 
 

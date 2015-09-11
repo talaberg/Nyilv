@@ -62,7 +62,7 @@ namespace NyilvLib
             Inaktiv_idoszakokList = new Inaktiv_idoszakok();
             Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
         }
-        public Alapadatok GetAlapadatok()
+        public Alapadatok GetAlapadatok(List<Munkatarsak> munkatarsak = null)
         {
             Alapadatok A = new Alapadatok();
 
@@ -96,6 +96,13 @@ namespace NyilvLib
             A.Inaktiv_idoszakok = Inaktiv_idoszakok;
             A.Felfuggesztett = Felfuggesztett;
             A.Egyeb_adatok = Egyeb_adatok;
+
+            if (munkatarsak != null)
+	        {
+                A.Felelos1 = munkatarsak.Find(c => c.Nev == Felelos1).MunkatarsID;
+                A.Felelos2 = munkatarsak.Find(c => c.Nev == Felelos2).MunkatarsID;
+	        }
+            
 
             return A;
         }

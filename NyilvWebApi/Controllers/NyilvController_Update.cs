@@ -141,17 +141,19 @@ namespace Nyilv.Controllers
 
                     using (var ctx = new ModelNyilv())
                     {
+                        List<Munkatarsak> munkatarsak = ctx.Munkatarsak.ToList();
+
                         Alapadatok Item2Modify = ctx.Alapadatok
                                 .Where(c => c.CegID == adat.CegID).FirstOrDefault<Alapadatok>();
                         if (Item2Modify == null)
                         {
                             adat.CegID = GenerateId();
-                            ctx.Alapadatok.Add(adat.GetAlapadatok());
+                            ctx.Alapadatok.Add(adat.GetAlapadatok(munkatarsak));
                             //ctx.Cegadatok.Add(new Cegadatok { CegID = adat.CegID });
                         }
                         else
                         {
-                            ctx.Entry(Item2Modify).CurrentValues.SetValues(adat.GetAlapadatok());
+                            ctx.Entry(Item2Modify).CurrentValues.SetValues(adat.GetAlapadatok(munkatarsak));
                         }
                         ctx.SaveChanges();
 

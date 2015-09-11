@@ -35,14 +35,13 @@ namespace NyilvForms
         }
         private void UpdateMunkatarsak()
         {
-            munkatarsak.Clear();
-            List<Munkatarsak> m = GetMunkatarsak();
+            munkatarsakCb.Clear();
 
-            munkatarsak.Add(new ComboboxItem(0, ""));
+            munkatarsakCb.Add(new ComboboxItem(0, ""));
 
-            foreach (var munkatars in m)
+            foreach (var munkatars in munkatarsak)
             {
-                munkatarsak.Add(new ComboboxItem(munkatars.MunkatarsID, munkatars.Nev));
+                munkatarsakCb.Add(new ComboboxItem(munkatars.MunkatarsID, munkatars.Nev));
             }
         }
 
@@ -111,7 +110,7 @@ namespace NyilvForms
                     datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Cegnev.Text, currentDataSource.Cegnev));
                     datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Adoszam.Text, currentDataSource.Adoszam));
                     datafield.Add(new ComboBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Ceg_forma.Text, cegFormak, currentDataSource.Ceg_forma));
-                    datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Ceg_forma.Text, currentDataSource.Ceg_forma));
+                    //datafield.Add(new TextBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Ceg_forma.Text, currentDataSource.Ceg_forma));
                     datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.Stat_szamjel.Text, currentDataSource.Stat_szamjel));
                     datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.EU_adoszam.Text, currentDataSource.EU_adoszam));
                     datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Cegjegyzek_szam.Text, currentDataSource.Cegjegyzek_szam));
@@ -120,8 +119,8 @@ namespace NyilvForms
                     break;
                 case 2:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Szerzodott_AZNAP_ceg.Text, currentDataSource.Nyilv_szam));
-                    datafield.Add(new ComboBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Felelos1.Text, munkatarsak, currentDataSource.Felelos1));
-                    datafield.Add(new ComboBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Felelos2.Text, munkatarsak, currentDataSource.Felelos2));
+                    datafield.Add(new ComboBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Felelos1.Text, munkatarsakCb, currentDataSource.Felelos1));
+                    datafield.Add(new ComboBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Felelos2.Text, munkatarsakCb, currentDataSource.Felelos2));
                     break;
                 case 3:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Email.Text, currentDataSource.Email));
@@ -220,24 +219,7 @@ namespace NyilvForms
 
         }
 
-        bool UpdateDokumentumok(int ID)
-        {
-            throw new NotImplementedException();
-            /*
-            var resp = myConnection.Client.GetAsync(myConfig.Configuration.HostAddress + ControllerFormats.GetDokumentumokById.ControllerUrl(ID)).Result;
-            if (resp.StatusCode == HttpStatusCode.OK)
-            {
-                var adat = resp.Content.ReadAsAsync<List<Dokumentumok>>().Result;
-
-                UpdateDokumentumokField(adat);
-                return true;
-            }
-            else
-            {
-                return false;
-            }*/
-
-        }
+        
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         // UI ----------------------------------------------------------------------------------------------------------------------------------------------

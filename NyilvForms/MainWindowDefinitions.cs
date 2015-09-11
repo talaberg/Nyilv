@@ -68,10 +68,6 @@ namespace NyilvForms
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
                 this.Data.ReadOnly = isreadonly;
 
-              /* BindingSource b = new BindingSource();
-               b.DataSource = value;
-               this.Data.DataBindings.Add("Value",b);*/
-
                 if (value != null)
                 {
                     type = value.GetType();
@@ -94,7 +90,7 @@ namespace NyilvForms
                
 
                 DataObj = (Control)Data;
-            }
+            }           
         }
         class RichTextBoxDataField : ObjectDataField
         {
