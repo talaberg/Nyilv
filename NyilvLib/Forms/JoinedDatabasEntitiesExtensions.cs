@@ -13,6 +13,10 @@ namespace NyilvLib.Entities
 {
     public partial class Telephelyek
     {
+        public Telephelyek()
+        {
+            TelepID = 0;
+        }
         public override string ToString()
         {
             List<string> str = new List<string>();

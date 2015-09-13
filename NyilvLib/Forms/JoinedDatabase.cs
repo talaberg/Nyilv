@@ -15,27 +15,27 @@ namespace NyilvLib
         public Alapadatok Container { get; set; }
 
         public List<Telephelyek> TelephelyekList { get { return telephelyekList; } set { telephelyekList = value; TelephelyekText = value.ToString(); } }
-        public List<Telephelyek> telephelyekList = new List<Telephelyek>();
+        private List<Telephelyek> telephelyekList = new List<Telephelyek>();
         public string TelephelyekText { get { return telephelyekList.ExtendedToString(); } set { } }
 
         public Telephelyek SzekhelyData { get { return szekhelyData; } set { szekhelyData = value; SzekhelyDataText = value.ToString(); } }
-        public Telephelyek szekhelyData = new Telephelyek();
+        private Telephelyek szekhelyData = new Telephelyek();
         public string SzekhelyDataText { get { return szekhelyData.ToString(); } set { } }
 
         public List<CegesSzemelyek> CegesSzemelyekList { get { return cegesSzemelyekList; } set { cegesSzemelyekList = value; CegesSzemelyekListText = value.ToString(); } }
-        public List<CegesSzemelyek> cegesSzemelyekList = new List<CegesSzemelyek>();
+        private List<CegesSzemelyek> cegesSzemelyekList = new List<CegesSzemelyek>();
         public string CegesSzemelyekListText { get { return cegesSzemelyekList.ExtendedToString(); } set { } }
 
         public Inaktiv_idoszakok Inaktiv_idoszakokList { get { return inaktiv_idoszakokList; } set { inaktiv_idoszakokList = value; Inaktiv_idoszakokListText = value.ToString(); } }
-        public Inaktiv_idoszakok inaktiv_idoszakokList = new Inaktiv_idoszakok();
+        private Inaktiv_idoszakok inaktiv_idoszakokList = new Inaktiv_idoszakok();
         public string Inaktiv_idoszakokListText { get { return inaktiv_idoszakokList.ToString(); } set { } }
 
         public List<Tevekenysegek> TevekenysegekList { get { return tevekenysegekList; } set { tevekenysegekList = value; TevekenysegekListText = value.ToString(); } }
-        public List<Tevekenysegek> tevekenysegekList = new List<Tevekenysegek>();
+        private List<Tevekenysegek> tevekenysegekList = new List<Tevekenysegek>();
         public string TevekenysegekListText { get { return tevekenysegekList.ExtendedToString(); } set { } }
 
         public Tevekenysegek FotevekenysegData { get { return fotevekenysegData; } set { fotevekenysegData = value; FotevekenysegDataText = value.ToString(); } }
-        public Tevekenysegek fotevekenysegData = new Tevekenysegek();
+        private Tevekenysegek fotevekenysegData = new Tevekenysegek();
         public string FotevekenysegDataText { get { return fotevekenysegData.ToString(); } set { } }
 
         //-------------------------------------------------------

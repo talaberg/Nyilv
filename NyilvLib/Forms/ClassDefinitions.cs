@@ -60,6 +60,7 @@ namespace NyilvLib.Forms
             Id = Inaktiv_idoszak.IdCount++;
         }
 
+        // Returns the date interval as string
         private string ToInterval()
         {
             string tol = "";
@@ -82,6 +83,12 @@ namespace NyilvLib.Forms
             if (this.meddig != null) str.Add(GuiConstants.Inaktiv_idoszakok_Meddig.Text + GuiConstants.KulcsElvalasztojel.Text + this.meddig.ToString());
 
             return StringHandler.BuildGuiString(str, GuiConstants.MezoElvalasztojel.Text);
+        }
+        public string ToXmlString()
+        {
+            return "<" + GuiConstants.Inaktiv_idoszakok_Mettol.Name + ">" + this.mettol.ToString() + "</" + GuiConstants.Inaktiv_idoszakok_Mettol.Name + ">" +
+                   "<" + GuiConstants.Inaktiv_idoszakok_Meddig.Name + ">" + this.meddig.ToString() + "</" + GuiConstants.Inaktiv_idoszakok_Meddig.Name + ">";
+
         }
     }
 
@@ -112,7 +119,7 @@ namespace NyilvLib.Forms
                         doc.Load(inStream);
 
                         // XmlNodeList NL = doc.GetElementsByTagName("Inaktiv_idoszak");
-                        XmlNodeList NL = doc.SelectNodes("/Inaktiv_idoszakok/Inaktiv_idoszak");
+                        XmlNodeList NL = doc.SelectNodes("/" + XmlConstants.Inaktiv_idoszakokCollection + "/" + XmlConstants.Inaktiv_idoszakokTag);
 
                         foreach (XmlNode node in NL)
                         {
@@ -139,6 +146,17 @@ namespace NyilvLib.Forms
 
             }
         }
+
+        public string ToXml()
+        {
+            List<string> idoszakok = new List<string>();
+            foreach (var item in Inaktiv_idoszak)
+            {
+                idoszakok.Add(item.ToXmlString());
+            }
+            return MyXmlParser.List2Xml(idoszakok,XmlConstants.Inaktiv_idoszakokTag,XmlConstants.Inaktiv_idoszakokCollection);
+        }
+
         public override string ToString()
         {
             return this.Inaktiv_idoszak.ExtendedToString();

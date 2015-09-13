@@ -136,7 +136,7 @@ namespace NyilvForms
 
             foreach (var t in T)
             {
-                var element = new ComboboxItem(int.Parse(t.ID), t.Megnevezes);
+                var element = new ComboboxItem(t.ID, t.Megnevezes);
                 comboboxTevekenysegek.Items.Add(element);
             }
 
@@ -200,7 +200,7 @@ namespace NyilvForms
             List<Tevekenysegek> Tev = new List<Tevekenysegek>();
             if (tev != null)
             {
-                List<string> tevekenysegek = MyXmlParser.Xml2StringList(tev, XmlConstants.TevekenysegekTag, XmlConstants.TevekenysegekTagCollection);
+                List<string> tevekenysegek = MyXmlParser.Xml2StringList(tev, XmlConstants.TevekenysegekTag, XmlConstants.TevekenysegekCollection);
                 
                 Tev = GetTevekenysegek(tevekenysegek, ev);
             }

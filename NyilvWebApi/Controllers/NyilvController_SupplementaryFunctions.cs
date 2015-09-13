@@ -21,7 +21,7 @@ namespace Nyilv.Controllers
 {
     public partial class NyilvController : ApiController
     {
-        protected static int GenerateId()
+        protected static int GenerateAlapadatokId()
         {
             int maxId = -1;
             using (var ctx = new ModelNyilv())
@@ -41,7 +41,48 @@ namespace Nyilv.Controllers
                 }
             }
             return maxId;
+        }
+        protected static int GenerateTelephelyekId()
+        {
+            int maxId = -1;
+            using (var ctx = new ModelNyilv())
+            {
+                maxId = ctx.Telephelyek.FirstOrDefault(c => c.TelepID == ctx.Telephelyek.Max(e => e.TelepID)).TelepID;
 
+                // new ID: maxId + 1 :
+                if (++maxId <= 0) // Overflow --> find new ID
+                {
+                    int i = 1;
+                    while (ctx.Telephelyek.Where(c => c.TelepID == i).FirstOrDefault<Telephelyek>() != null)
+                    {
+                        i++;
+                        if (i <= 0) return -1; //Error
+                    }
+                    maxId = i;
+                }
+            }
+            return maxId;
+        }
+        protected static int GenerateCegesSzemelyekId()
+        {
+            int maxId = -1;
+            using (var ctx = new ModelNyilv())
+            {
+                maxId = ctx.CegesSzemelyek.FirstOrDefault(c => c.CegSzemID == ctx.CegesSzemelyek.Max(e => e.CegSzemID)).CegSzemID;
+
+                // new ID: maxId + 1 :
+                if (++maxId <= 0) // Overflow --> find new ID
+                {
+                    int i = 1;
+                    while (ctx.CegesSzemelyek.Where(c => c.CegSzemID == i).FirstOrDefault<CegesSzemelyek>() != null)
+                    {
+                        i++;
+                        if (i <= 0) return -1; //Error
+                    }
+                    maxId = i;
+                }
+            }
+            return maxId;
         }
 
         Tevekenysegek TevekenysegekEV2Tevekenysegek(TevekenysegekEV tev)

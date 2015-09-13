@@ -312,7 +312,5 @@ namespace NyilvForms
             UploadChanges();
         }
 
-
-
     }
 }

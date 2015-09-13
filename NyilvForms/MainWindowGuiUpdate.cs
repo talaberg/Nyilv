@@ -118,7 +118,7 @@ namespace NyilvForms
                     
                     break;
                 case 2:
-                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Szerzodott_AZNAP_ceg.Text, currentDataSource.Nyilv_szam));
+                    datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Szerzodott_AZNAP_ceg.Text, currentDataSource.Szerzodott_AZNAP_ceg));
                     datafield.Add(new ComboBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Felelos1.Text, munkatarsakCb, currentDataSource.Felelos1));
                     datafield.Add(new ComboBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Felelos2.Text, munkatarsakCb, currentDataSource.Felelos2));
                     break;
@@ -131,14 +131,14 @@ namespace NyilvForms
                     datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.Fotevekenyseg.Text, currentDataSource.FotevekenysegData.Megnevezes,true));
 
                     ComboBox comTevekenyseg = ComboBoxTevekenysegekInit(currentDataSource.TevekenysegekList);
-                    var currentTevekenyseg = currentDataSource.TevekenysegekList.Find(x => int.Parse(x.ID) == ((ComboboxItem)comTevekenyseg.SelectedItem).ID);
+                    var currentTevekenyseg = currentDataSource.TevekenysegekList.Find(x => x.ID == ((ComboboxItem)comTevekenyseg.SelectedItem).sID);
                     if (currentTevekenyseg == null)
                     {
                         currentTevekenyseg = new Tevekenysegek(); 
                     }
 
-                    datafield.Add(new ComboBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Telephelyek.Text, comTevekenyseg, new ComboboxChangeHandlerDelegate(ComboboxTevekenysegekChangeHandler)));
-                    datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.Tevekenyseg_ID.Text, currentTevekenyseg.ID));
+                    datafield.Add(new ComboBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Tevekenyseg.Text, comTevekenyseg, new ComboboxChangeHandlerDelegate(ComboboxTevekenysegekChangeHandler)));
+                    datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.Tevekenyseg_ID.Text, currentTevekenyseg.ID,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
                     datafield.Add(new TextBoxDataField(9, GetControlPos(9), GetLabelPos(9), currSize, GuiConstants.Tevekenyseg_Megnevezes.Text, currentTevekenyseg.Megnevezes,true));
                     datafield.Add(new DateTimeDataField(10, GetControlPos(10), GetLabelPos(10), currSize, GuiConstants.Tevekenyseg_vege.Text, currentDataSource.Tevekenyseg_vege));
                     break;
@@ -156,9 +156,9 @@ namespace NyilvForms
                     }
 
                     datafield.Add(new ComboBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Telephelyek.Text, comTelepek, new ComboboxChangeHandlerDelegate(ComboboxTelephelyekChangeHandler)));
-                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.Telephely_Cim.Text, currentTelep.Cim));
-                    datafield.Add(new DateTimeDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.Telephely_Mettol.Text, currentTelep.Mettol));
-                    datafield.Add(new DateTimeDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Telephely_Meddig.Text, currentTelep.Meddig));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.Telephely_Cim.Text, currentTelep.Cim, false, new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new DateTimeDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.Telephely_Mettol.Text, currentTelep.Mettol, new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new DateTimeDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Telephely_Meddig.Text, currentTelep.Meddig, new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
 
                     datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.Felhasznalonev.Text, currentDataSource.Felhasznalonev));
                     datafield.Add(new TextBoxDataField(9, GetControlPos(9), GetLabelPos(9), currSize, GuiConstants.Jelszo.Text, currentDataSource.Jelszo));
@@ -172,15 +172,15 @@ namespace NyilvForms
                     }
 
                     datafield.Add(new ComboBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Ugyvez_tagok.Text, comSzemelyek, new ComboboxChangeHandlerDelegate(ComboboxCegesSzemelyekChangeHandler)));
-                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.CegesSzemely_Nev.Text, currentSzemely.Nev));
-                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.CegesSzemely_Taj.Text, currentSzemely.Taj));
-                    datafield.Add(new DateTimeDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.CegesSzemely_Szul_Ido.Text, currentSzemely.Szul_Ido));
-                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.CegesSzemely_Anyja.Text, currentSzemely.Anyja));
-                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.CegesSzemely_Cime.Text, currentSzemely.Cime));
-                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.CegesSzemely_Adoazon.Text, currentSzemely.Adoazon));
-                    datafield.Add(new DateTimeDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.CegesSzemely_Mettol.Text, currentSzemely.Mettol));
-                    datafield.Add(new DateTimeDataField(9, GetControlPos(9), GetLabelPos(9), currSize, GuiConstants.CegesSzemely_Meddig.Text, currentSzemely.Meddig));
-                    datafield.Add(new TextBoxDataField(10, GetControlPos(10), GetLabelPos(10), currSize, GuiConstants.CegesSzemely_Megbizas_minosege.Text, currentSzemely.Megbizas_minosege));
+                    datafield.Add(new TextBoxDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.CegesSzemely_Nev.Text, currentSzemely.Nev,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new TextBoxDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.CegesSzemely_Taj.Text, currentSzemely.Taj,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new DateTimeDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.CegesSzemely_Szul_Ido.Text, currentSzemely.Szul_Ido,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new TextBoxDataField(5, GetControlPos(5), GetLabelPos(5), currSize, GuiConstants.CegesSzemely_Anyja.Text, currentSzemely.Anyja,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new TextBoxDataField(6, GetControlPos(6), GetLabelPos(6), currSize, GuiConstants.CegesSzemely_Cime.Text, currentSzemely.Cime,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new TextBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.CegesSzemely_Adoazon.Text, currentSzemely.Adoazon,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new DateTimeDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.CegesSzemely_Mettol.Text, currentSzemely.Mettol,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new DateTimeDataField(9, GetControlPos(9), GetLabelPos(9), currSize, GuiConstants.CegesSzemely_Meddig.Text, currentSzemely.Meddig,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new TextBoxDataField(10, GetControlPos(10), GetLabelPos(10), currSize, GuiConstants.CegesSzemely_Megbizas_minosege.Text, currentSzemely.Megbizas_minosege,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
                     break;
                 case 6:
                     datafield.Add(new TextBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Toke.Text, currentDataSource.Toke));
@@ -198,8 +198,8 @@ namespace NyilvForms
                     }
 
                     datafield.Add(new ComboBoxDataField(1, GetControlPos(1), GetLabelPos(1), currSize, GuiConstants.Inaktiv_idoszakok.Text, comInaktiv_ido, new ComboboxChangeHandlerDelegate(ComboboxInaktiv_idoszakokChangeHandler)));
-                    datafield.Add(new DateTimeDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Inaktiv_idoszakok_Mettol.Text, currentInaktiv_ido.Mettol));
-                    datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Inaktiv_idoszakok_Meddig.Text, currentInaktiv_ido.Meddig));
+                    datafield.Add(new DateTimeDataField(2, GetControlPos(2), GetLabelPos(2), currSize, GuiConstants.Inaktiv_idoszakok_Mettol.Text, currentInaktiv_ido.Mettol,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
+                    datafield.Add(new DateTimeDataField(3, GetControlPos(3), GetLabelPos(3), currSize, GuiConstants.Inaktiv_idoszakok_Meddig.Text, currentInaktiv_ido.Meddig,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
 
                     datafield.Add(new CheckBoxDataField(4, GetControlPos(4), GetLabelPos(4), currSize, GuiConstants.Felfuggesztett.Text, currentDataSource.Felfuggesztett));
                     break;

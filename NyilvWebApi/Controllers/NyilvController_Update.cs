@@ -34,7 +34,7 @@ namespace Nyilv.Controllers
                             .Where(c => c.CegID == adat.CegID).FirstOrDefault<Alapadatok>();
                     if (Item2Modify == null)
                     {
-                        adat.CegID = GenerateId();
+                        adat.CegID = GenerateAlapadatokId();
                         ctx.Alapadatok.Add(adat);
                         ctx.Cegadatok.Add(new Cegadatok { CegID = adat.CegID });
                     }
@@ -143,42 +143,62 @@ namespace Nyilv.Controllers
                     {
                         List<Munkatarsak> munkatarsak = ctx.Munkatarsak.ToList();
 
+                        // Update alapadatok ----------------------------------------------------------------
                         Alapadatok Item2Modify = ctx.Alapadatok
                                 .Where(c => c.CegID == adat.CegID).FirstOrDefault<Alapadatok>();
                         if (Item2Modify == null)
                         {
-                            adat.CegID = GenerateId();
+                            adat.CegID = GenerateAlapadatokId();
                             ctx.Alapadatok.Add(adat.GetAlapadatok(munkatarsak));
                             //ctx.Cegadatok.Add(new Cegadatok { CegID = adat.CegID });
                         }
                         else
                         {
                             ctx.Entry(Item2Modify).CurrentValues.SetValues(adat.GetAlapadatok(munkatarsak));
+                            ctx.SaveChanges();
                         }
-                        ctx.SaveChanges();
 
-                        return Ok();
-                    }
-                    using (var ctx = new ModelNyilv())
-                    {
-                        foreach (Telephelyek item in adat.telephelyekList)
+                        // Update telephelyek and szekhely  ----------------------------------------------------------------
+                        adat.TelephelyekList.Add(adat.SzekhelyData);
+                        foreach (Telephelyek item in adat.TelephelyekList)
                         {
-                            Telephelyek Item2Modify = ctx.Telephelyek
+                            Telephelyek Item2ModifyT = ctx.Telephelyek
                                 .Where(c => c.TelepID == item.TelepID).FirstOrDefault<Telephelyek>();
 
-                            if (Item2Modify == null)
+                            if (Item2ModifyT == null || Item2ModifyT.TelepID == 0)
                             {
-                                item.TelepID = GenerateId();
+                                item.TelepID = GenerateTelephelyekId();
                                 ctx.Telephelyek.Add(item);
                             }
                             else
                             {
-                                ctx.Entry(Item2Modify).CurrentValues.SetValues(item);
+                                ctx.Entry(Item2ModifyT).CurrentValues.SetValues(item);
+                                
                             }
                             ctx.SaveChanges();
-
-                            return Ok();
                         }
+
+                        // Update CegesSzemelyek ----------------------------------------------------------------
+                        foreach (CegesSzemelyek item in adat.CegesSzemelyekList)
+                        {
+                            CegesSzemelyek Item2ModifyC = ctx.CegesSzemelyek
+                                .Where(c => c.CegSzemID == item.CegSzemID).FirstOrDefault<CegesSzemelyek>();
+
+                            if (Item2ModifyC == null || Item2ModifyC.CegSzemID == 0)
+                            {
+                                item.CegSzemID = GenerateTelephelyekId();
+                                ctx.CegesSzemelyek.Add(item);
+                            }
+                            else
+                            {
+                                ctx.Entry(Item2ModifyC).CurrentValues.SetValues(item);
+                                ctx.SaveChanges();
+                            }
+                        }
+
+                        ctx.SaveChanges();
+
+                        return Ok();
                     }
                 }
             }

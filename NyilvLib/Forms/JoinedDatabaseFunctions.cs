@@ -99,8 +99,25 @@ namespace NyilvLib
 
             if (munkatarsak != null)
 	        {
-                A.Felelos1 = munkatarsak.Find(c => c.Nev == Felelos1).MunkatarsID;
-                A.Felelos2 = munkatarsak.Find(c => c.Nev == Felelos2).MunkatarsID;
+                Munkatarsak m = munkatarsak.Find(c => c.Nev == Felelos1);
+                if (m != null)
+                {
+                    A.Felelos1 = m.MunkatarsID;
+	            }
+                else
+                {
+                    A.Felelos1 = null;
+                }
+
+                m = munkatarsak.Find(c => c.Nev == Felelos2);
+                if (m != null)
+                {
+                    A.Felelos2 = m.MunkatarsID;
+                }
+                else
+                {
+                    A.Felelos2 = null;
+                }
 	        }
             
 
