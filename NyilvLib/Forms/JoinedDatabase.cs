@@ -16,27 +16,27 @@ namespace NyilvLib
 
         public List<Telephelyek> TelephelyekList { get { return telephelyekList; } set { telephelyekList = value; TelephelyekText = value.ToString(); } }
         private List<Telephelyek> telephelyekList = new List<Telephelyek>();
-        public string TelephelyekText { get { return telephelyekList.ExtendedToString(); } set { } }
+        public string TelephelyekText { get { return (telephelyekList.Count != 0) ? telephelyekList.ExtendedToString() : GuiConstants.DefaultXmlText; } set { } }
 
         public Telephelyek SzekhelyData { get { return szekhelyData; } set { szekhelyData = value; SzekhelyDataText = value.ToString(); } }
         private Telephelyek szekhelyData = new Telephelyek();
-        public string SzekhelyDataText { get { return szekhelyData.ToString(); } set { } }
+        public string SzekhelyDataText { get { return (szekhelyData != null) ? szekhelyData.ToString() : GuiConstants.DefaultXmlText; } set { } }
 
         public List<CegesSzemelyek> CegesSzemelyekList { get { return cegesSzemelyekList; } set { cegesSzemelyekList = value; CegesSzemelyekListText = value.ToString(); } }
         private List<CegesSzemelyek> cegesSzemelyekList = new List<CegesSzemelyek>();
-        public string CegesSzemelyekListText { get { return cegesSzemelyekList.ExtendedToString(); } set { } }
+        public string CegesSzemelyekListText { get { return (cegesSzemelyekList.Count != 0 ) ? cegesSzemelyekList.ExtendedToString() : GuiConstants.DefaultXmlText; } set { } }
 
         public Inaktiv_idoszakok Inaktiv_idoszakokList { get { return inaktiv_idoszakokList; } set { inaktiv_idoszakokList = value; Inaktiv_idoszakokListText = value.ToString(); } }
         private Inaktiv_idoszakok inaktiv_idoszakokList = new Inaktiv_idoszakok();
-        public string Inaktiv_idoszakokListText { get { return inaktiv_idoszakokList.ToString(); } set { } }
+        public string Inaktiv_idoszakokListText { get { return (inaktiv_idoszakokList.Inaktiv_idoszak.Count != 0) ? inaktiv_idoszakokList.ToString() : GuiConstants.DefaultXmlText; } set { } }
 
         public List<Tevekenysegek> TevekenysegekList { get { return tevekenysegekList; } set { tevekenysegekList = value; TevekenysegekListText = value.ToString(); } }
         private List<Tevekenysegek> tevekenysegekList = new List<Tevekenysegek>();
-        public string TevekenysegekListText { get { return tevekenysegekList.ExtendedToString(); } set { } }
+        public string TevekenysegekListText { get { return (tevekenysegekList.Count != 0) ? tevekenysegekList.ExtendedToString() : GuiConstants.DefaultXmlText; } set { } }
 
         public Tevekenysegek FotevekenysegData { get { return fotevekenysegData; } set { fotevekenysegData = value; FotevekenysegDataText = value.ToString(); } }
         private Tevekenysegek fotevekenysegData = new Tevekenysegek();
-        public string FotevekenysegDataText { get { return fotevekenysegData.ToString(); } set { } }
+        public string FotevekenysegDataText { get { return (fotevekenysegData != null) ? fotevekenysegData.ToString() : GuiConstants.DefaultXmlText; } set { } }
 
         //-------------------------------------------------------
         //Alapadatok

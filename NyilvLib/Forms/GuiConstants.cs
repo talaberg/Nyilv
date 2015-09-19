@@ -372,6 +372,8 @@ namespace NyilvLib.Forms
         }
 
 
+        public const string DefaultXmlText = "< ... >";
+
 
         public static string GetHeader(string s)
         {

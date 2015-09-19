@@ -28,7 +28,7 @@ namespace NyilvForms
             foreach (JoinedDatabase client in ClientList)
             {
                 joinedDatabaseBindingSource.Add(client);
-                UpdateMiscJoinedDataBaseData(client);
+                //UpdateMiscJoinedDataBaseData(client);
             }
             UpdateDataField(currentGroup);
             

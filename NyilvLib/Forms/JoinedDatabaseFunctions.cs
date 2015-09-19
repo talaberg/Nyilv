@@ -24,6 +24,9 @@ namespace NyilvLib
         public void SetData()
         {
             SetAlapadatok();
+
+            Inaktiv_idoszakokList = new Inaktiv_idoszakok();
+            Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
         }
         private void SetAlapadatok()
         {
@@ -58,9 +61,6 @@ namespace NyilvLib
             Inaktiv_idoszakok           = Container.Inaktiv_idoszakok;
             Felfuggesztett              = Container.Felfuggesztett;
             Egyeb_adatok                = Container.Egyeb_adatok;
-
-            Inaktiv_idoszakokList = new Inaktiv_idoszakok();
-            Inaktiv_idoszakokList.Parse(Inaktiv_idoszakok);
         }
         public Alapadatok GetAlapadatok(List<Munkatarsak> munkatarsak = null)
         {
