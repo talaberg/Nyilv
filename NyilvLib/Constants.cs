@@ -14,11 +14,16 @@ namespace NyilvLib
         public const int CONTROL_XPOS_BASE = 150;
         public const int CONTROL_YPOS_BASE = 40;
         public const int CONTROL_YPOS_STEP = 35;
+        
         public const int LABEL_MARGIN = 5;
         public const int LABEL_XPOS_BASE = 20;
         public const int LABEL_YPOS_BASE = CONTROL_YPOS_BASE;
-        public const int LABEL_YPOS_STEP = CONTROL_YPOS_STEP;  
+        public const int LABEL_YPOS_STEP = CONTROL_YPOS_STEP;
 
+        public const int COMBOXBUTTON_XPOS_BASE = 0;
+        public const int COMBOXBUTTON_YPOS_BASE = 0;
+        public const int COMBOXBUTTON_PADDING = 20;
+        public const int COMBOXBUTTON_SIZE = 50;
         
         public enum ButtonTypes {Save=1};
         public static class SaveButtonProperties

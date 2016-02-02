@@ -1,4 +1,5 @@
 ﻿using NyilvLib;
+using NyilvLib.Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -52,7 +53,7 @@ namespace NyilvForms
             public Label Label { get; set; }
             public int Number { get; set; }
             public Control DataObj { get; set; }
-            protected ComboboxUpdateHandlerDelegate handler;
+            protected ComboboxUpdateHandlerDelegate handler2;
             public ObjectDataField(Point label, int num, string name, ComboboxUpdateHandlerDelegate h = null)
             {
                 Number = num;
@@ -68,9 +69,9 @@ namespace NyilvForms
                 
                 Label.TextAlign = ContentAlignment.MiddleRight;
 
-                if (handler != null)
+                if (handler2 != null)
                 {
-                    handler = h;
+                    handler2 = h;
                 }
                 
             }
@@ -114,13 +115,13 @@ namespace NyilvForms
 
                 if (updatehandler != null)
                 {
-                    handler = updatehandler;
+                    handler2 = updatehandler;
                     Data.Leave += Data_SelectedValueChanged;
                 }
             }
            void Data_SelectedValueChanged(object sender, EventArgs e)
            {
-               handler(this, new EventArgs());
+               handler2(this, new EventArgs());
            }
         }
         class RichTextBoxDataField : ObjectDataField
@@ -158,13 +159,13 @@ namespace NyilvForms
 
                 if (updatehandler != null)
                 {
-                    handler = updatehandler;
+                    handler2 = updatehandler;
                     Data.TextChanged += Data_SelectedValueChanged;
                 }
             }
             void Data_SelectedValueChanged(object sender, EventArgs e)
             {
-                handler(this, e);
+                handler2(this, e);
             }
         }        
 
@@ -206,13 +207,13 @@ namespace NyilvForms
 
                 if (updatehandler != null)
                 {
-                    handler = updatehandler;
+                    handler2 = updatehandler;
                     Data.LostFocus += Data_SelectedValueChanged;
                 }
             }
             void Data_SelectedValueChanged(object sender, EventArgs e)
             {
-                handler(this, e);
+                handler2(this, e);
             }
         }
 
@@ -239,10 +240,16 @@ namespace NyilvForms
             }
         }
 
-        class ComboBoxDataField : ObjectDataField
+        class ComboBoxDataField : ObjectDataField, IDisposable
         {
+            // Variables-------------
             public ComboBox Data { get; set; }
             ComboboxChangeHandlerDelegate handler;
+
+            protected Button addButton;
+            protected Button removeButton;
+            
+            //Functions -------------
             public ComboBoxDataField(int num, Point data, Point label, Size size, string Name, List<ComboboxItem> list, object value, ComboboxChangeHandlerDelegate handlerFunction = null)
                 : base(label, num, Name)
             {
@@ -260,7 +267,10 @@ namespace NyilvForms
 
                 Data.SelectedItem = list.Where(c => c.Name == (value as string)).FirstOrDefault();
 
-                DataObj = (Control)Data;
+                // Buttons
+                ButtonsInit(label);
+
+                DataObj = InitDataObj();
                 this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
 
                 //Events
@@ -269,13 +279,19 @@ namespace NyilvForms
                     handler = handlerFunction;
                     Data.SelectedValueChanged += Data_SelectedValueChanged;
                 }
+
+                
+
             }
             public ComboBoxDataField(int num, Point data, Point label, Size size, string Name, ComboBox c, ComboboxChangeHandlerDelegate handlerFunction = null)
                 : base(label, num, Name)
             {
                 ComboxInit(c, data, size);
+                
+                // Buttons
+                ButtonsInit(label);
 
-                DataObj = (Control)Data;
+                DataObj = InitDataObj();
 
                 //Events
                 if (handlerFunction != null)
@@ -283,10 +299,24 @@ namespace NyilvForms
                     handler = handlerFunction;
                     Data.SelectedValueChanged += Data_SelectedValueChanged;
                 }
+                
             }
             void Data_SelectedValueChanged(object sender, EventArgs e)
             {
                 handler(Data.SelectedItem.ToString());
+            }
+            Control InitDataObj()
+            {
+                Panel p = new Panel();
+                
+
+                p.AutoSize = true;
+
+                p.Controls.Add(removeButton);
+                p.Controls.Add(addButton);
+                p.Controls.Add(Data);
+                p.Show();
+                return p;
             }
             void ComboxInit(ComboBox c, Point data, Size size)
             {
@@ -303,6 +333,40 @@ namespace NyilvForms
             public void Reload(ComboBox c)
             {
                 ComboxInit(c, Data.Location, Data.Size);
+            }
+
+            private void Add(object sender, EventArgs e)
+            {                
+            }
+            private void Remove(object sender, EventArgs e)
+            {
+            }
+            private void ButtonsInit(Point pos)
+            {
+                addButton = new Button();
+                addButton.Text = GuiConstants.ComboBoxButtonText.Add;
+                addButton.Location = pos;
+                addButton.Click += this.Add;
+
+                pos.X += NyilvConstants.COMBOXBUTTON_PADDING;
+
+                removeButton = new Button();
+                removeButton.Text = GuiConstants.ComboBoxButtonText.Delete;
+                removeButton.Location = pos;
+                removeButton.Click += this.Remove;
+
+                this.Label.Hide();
+
+                
+
+            }
+            private void ButtonsRemove()
+            {
+            }
+
+            public void Dispose()
+            {
+                
             }
 
         }

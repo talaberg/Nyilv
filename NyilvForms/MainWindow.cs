@@ -44,10 +44,10 @@ namespace NyilvForms
         //Signal flow ------------------------
         //bool dataGridViewCellChanged;           //Indicates if a dataGridView cell is modified
         int changedRowIndex;                    //Indicates the changed row index
-        int currentRow;
-        int currentGroup;                       //Inidcates the current group
+        int currentRow;                         //Indicates the current row
+        int currentGroup;                       //Indicates the current group
 
-        int currentCegID = 1;                   // Current CegID regerence
+        int currentCegID = 1;                   // Current CegID reference
 
         int importcommand;                      // Registers, which import mode called the openFileDialog
 

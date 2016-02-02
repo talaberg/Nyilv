@@ -371,6 +371,14 @@ namespace NyilvLib.Forms
             public const string Text = "; ";
         }
 
+        // -------------------------------------------------
+        public static class ComboBoxButtonText
+        {
+            public const string Delete = "Hozzáadás";
+            public const string Add = "Törlés";
+        }
+
+
 
         public const string DefaultXmlText = "< ... >";
 

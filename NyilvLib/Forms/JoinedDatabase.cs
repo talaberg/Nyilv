@@ -20,7 +20,7 @@ namespace NyilvLib
 
         public Telephelyek SzekhelyData { get { return szekhelyData; } set { szekhelyData = value; SzekhelyDataText = value.ToString(); } }
         private Telephelyek szekhelyData = new Telephelyek();
-        public string SzekhelyDataText { get { return (szekhelyData != null) ? szekhelyData.ToString() : GuiConstants.DefaultXmlText; } set { } }
+        public string SzekhelyDataText { get { return (szekhelyData.ToString() != "") ? szekhelyData.ToString() : GuiConstants.DefaultXmlText; } set { } }
 
         public List<CegesSzemelyek> CegesSzemelyekList { get { return cegesSzemelyekList; } set { cegesSzemelyekList = value; CegesSzemelyekListText = value.ToString(); } }
         private List<CegesSzemelyek> cegesSzemelyekList = new List<CegesSzemelyek>();
@@ -36,7 +36,7 @@ namespace NyilvLib
 
         public Tevekenysegek FotevekenysegData { get { return fotevekenysegData; } set { fotevekenysegData = value; FotevekenysegDataText = value.ToString(); } }
         private Tevekenysegek fotevekenysegData = new Tevekenysegek();
-        public string FotevekenysegDataText { get { return (fotevekenysegData != null) ? fotevekenysegData.ToString() : GuiConstants.DefaultXmlText; } set { } }
+        public string FotevekenysegDataText { get { return (fotevekenysegData.ID != null) ? fotevekenysegData.ToString() : GuiConstants.DefaultXmlText; } set { } }
 
         //-------------------------------------------------------
         //Alapadatok

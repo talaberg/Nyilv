@@ -89,7 +89,10 @@ namespace NyilvForms
             }
             */
         }
-
+        //----------------------------------------------------------------------
+        // Updates DataPanel according to which group is selected
+        // Return: void
+        //----------------------------------------------------------------------
         void UpdateDataField(int group)
         {
             datafield = new List<ObjectDataField>();
@@ -242,6 +245,10 @@ namespace NyilvForms
             return bt;
         }
 
+        //----------------------------------------------------------------------
+        // Updates DataGridViewHeaderStyle
+        // Return: void
+        //----------------------------------------------------------------------
         void DataGridViewHeaderStyleUpdate()
         {
             alapadatokDataGridView.EnableHeadersVisualStyles = false;
