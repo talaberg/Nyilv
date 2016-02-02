@@ -129,7 +129,7 @@ namespace NyilvLib.Forms
         public static class Tevekenyseg_vege
         {
             public const string Name = "Tevekenyseg_vege";
-            public const string Text = "Tevékenység vége";
+            public const string Text = "Tevékenységek vége";
             public const int Group = 3;
         }   
         public static class Szekhely
@@ -374,8 +374,10 @@ namespace NyilvLib.Forms
         // -------------------------------------------------
         public static class ComboBoxButtonText
         {
-            public const string Delete = "Hozzáadás";
-            public const string Add = "Törlés";
+            //public const string Delete = "Hozzáadás";
+            //public const string Add = "Törlés";
+            public const string Delete = "-";
+            public const string Add = "+";
         }
 
 

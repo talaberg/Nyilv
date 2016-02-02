@@ -46,7 +46,9 @@ namespace NyilvForms
 
             public override string ToString() { return Name; }
         }
-
+        //----------------------------------------------------------------------
+        // Definition of the parent object of the datafields
+        //----------------------------------------------------------------------
         class ObjectDataField
         {
             protected System.Type type;
@@ -78,6 +80,9 @@ namespace NyilvForms
 
             
         }
+        //----------------------------------------------------------------------
+        // Definition of TextBox fields
+        //----------------------------------------------------------------------
         class TextBoxDataField : ObjectDataField
         {
 
@@ -124,6 +129,9 @@ namespace NyilvForms
                handler2(this, new EventArgs());
            }
         }
+        //----------------------------------------------------------------------
+        // Definition of RicTextBox fields
+        //----------------------------------------------------------------------
         class RichTextBoxDataField : ObjectDataField
         {
             public RichTextBox Data { get; set; }
@@ -167,8 +175,10 @@ namespace NyilvForms
             {
                 handler2(this, e);
             }
-        }        
-
+        }
+        //----------------------------------------------------------------------
+        // Definition of DateTime fields
+        //----------------------------------------------------------------------
         class DateTimeDataField : ObjectDataField
         {
             public DateTimePicker Data { get; set; }
@@ -216,7 +226,9 @@ namespace NyilvForms
                 handler2(this, e);
             }
         }
-
+        //----------------------------------------------------------------------
+        // Definition of CheckBox fields
+        //----------------------------------------------------------------------
         class CheckBoxDataField : ObjectDataField
         {
             public CheckBox Data { get; set; }
@@ -239,7 +251,9 @@ namespace NyilvForms
                 DataObj = (Control)Data;
             }
         }
-
+        //----------------------------------------------------------------------
+        // Definition of ComboBox fields
+        //----------------------------------------------------------------------
         class ComboBoxDataField : ObjectDataField, IDisposable
         {
             // Variables-------------
@@ -268,10 +282,10 @@ namespace NyilvForms
                 Data.SelectedItem = list.Where(c => c.Name == (value as string)).FirstOrDefault();
 
                 // Buttons
-                ButtonsInit(label);
+                //ButtonsInit(label);
 
-                DataObj = InitDataObj();
-                this.Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+                DataObj = InitDataObj(true);
+                this.Data.Anchor = (AnchorStyles.Left | AnchorStyles.Top);
 
                 //Events
                 if (handlerFunction != null)
@@ -279,7 +293,6 @@ namespace NyilvForms
                     handler = handlerFunction;
                     Data.SelectedValueChanged += Data_SelectedValueChanged;
                 }
-
                 
 
             }
@@ -291,7 +304,7 @@ namespace NyilvForms
                 // Buttons
                 ButtonsInit(label);
 
-                DataObj = InitDataObj();
+                DataObj = InitDataObj(false);
 
                 //Events
                 if (handlerFunction != null)
@@ -305,18 +318,24 @@ namespace NyilvForms
             {
                 handler(Data.SelectedItem.ToString());
             }
-            Control InitDataObj()
+            Control InitDataObj(bool simpleCombobox)
             {
-                Panel p = new Panel();
-                
+                if (simpleCombobox)
+                {
+                    return Data;
+                }
+                else
+                {
+                    Panel p = new Panel();
+                    p.AutoSize = true;
 
-                p.AutoSize = true;
+                    p.Controls.Add(removeButton);
+                    p.Controls.Add(addButton);
+                    p.Controls.Add(Data);
 
-                p.Controls.Add(removeButton);
-                p.Controls.Add(addButton);
-                p.Controls.Add(Data);
-                p.Show();
-                return p;
+                    p.Show();
+                    return p;
+                }
             }
             void ComboxInit(ComboBox c, Point data, Size size)
             {
@@ -327,7 +346,7 @@ namespace NyilvForms
                 Data = c;
                 Data.Location = data;
                 Data.Size = size;
-                Data.Anchor = (AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top);
+                Data.Anchor = ( AnchorStyles.Left | AnchorStyles.Top);
             }
 
             public void Reload(ComboBox c)
@@ -346,13 +365,15 @@ namespace NyilvForms
                 addButton = new Button();
                 addButton.Text = GuiConstants.ComboBoxButtonText.Add;
                 addButton.Location = pos;
+                addButton.Size = new Size(NyilvConstants.COMBOXBUTTON_SIZE, NyilvConstants.CONTROL_HEIGHT);
                 addButton.Click += this.Add;
-
+                
                 pos.X += NyilvConstants.COMBOXBUTTON_PADDING;
 
                 removeButton = new Button();
                 removeButton.Text = GuiConstants.ComboBoxButtonText.Delete;
                 removeButton.Location = pos;
+                removeButton.Size = new Size(NyilvConstants.COMBOXBUTTON_SIZE, NyilvConstants.CONTROL_HEIGHT);
                 removeButton.Click += this.Remove;
 
                 this.Label.Hide();

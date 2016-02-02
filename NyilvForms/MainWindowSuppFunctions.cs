@@ -213,7 +213,18 @@ namespace NyilvForms
             {
                 List<string> fotevekenyseg = new List<string>();
                 fotevekenyseg.Add(fotev);
-                Fotevevekeny = GetTevekenysegek(fotevekenyseg, ev).FirstOrDefault();
+
+                Tevekenysegek tevTemp = GetTevekenysegek(fotevekenyseg, ev).FirstOrDefault();
+                if (tevTemp == null)
+                {
+                    // Tevekenyseg ID not found --> possible Data inconsistency
+                    Fotevevekeny.ID = fotev;
+                    Fotevevekeny.Megnevezes = "";
+                }
+                else
+                {
+                    Fotevevekeny = tevTemp;
+                }
             }
             data.FotevekenysegData = Fotevevekeny;
 
