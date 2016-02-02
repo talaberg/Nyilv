@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,6 +47,13 @@ namespace NyilvForms
                 column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             }
             DataGridViewHeaderStyleUpdate();
+
+            // Turning on datagridview double buffering
+            Type dgvType = alapadatokDataGridView.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(alapadatokDataGridView, true, null);
+
 
             //Datafield init
             currentGroup = 1;
