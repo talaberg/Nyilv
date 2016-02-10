@@ -33,6 +33,7 @@
             this.splitContainerBalOldal = new System.Windows.Forms.SplitContainer();
             this.alapadatokBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.joinedDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -76,7 +77,6 @@
             this.Inaktiv_idoszakokListText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.felfuggesztettDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.egyebadatokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.joinedDatabaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainerAdatok = new System.Windows.Forms.SplitContainer();
             this.splitContainerJobbOldal = new System.Windows.Forms.SplitContainer();
             this.panelCegAdat = new System.Windows.Forms.Panel();
@@ -109,8 +109,8 @@
             this.splitContainerBalOldal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokBindingNavigator)).BeginInit();
             this.alapadatokBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdatok)).BeginInit();
             this.splitContainerAdatok.Panel1.SuspendLayout();
             this.splitContainerAdatok.Panel2.SuspendLayout();
@@ -144,8 +144,10 @@
             // alapadatokBindingNavigator
             // 
             this.alapadatokBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.alapadatokBindingNavigator.BindingSource = this.joinedDatabaseBindingSource;
             this.alapadatokBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.alapadatokBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.alapadatokBindingNavigator.CountItemFormat = "/ {0}";
+            this.alapadatokBindingNavigator.DeleteItem = null;
             this.alapadatokBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -171,6 +173,10 @@
             // 
             resources.ApplyResources(this.bindingNavigatorAddNewItem, "bindingNavigatorAddNewItem");
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            // 
+            // joinedDatabaseBindingSource
+            // 
+            this.joinedDatabaseBindingSource.DataSource = typeof(NyilvLib.JoinedDatabase);
             // 
             // bindingNavigatorCountItem
             // 
@@ -465,10 +471,6 @@
             resources.ApplyResources(this.egyebadatokDataGridViewTextBoxColumn, "egyebadatokDataGridViewTextBoxColumn");
             this.egyebadatokDataGridViewTextBoxColumn.Name = "egyebadatokDataGridViewTextBoxColumn";
             // 
-            // joinedDatabaseBindingSource
-            // 
-            this.joinedDatabaseBindingSource.DataSource = typeof(NyilvLib.JoinedDatabase);
-            // 
             // splitContainerAdatok
             // 
             resources.ApplyResources(this.splitContainerAdatok, "splitContainerAdatok");
@@ -673,8 +675,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.alapadatokBindingNavigator)).EndInit();
             this.alapadatokBindingNavigator.ResumeLayout(false);
             this.alapadatokBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.joinedDatabaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alapadatokDataGridView)).EndInit();
             this.splitContainerAdatok.Panel1.ResumeLayout(false);
             this.splitContainerAdatok.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerAdatok)).EndInit();

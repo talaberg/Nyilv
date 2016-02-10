@@ -276,6 +276,7 @@ namespace NyilvForms
             ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakok = ((JoinedDatabase)joinedDatabaseBindingSource.Current).Inaktiv_idoszakokList.ToXml();
 
         }
+        // Handles the update of the database in case of a data in a combobox is changed.
         void ComboboxChangedHandler(object sender, EventArgs e)
         {
             bool ComboboxItemChanged = false;
@@ -290,12 +291,12 @@ namespace NyilvForms
                         string item2find3 = ((ComboBoxDataField)datafield.Find(c => c.Number == 7)).Data.SelectedItem.ToString();
                         switch (item.Number)
                         {
-                            case 9:
+                            case 8:
                                 TextBoxDataField tb = sender as TextBoxDataField;
-                                ((JoinedDatabase)joinedDatabaseBindingSource.Current).TevekenysegekList.Find(c => c.ID == item2find3).ID = tb.Data.Text;
+                                ((JoinedDatabase)joinedDatabaseBindingSource.Current).TevekenysegekList.Find(c => c.Megnevezes == item2find3).ID = tb.Data.Text;
                                 ComboboxItemChanged = true;
                                 break;
-                            case 10:
+                            case 9:
                                 // no need to update
                                 break;
                             default:

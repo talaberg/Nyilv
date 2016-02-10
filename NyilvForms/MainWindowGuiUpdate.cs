@@ -101,6 +101,8 @@ namespace NyilvForms
 
             Button saveButton = InitButton(NyilvConstants.ButtonTypes.Save);
 
+            saveButton.Click += new System.EventHandler(this.saveButton_Click);
+
             panelCegAdat.Controls.Add(saveButton);
 
             Size currSize = GetControlSize();
@@ -139,7 +141,7 @@ namespace NyilvForms
                     {
                         currentTevekenyseg = new Tevekenysegek(); 
                     }
-
+            TODO: megnézni, hogy hol tölti be a tevékenységeket, és ott beállítani, hogy invalidot is kijelezzen.
                     datafield.Add(new ComboBoxDataField(7, GetControlPos(7), GetLabelPos(7), currSize, GuiConstants.Tevekenyseg.Text, comTevekenyseg, new ComboboxChangeHandlerDelegate(ComboboxTevekenysegekChangeHandler)));
                     datafield.Add(new TextBoxDataField(8, GetControlPos(8), GetLabelPos(8), currSize, GuiConstants.Tevekenyseg_ID.Text, currentTevekenyseg.ID,false,new ComboboxUpdateHandlerDelegate(ComboboxChangedHandler)));
                     datafield.Add(new TextBoxDataField(9, GetControlPos(9), GetLabelPos(9), currSize, GuiConstants.Tevekenyseg_Megnevezes.Text, currentTevekenyseg.Megnevezes,true));

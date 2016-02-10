@@ -153,35 +153,17 @@
   <data name="bindingNavigatorAddNewItem.Text" xml:space="preserve">
     <value>Hozzáadás</value>
   </data>
+  <metadata name="joinedDatabaseBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
+  </metadata>
   <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 22</value>
+    <value>30, 22</value>
   </data>
   <data name="bindingNavigatorCountItem.Text" xml:space="preserve">
-    <value>of {0}</value>
+    <value>/ {0}</value>
   </data>
   <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
     <value>Total number of items</value>
-  </data>
-  <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFvSURBVDhPtZBNKMNhHMd3Vd5K7eKCWjkgk7yEZDKksciE
-        yMwkBw6LhHZxcCDlQg64SA4kJeVE4jRv89qaWn8tUtoF/7g8H2Ootb+x4nt56nm+38/v+/xUfyJcJ9Bt
-        BMcOH1eRiZV5RGcVwqyHrfWwELweWJoJ9rC2AL0mRLse0VEBcxOKkLeGwlwGIz2h75w6ApC6bERjAdia
-        gkxiyIow5cKkPWxDFYvTiMrUdxDDVnCfwVh/AOo/P2zhhccFzcWBLxmzEPV50Nfyu/Cn2N/1V85DGNKh
-        Rhth+EaCxkLISUDWxvOgjYXa7F/Wv7kGUz4UJeKzGODi6H25d2l+yPLsDwu8v4NWHY8lSbhL0/HtbX8F
-        GLXh1MQgnxwoQ3h5hkEL6JI5TlPj21gNMd6WZyC1VSN7r0Mh7G4i56pxpkQhdTWA/KQ4aUcTh+x0KACm
-        RpBSo3HrM0G6Uq7pl2zvhvNDBcClE8YH4HDv2/A/SKV6BYojAxyEJtLJAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="bindingNavigatorDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 22</value>
-  </data>
-  <data name="bindingNavigatorDeleteItem.Text" xml:space="preserve">
-    <value>Törlés</value>
   </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -282,6 +264,27 @@
   </data>
   <data name="bindingNavigatorSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
+  </data>
+  <data name="bindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAFvSURBVDhPtZBNKMNhHMd3Vd5K7eKCWjkgk7yEZDKksciE
+        yMwkBw6LhHZxcCDlQg64SA4kJeVE4jRv89qaWn8tUtoF/7g8H2Ootb+x4nt56nm+38/v+/xUfyJcJ9Bt
+        BMcOH1eRiZV5RGcVwqyHrfWwELweWJoJ9rC2AL0mRLse0VEBcxOKkLeGwlwGIz2h75w6ApC6bERjAdia
+        gkxiyIow5cKkPWxDFYvTiMrUdxDDVnCfwVh/AOo/P2zhhccFzcWBLxmzEPV50Nfyu/Cn2N/1V85DGNKh
+        Rhth+EaCxkLISUDWxvOgjYXa7F/Wv7kGUz4UJeKzGODi6H25d2l+yPLsDwu8v4NWHY8lSbhL0/HtbX8F
+        GLXh1MQgnxwoQ3h5hkEL6JI5TlPj21gNMd6WZyC1VSN7r0Mh7G4i56pxpkQhdTWA/KQ4aUcTh+x0KACm
+        RpBSo3HrM0G6Uq7pl2zvhvNDBcClE8YH4HDv2/A/SKV6BYojAxyEJtLJAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="bindingNavigatorDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 22</value>
+  </data>
+  <data name="bindingNavigatorDeleteItem.Text" xml:space="preserve">
+    <value>Törlés</value>
   </data>
   <data name="toolStripButtonEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -485,9 +488,6 @@
   <data name="egyebadatokDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Egyeb_adatok</value>
   </data>
-  <metadata name="joinedDatabaseBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 54</value>
-  </metadata>
   <data name="alapadatokDataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2169,6 +2169,12 @@
   <data name="&gt;&gt;bindingNavigatorAddNewItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;joinedDatabaseBindingSource.Name" xml:space="preserve">
+    <value>joinedDatabaseBindingSource</value>
+  </data>
+  <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;bindingNavigatorCountItem.Name" xml:space="preserve">
     <value>bindingNavigatorCountItem</value>
   </data>
@@ -2420,12 +2426,6 @@
   </data>
   <data name="&gt;&gt;egyebadatokDataGridViewTextBoxColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;joinedDatabaseBindingSource.Name" xml:space="preserve">
-    <value>joinedDatabaseBindingSource</value>
-  </data>
-  <data name="&gt;&gt;joinedDatabaseBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fajlToolStripMenuItem.Name" xml:space="preserve">
     <value>fajlToolStripMenuItem</value>

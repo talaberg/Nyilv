@@ -28,6 +28,8 @@ namespace NyilvForms
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
         private void FormMiscellaneousInit()
         {
+            // Maximized window
+            this.WindowState = FormWindowState.Maximized;
 
             //Init ComboBox parameteres
             //Make ComboBoxes not editable
@@ -54,6 +56,9 @@ namespace NyilvForms
                 BindingFlags.Instance | BindingFlags.NonPublic);
             pi.SetValue(alapadatokDataGridView, true, null);
 
+            // Make table read only
+            alapadatokDataGridView.ReadOnly = true;
+            toolStripButtonEdit.CheckState = CheckState.Unchecked;
 
             //Datafield init
             currentGroup = 1;

@@ -216,7 +216,22 @@ namespace NyilvForms
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            RemoveAlapadatokElement(currentCegID);
+            JoinedDatabase currentRecord = ((JoinedDatabase)joinedDatabaseBindingSource.Current);
+
+            string recordInfo = currentRecord.Azonosito + "\n" +
+                                currentRecord.Cegnev + "\n" +
+                                currentRecord.Adoszam + "\n";
+            DialogResult dialogResult = MessageBox.Show("Biztos törölni akarja a bejegyzést?\n" + recordInfo, "Bejegyzés törlése", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                RemoveAlapadatokElement(currentCegID);
+                joinedDatabaseBindingSource.RemoveCurrent();
+            }            
+        }
+
+        public void saveButton_Click(object sender, EventArgs e)
+        {
+            UpdateMiscJoinedDataBaseData(((JoinedDatabase)joinedDatabaseBindingSource.Current));
         }
         // Dokumentumok Tree View ------
         private void treeViewDokumentumok_MouseClick(object sender, MouseEventArgs e)
