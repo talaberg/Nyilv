@@ -24,7 +24,12 @@ namespace NyilvLib
         public const int COMBOXBUTTON_YPOS_BASE = 0;
         public const int COMBOXBUTTON_PADDING = 20;
         public const int COMBOXBUTTON_SIZE = 20;
-        
+
+        public const string EMPTY_TEVEKENYSEG = "";
+
+        public const int EMPTY_COMBOBOX_ID = 0;
+        public const string EMPTY_COMBOBOX_TEXT = "";
+
         public enum ButtonTypes {Save=1};
         public static class SaveButtonProperties
         {

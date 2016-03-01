@@ -276,6 +276,13 @@ namespace Nyilv.Controllers
                             {
                                 tevekenysegek.Add(TevekenysegekEV2Tevekenysegek(tevekenyseg));
                             }
+                            else
+                            {
+                                tevekenyseg = new TevekenysegekEV();
+                                tevekenyseg.ID = id;
+                                tevekenyseg.Megnevezes = NyilvConstants.EMPTY_TEVEKENYSEG;
+                                tevekenysegek.Add(TevekenysegekEV2Tevekenysegek(tevekenyseg));
+                            }
                         }
 
                     }
@@ -287,6 +294,13 @@ namespace Nyilv.Controllers
 
                             if (tevekenyseg != null)
                             {
+                                tevekenysegek.Add(tevekenyseg);
+                            }
+                            else
+                            {
+                                tevekenyseg = new Tevekenysegek();
+                                tevekenyseg.ID = id;
+                                tevekenyseg.Megnevezes = NyilvConstants.EMPTY_TEVEKENYSEG;
                                 tevekenysegek.Add(tevekenyseg);
                             }
                         }

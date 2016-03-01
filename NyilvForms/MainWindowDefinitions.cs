@@ -355,11 +355,15 @@ namespace NyilvForms
             }
 
             private void Add(object sender, EventArgs e)
-            {                
+            {
+                var element = new ComboboxItem(NyilvConstants.EMPTY_COMBOBOX_ID, NyilvConstants.EMPTY_COMBOBOX_TEXT);
+                this.Data.Items.Add(element);
+                this.Data.SelectedText = NyilvConstants.EMPTY_COMBOBOX_TEXT;
             }
             private void Remove(object sender, EventArgs e)
             {
-            }
+                this.Data.Items.Remove(this.Data.SelectedItem);
+}
             private void ButtonsInit(Point pos)
             {
                 addButton = new Button();
